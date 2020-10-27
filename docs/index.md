@@ -1,11 +1,15 @@
 ## Computational Methods for Social Science
-#### Mickael Temporão, Sciences Po Bordeaux
+#### Sciences Po Bordeaux
+
+| Mickael Temporão                       |
+| Instructor                             |
+
+| What         | When                 | Where |
+| -            | -                    | -     |
+| Class        | Monday - 14h00-17h00 | B.248 |
+| Office hours | Monday - 17h00-18h00 | B.140 |
 
 
-| What         | When          | Time        | Where |
-| -----------  | ------------- | -           | -     |
-| Class        | Monday        | 14h00-17h00 | B.248 |
-| Office hours | Monday        | 17h00-18h00 | B.140 |
 
 ## Overview
 

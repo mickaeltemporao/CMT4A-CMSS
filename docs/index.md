@@ -1,4 +1,4 @@
-# Computational Methods for Social Science
+## Computational Methods for Social Science
 #### Sciences Po Bordeaux
 
 ## Overview
@@ -6,10 +6,10 @@ Description
 
 ## Schedule
 
-| Schedule      | Day           | Time        | Location |
-| ------------- | ------------- | -           | -        |
-| Class         | Lundi         | 14h00-17h00 | B.248    |
-| Office hours  | Lundi         | 17h00-12h30 | B.140    |
+|              | Day           | Time          | Location |
+| -----------  | ------------- | -             | -        |
+| Class        | Monday        | 14h00-17h00   | B.248    |
+| Office hours | Monday        | 17h00-12h30   | B.140    |
 
 
 ### Prerequisites
@@ -32,16 +32,18 @@ Un ordinateur est nécessaire lors de chaque séance afin de pouvoir suivre les 
 La conférence de méthodes se donne en présentiel. Dans les circonstances actuelles, la conférence est répartie en 2x6 [séances](seance.md) afin de respecter les règles sanitaires en vigueur. Chaque groupe bénéficie de 6 séances à des dates qui leur sont spécifiques. Le *Groupe A* débute sa première séance le 2020/09/18, tandis que le *Groupe B* débute la semaine suivante soit le 2020/09/25. Les dates de remise des différents travaux sont directement liées aux séances spécifiques de chaque groupe.
 
 
-| Groupe A   | Groupe B   | Section  | Séance | Thème                                       | Remise                          |
-| -          | -          | -        | :-:    | -                                           | :-:                             |
-| 2020/09/18 | 2020/09/25 | Projet   | 1      | [Introduction](1_projet_intro.md)           | -                               |
-| 2020/10/02 | 2020/10/09 | Projet   | 2      | [Le projet de recherche](2_projet_objet.md) | -                               |
-| 2020/10/16 | 2020/10/23 | Collecte | 3      | [Les types de données](3_types.md)          | **[TP1](tp_01_projet)**         |
-| 2020/11/06 | 2020/11/13 | Collecte | 4      | [La collecte de données](4_collecte.md)     | -                               |
-| 2020/11/20 | 2020/11/27 | Analyse  | 5      | Biais et inférence                          | **[TP2](tp_02_données)**        |
-| 2020/12/04 | 2020/12/11 | Analyse  | 6      | Le rapport de recherche                     | -                               |
-| 2021/01/11 | 2021/01/18 | -        | -      | -                                           | **[Rapport Final](le_rapport)** |
-
+| Groupe A   | Groupe B   | Section  | Session | Thème                                       | Remise                          |
+| -          | -          | -        | :-:     | -                                           | :-:                             |
+| 2020/09/18 | 2020/09/25 | Setup    | 1       | [Introduction]()                            | -                               |
+| 2020/10/02 | 2020/10/09 | Setup    | 2       | [Le projet de recherche]()                  | -                               |
+| 2020/10/16 | 2020/10/23 | Setup    | 3       | [Les types de données]()                    | -                               |
+| 2020/11/06 | 2020/11/13 | Code     | 4       | [La collecte de données]()                  | -                               |
+| 2020/11/20 | 2020/11/27 | Code     | 5       | Biais et inférence                          | -                               |
+| 2020/12/04 | 2020/12/11 | Code     | 6       | Le rapport de recherche                     | -                               |
+| 2021/01/11 | 2021/01/18 | Analysis | 7       | -                                           | -                               |
+| 2020/11/20 | 2020/11/27 | Analysis | 8       | Biais et inférence                          | -                               |
+| 2020/12/04 | 2020/12/11 | Analysis | 9       | Le rapport de recherche                     | -                               |
+| 2021/01/11 | 2021/01/18 | test     | -       | -                                           | -                               |
 
 ## Communication
 Le moyen de communication privilégié pour le cours est **[Slack](https://methodesss.slack.com)**.

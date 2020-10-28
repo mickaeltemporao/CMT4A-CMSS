@@ -11,7 +11,7 @@
 
 
 
-<title>schedule.utf8</title>
+<title>Schedule</title>
 
 <script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -20,11 +20,16 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -260,6 +265,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -267,6 +335,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -279,19 +357,35 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Computational Methods for Social Science</a>
+      <a class="navbar-brand" href="index.html">CMT4A-CMSS</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="index.html">Home</a>
+  <a href="index.html">Overview</a>
 </li>
 <li>
-  <a href="schedule.html">Schedule</a>
+  <a href="schedule.html">
+    <span class="fa fa-clipboard-list fa-lg"></span>
+     
+    Schedule
+  </a>
+</li>
+<li>
+  <a href="tbd.html">
+    <span class="fa fa-calendar-check fa-lg"></span>
+     
+    Assignments
+  </a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/mickaeltemporao/CMT4A-CMSS">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -301,124 +395,99 @@ $(document).ready(function () {
 
 
 
+<h1 class="title toc-ignore">Schedule</h1>
 
 </div>
 
 
-<div id="schedule" class="section level1">
-<h1>Schedule</h1>
-<p>La conférence de méthodes se donne en présentiel. Dans les circonstances actuelles, la conférence est répartie en 2x6 <a href="seance.md">séances</a> afin de respecter les règles sanitaires en vigueur. Chaque groupe bénéficie de 6 séances à des dates qui leur sont spécifiques. Le <em>Groupe A</em> débute sa première séance le 2020/09/18, tandis que le <em>Groupe B</em> débute la semaine suivante soit le 2020/09/25. Les dates de remise des différents travaux sont directement liées aux séances spécifiques de chaque groupe.</p>
+<p>The course is divided into 9 sessions. Each group will have 9 dedicated sessions. All assignment deadlines are related to each group’s respective sessions.</p>
+<div id="content-activities" class="section level2">
+<h2>Content &amp; Activities</h2>
 <table>
 <thead>
 <tr class="header">
-<th>Groupe A</th>
-<th>Groupe B</th>
-<th>Section</th>
+<th>Group A</th>
+<th>Group B</th>
 <th align="center">Session</th>
-<th>Thème</th>
-<th align="center">Remise</th>
+<th>Theme</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>2020/09/18</td>
-<td>2020/09/25</td>
-<td>Setup</td>
-<td align="center">1</td>
-<td><a href="">Introduction</a></td>
-<td align="center">-</td>
-</tr>
-<tr class="even">
 <td>2020/10/02</td>
 <td>2020/10/09</td>
-<td>Setup</td>
-<td align="center">2</td>
-<td><a href="">TBD</a></td>
-<td align="center">-</td>
+<td align="center">1</td>
+<td><a href="">Introduction</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>2020/10/16</td>
 <td>2020/10/23</td>
-<td>Setup</td>
-<td align="center">3</td>
-<td><a href="">TBD</a></td>
-<td align="center">-</td>
+<td align="center">2</td>
+<td><a href="">analytics</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>2020/11/06</td>
 <td>2020/11/13</td>
-<td>Code</td>
+<td align="center">3</td>
+<td><a href="">analytics</a></td>
+</tr>
+<tr class="even">
+<td>2020/11/20</td>
+<td>2020/11/27</td>
 <td align="center">4</td>
-<td><a href="">TBD</a></td>
-<td align="center">-</td>
+<td><a href="">supervised methods 1</a></td>
 </tr>
 <tr class="odd">
-<td>2020/11/20</td>
-<td>2020/11/27</td>
-<td>Code</td>
+<td>2020/12/04</td>
+<td>2020/12/11</td>
 <td align="center">5</td>
-<td>TBD</td>
-<td align="center">-</td>
+<td><a href="">supervised methods 2</a></td>
 </tr>
 <tr class="even">
-<td>2020/12/04</td>
-<td>2020/12/11</td>
-<td>Code</td>
-<td align="center">6</td>
-<td>TBD</td>
-<td align="center">-</td>
-</tr>
-<tr class="odd">
 <td>2021/01/11</td>
 <td>2021/01/18</td>
-<td>Analysis</td>
-<td align="center">7</td>
-<td>TBD</td>
-<td align="center">-</td>
+<td align="center">6</td>
+<td><a href="">unsupervised methods 1</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>2020/11/20</td>
 <td>2020/11/27</td>
-<td>Analysis</td>
-<td align="center">8</td>
-<td>TBD</td>
-<td align="center">-</td>
-</tr>
-<tr class="odd">
-<td>2020/12/04</td>
-<td>2020/12/11</td>
-<td>Analysis</td>
-<td align="center">9</td>
-<td>TBD</td>
-<td align="center">-</td>
+<td align="center">7</td>
+<td><a href="">unsupervised methods 2</a></td>
 </tr>
 <tr class="even">
+<td>2020/12/04</td>
+<td>2020/12/11</td>
+<td align="center">8</td>
+<td><a href="">building machines</a></td>
+</tr>
+<tr class="odd">
 <td>2021/01/11</td>
 <td>2021/01/18</td>
-<td>TBD</td>
-<td align="center">-</td>
-<td>TBD</td>
-<td align="center">-</td>
+<td align="center">9</td>
+<td><a href="">application: forcastingTBD</a></td>
 </tr>
 </tbody>
 </table>
+<p>Introduction to computational social science Basic data analysis and visualization Data collection</p>
+<p>Introduction, setup, and compilation. Basics, data preprocessing, and visualization</p>
+<p>Model</p>
+<p>Environment</p>
+<p>Collection Visualization</p>
+<p>Challenge Forecasting votes</p>
+<p>Part 1: Foundation Session 01: Introduction to computational methods for social science Session 02: Digital traces, public opinion and political behavior Session 03: Experimental research in the digital age</p>
+<p>Part 2: Data Collection Session 04: Scalable data collection pipelines, APIs and databases Session 05: Automated data preprocessing, cleaning, and visualization of big data Session 06: Statistical modeling vs. predictive modeling</p>
+<p>Part 4: Application &amp; Validation Session 10: Analytical data pipelines for textual data analysis Session 11: Analytical data pipelines for network data analysis Session 12: Analytical data pipelines for visual data analysis</p>
+<p>Introduction to Analytics, Introduction to R Basic Data Analysis Initial Evaluation and Homework Linear Regression Homework Logistic Regressioin Classification and Regression Trees Text as data methods Clustering Kaggle Competition</p>
 </div>
 
-<h2>Source</h2>
-<p>
-Le code source de cette page se trouve sur <a href="https://github.com/mickaeltemporao/CMT4A-CMSS"> GitHub</a>.
-</p>
 
-<h2>Licence</h2>
-
-<p>
-La science se doit d'être ouverte et ce cours est construit à partir d'autres matériels en licence ouverte. À cet effet, et sauf indication contraire, tous les contenus et supports de ce cours sont sous licence <a href="https://spdx.org/licenses/AGPL-3.0-or-later.html">GNU Affero General Public License v3.0</a>
-</p>
-
-<p style="margin-bottom:3cm;"> Copyright &copy; 2020 Mickael Temporão. All rights reserved. </p>
+<p style="margin-bottom:3cm;"> Copyright &copy; Mickael Temporão, 2020, <a href="https://spdx.org/licenses/AGPL-3.0-or-later.html">GNU Affero General Public License v3.0</a>. </p>
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -451,6 +520,32 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

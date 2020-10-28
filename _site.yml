@@ -1,50 +1,30 @@
 name: "CMT4A-CMSS"
+exclude: ["README.md", "resources/*", "LICENSE"]
 navbar:
-  title: "Computational Methods for Social Science"
+  title: "CMT4A-CMSS"
+  type: default
   left:
-    - text: "Syllabus"
-      icon: fa-info
+    - text: "Overview"
       href: index.html
     - text: "Schedule"
       href: schedule.html
-    - text: "More"
-      icon: fa-gear
-      menu:
-        - text: "Heading 1"
-        - text: "Page A"
-          href: page-a.html
-        - text: "Page B"
-          href: page-b.html
-        - text: "---------"
-        - text: "Heading 2"
-        - text: "Page C"
-          href: page-c.html
-        - text: "Page D"
-          href: page-d.html
+      icon: fa-clipboard-list fa-lg
+    - text: "Assignments"
+      href: tbd.html
+      icon: fa-calendar-check fa-lg
   right:
-    - icon: fa-question fa-lg
-      href: https://example.com
-output_dir: "."
+    - icon: fa-github fa-lg
+      href: https://github.com/mickaeltemporao/CMT4A-CMSS
+output_dir: "docs"
 output:
   html_document:
     theme: cosmo
     highlight: textmate
     include:
       after_body: footer.html
-
-
-      menu:
-        - text: "Heading 1"
-        - text: "Page A"
-          href: page-a.html
-        - text: "Page B"
-          href: page-b.html
-        - text: "---------"
-        - text: "Heading 2"
-        - text: "Page C"
-          href: page-c.html
-        - text: "Page D"
-          href: page-d.html
-  right:
-    - icon: fa-question fa-lg
-      href: https://example.com
+    self_contained: false
+    toc: true
+    toc_depth: 2
+    toc_float:
+      collapsed: true
+    html5: true

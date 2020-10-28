@@ -1,5 +1,8 @@
-## Computational Methods for Social Science
-#### Sciences Po Bordeaux
+---
+title: "Computational Methods for Social Science"
+subtitle: "Sciences Po Bordeaux"
+---
+
 
 | Mickael Temporão                       |
 | Instructor                             |

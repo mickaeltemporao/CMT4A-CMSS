@@ -1,11 +1,8 @@
 ---
 title: "Computational Methods for Social Science"
 subtitle: "Sciences Po Bordeaux"
+author: Mickael Temporão
 ---
-
-
-| Mickael Temporão                       |
-| Instructor                             |
 
 | What         | When                 | Where |
 | -            | -                    | -     |

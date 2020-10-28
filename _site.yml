@@ -1,13 +1,15 @@
-name: "my-website"
+name: "CMT4A-CMSS"
 navbar:
-  title: "My Website"
+  title: "Computational Methods for Social Science"
   left:
     - text: "Home"
       href: index.html
-    - text: "About"
-      href: about.html
+    - text: "Schedule"
+      href: schedule.html
 output_dir: "."
 output:
   html_document:
     theme: cosmo
     highlight: textmate
+    include:
+      after_body: footer.html

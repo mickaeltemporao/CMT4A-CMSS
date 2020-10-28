@@ -2,10 +2,28 @@ name: "CMT4A-CMSS"
 navbar:
   title: "Computational Methods for Social Science"
   left:
-    - text: "Home"
+    - text: "Syllabus"
+      icon: fa-info
       href: index.html
     - text: "Schedule"
       href: schedule.html
+    - text: "More"
+      icon: fa-gear
+      menu:
+        - text: "Heading 1"
+        - text: "Page A"
+          href: page-a.html
+        - text: "Page B"
+          href: page-b.html
+        - text: "---------"
+        - text: "Heading 2"
+        - text: "Page C"
+          href: page-c.html
+        - text: "Page D"
+          href: page-d.html
+  right:
+    - icon: fa-question fa-lg
+      href: https://example.com
 output_dir: "."
 output:
   html_document:
@@ -13,3 +31,20 @@ output:
     highlight: textmate
     include:
       after_body: footer.html
+
+
+      menu:
+        - text: "Heading 1"
+        - text: "Page A"
+          href: page-a.html
+        - text: "Page B"
+          href: page-b.html
+        - text: "---------"
+        - text: "Heading 2"
+        - text: "Page C"
+          href: page-c.html
+        - text: "Page D"
+          href: page-d.html
+  right:
+    - icon: fa-question fa-lg
+      href: https://example.com

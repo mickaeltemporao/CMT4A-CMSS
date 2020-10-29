@@ -54,8 +54,8 @@ In order to generate high-quality reports we will also use [LaTeX](https://www.l
 Make sure you have downloaded the following 3 softwares before the first session:
 
 1. [R](https://cran.biotools.fr/)
-2. (RStudio)[https://rstudio.com/products/rstudio/download/#download]
-3. (LaTeX)[https://miktex.org/download]
+2. [RStudio](https://rstudio.com/products/rstudio/download/#download)
+3. [LaTeX](https://miktex.org/download)
 
 ## Books
 

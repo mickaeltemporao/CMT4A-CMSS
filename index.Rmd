@@ -54,8 +54,8 @@ If this does not yet make sense, don't worry; we'll cover it in the course.
 1. Download [R](https://cran.biotools.fr/)
 2. Download [RStudio](https://rstudio.com/products/rstudio/download/#download)
 3. Download [LaTeX](https://miktex.org/download)
-4. Create a [GitHub](https://github.com/)
-5. Create and join the our [Slack](https://methodesss.slack.com) channel.
+4. Create a [GitHub](https://github.com/) account
+5. Join our [Slack](https://methodesss.slack.com) channel
 
 ### Books
 

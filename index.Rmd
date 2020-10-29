@@ -9,24 +9,26 @@ This course introduces students to the building blocks of machine learning and a
 The course will allow you to apply your theoretical knowledge and articulate the methods learned through various challenges and projects throughout the course. This course is designed for social science students that are not necessarily familiar with quantitative methods or computer programming.
 
 
-# Goals
+## Goals
 1. Collect, process, visualize, analyze and model data using free and open source software.
 2. Leverage computational methods in a fully reproducible end to end academic research paper.
 3. Build awareness of the ethical considerations related to big data and artificial intelligence.
 
+## Grading
+- TBA
 
 # Pre-requisites
 The most important prerequisite is motivation to work hard on possibly unfamiliar material.
 
 
-# Grading
-- TBA
 
 
 # Communication
-For questions regarding the content of the course, ask and answer them on our [Slack](tba.html) channel. If you have a question about the topic, it is likely that someone else had the same question. Posting questions and answers publicly allows us all to learn from each of these questions and answers.
+Before the first session you should receive an email invitation to join our [Slack](tba.html) channel.
 
-Reserve emails to the instructors for personal matters.
+Use slack for questions regarding the content of the course, ask and answer them on our [Slack](tba.html) channel. Being active on Slack and answering your peers’ questions is encouraged and will positively impact your participation grade. Furthermore, if you have a question about the topic, it is likely that someone else had the same question. Posting questions and answers publicly allows us all to learn from each of these questions and answers.
+
+Reserve emails or private slack messages to the instructors for personal matters.
 
 # Materials & requirements
 
@@ -49,15 +51,13 @@ Students have access to a [DataCamp classroom](https://www.datacamp.com/groups/e
 
 In order to generate high-quality reports we will also use [LaTeX](https://www.latex-project.org/get/).
 
-
-
-Make sure you have downloaded the following 3 softwares before the first session:
+Make sure you have downloaded the following softwares before the first session:
 
 1. [R](https://cran.biotools.fr/)
 2. [RStudio](https://rstudio.com/products/rstudio/download/#download)
 3. [LaTeX](https://miktex.org/download)
 
-## Books
+### Books
 
 - Wickham, H., & Grolemund, G. (2016). *[R for Data Science: import, tidy, transform, visualize, and model data](http://r4ds.had.co.nz/)*. O'Reilly Media, Inc. (Free Online)
 - Salganik, M. J. (2019). [*Bit by bit: Social research in the digital age](https://www.bitbybitbook.com/en/1st-ed/preface/)*. Princeton University Press. (Free Online)

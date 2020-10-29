@@ -61,7 +61,7 @@ If this does not yet make sense, don't worry; we'll cover it in the course.
 - Wickham, H., & Grolemund, G. (2016). *[R for Data Science: import, tidy, transform, visualize, and model data](http://r4ds.had.co.nz/)*. O'Reilly Media, Inc. (Free Online)
 - Salganik, M. J. (2019). *[Bit by bit: Social research in the digital age](https://www.bitbybitbook.com/en/1st-ed/preface/)*. Princeton University Press. (Free Online)
 
-# Licence and credit
+# Licence & Credit
 
 Science should be open, and this course builds up other open licensed material. Unless otherwise noted, all materials for this class are licensed under the [GNU Affero General Public License v3.0](https://spdx.org/licenses/AGPL-3.0-or-later.html).
 

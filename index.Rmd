@@ -10,9 +10,9 @@ The course will allow you to apply your theoretical knowledge and articulate the
 
 
 # Goals
-1. Leverage computational methods to collect, process, visualize, analyze and model data in a fully reproducible end to end research paper.
-2. Use modern free and open source software and tools to solve complex problems in the social sciences.
-3. Build awareness around the ethical considerations related to big data and artificial intelligence.
+1. Collect, process, visualize, analyze and model data using free and open source software.
+2. Leverage computational methods in a fully reproducible end to end academic research paper.
+3. Build awareness of the ethical considerations related to big data and artificial intelligence.
 
 
 # Pre-requisites
@@ -20,16 +20,10 @@ The most important prerequisite is motivation to work hard on possibly unfamilia
 
 
 # Grading
-## Participation - 20%
-
-## Problem Sets - 30%
-
-## Final Project - 50%
+- TBA
 
 # Communication
-The main communication tool that we will use during the course will be
-
-If you have questions regarding the content of the course, please ask and answer them on *element*. If you have a question about the topic, it is likely that someone else had the same question. Posting questions and answers publicly allows us all to learn from each of these questions and answers.
+For questions regarding the content of the course, ask and answer them on our [Slack](tba.html) channel. If you have a question about the topic, it is likely that someone else had the same question. Posting questions and answers publicly allows us all to learn from each of these questions and answers.
 
 Reserve emails to the instructors for personal matters.
 
@@ -51,14 +45,21 @@ If this does not yet make sense, don't worry; we'll cover it in the course.
 
 Students have access to a [DataCamp classroom](https://www.datacamp.com/groups/education). You can use this resource for additional practice.
 
+
+In order to generate high-quality reports we will also use [LaTeX](https://www.latex-project.org/get/).
+
+https://miktex.org/download
+
 Make sure you have downloaded the following software before the first day of class:
+
 - R
 - RStudio
 - LaTeX
 
 ## Books
-- TBD
-- TBD
+
+- TBA
+- TBA
 
 # Licence and credit
 Science should be open, and this course builds up other open licensed material. Unless otherwise noted, all materials for this class are licensed under the [GNU Affero General Public License v3.0](https://spdx.org/licenses/AGPL-3.0-or-later.html).

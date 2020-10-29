@@ -17,20 +17,28 @@ The course will allow you to apply your theoretical knowledge and articulate the
 ## Grading
 - TBA
 
-# Pre-requisites
+## Pre-requisites
 The most important prerequisite is motivation to work hard on possibly unfamiliar material.
 
 
+# Materials & Requirements
+
+Students need to have access to a computer in order to participate, complete activities during each session and accomplish the assignments.
 
 
-# Communication
+**TLDR**: Make sure you have done the following before the first session:
+
+1. Join our [Slack](https://methodesss.slack.com) channel
+2. Download [R](https://cran.biotools.fr/)
+3. Download [RStudio](https://rstudio.com/products/rstudio/download/#download)
+4. Download [LaTeX](https://miktex.org/download)
+5. Create a [GitHub](https://github.com/) account
+
+
+## Communication
 Before the first session you should receive an email invitation to join our [Slack](https://methodesss.slack.com) channel.
 
 Use slack for questions regarding the content of the course, ask and answer them on our [Slack](https://methodesss.slack.com) channel. Being active on Slack and answering your peers’ questions is encouraged and will positively impact your participation grade. Furthermore, if you have a question about the topic, it is likely that someone else had the same question. Posting questions and answers publicly allows us all to learn from each of these questions and answers.
-
-# Materials & requirements
-
-Students need to have access to a computer in order to follow the coding sections of each session.
 
 ## Software
 
@@ -44,30 +52,22 @@ We will also use [git](https://git-scm.com/) and [GitHub](https://github.com/) f
 
 Homework assignments will be distributed and submitted via [GitHub Classrooms](https://classroom.github.com/classrooms).
 
-
 Students have access to a [DataCamp classroom](https://www.datacamp.com/groups/education). You can use this resource for additional practice.
 
 If this does not yet make sense, don't worry; we'll cover it in the course.
-
-**TLDR**: Make sure you have done the following before the first session:
-
-1. Download [R](https://cran.biotools.fr/)
-2. Download [RStudio](https://rstudio.com/products/rstudio/download/#download)
-3. Download [LaTeX](https://miktex.org/download)
-4. Create a [GitHub](https://github.com/) account
-5. Join our [Slack](https://methodesss.slack.com) channel
 
 ### Books
 
 - Wickham, H., & Grolemund, G. (2016). *[R for Data Science: import, tidy, transform, visualize, and model data](http://r4ds.had.co.nz/)*. O'Reilly Media, Inc. (Free Online)
 - Salganik, M. J. (2019). [*Bit by bit: Social research in the digital age](https://www.bitbybitbook.com/en/1st-ed/preface/)*. Princeton University Press. (Free Online)
 
-# Bugs & Feedback
-
-If you find any typos or other issues in this page, or any other page in the site, go to [issues](https://github.com/mickaeltemporao/CMT4A-CMSS/issues), click on the "New Issue" button to create a new issue, and describe the problem.
-
 # Licence and credit
+
 Science should be open, and this course builds up other open licensed material. Unless otherwise noted, all materials for this class are licensed under the [GNU Affero General Public License v3.0](https://spdx.org/licenses/AGPL-3.0-or-later.html).
 
 The source code and the materials to build this website are on GitHub at [mickaeltemporao/CMT4A-CMSS](https://github.com/mickaeltemporao/CMT4A-CMSS)
+
+## Bugs & Feedback
+
+If you find any typos or other issues in this page, or any other page in the site, go to [issues](https://github.com/mickaeltemporao/CMT4A-CMSS/issues), click on the "New Issue" button to create a new issue, and describe the problem.
 

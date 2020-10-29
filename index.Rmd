@@ -64,10 +64,10 @@ Make sure you have downloaded the following softwares before the first session:
 
 # Bugs & Feedback
 
-If you find any typos or other issues in this page, or any other page in the site, go to [issues](https://github.com/mickaeltemporao/CMT4A-MSS/issues), click on the "New Issue" button to create a new issue, and describe the problem.
+If you find any typos or other issues in this page, or any other page in the site, go to [issues](https://github.com/mickaeltemporao/CMT4A-CMSS/issues), click on the "New Issue" button to create a new issue, and describe the problem.
 
 # Licence and credit
 Science should be open, and this course builds up other open licensed material. Unless otherwise noted, all materials for this class are licensed under the [GNU Affero General Public License v3.0](https://spdx.org/licenses/AGPL-3.0-or-later.html).
 
-The source code and the materials to build this website are on GitHub at [mickaeltemporao/CMT4A-CMSS](https://github.com/mickaeltemporao/CMT4A-MSS)
+The source code and the materials to build this website are on GitHub at [mickaeltemporao/CMT4A-CMSS](https://github.com/mickaeltemporao/CMT4A-CMSS)
 

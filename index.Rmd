@@ -60,7 +60,7 @@ Make sure you have downloaded the following 3 softwares before the first session
 ## Books
 
 - Wickham, H., & Grolemund, G. (2016). *[R for Data Science: import, tidy, transform, visualize, and model data](http://r4ds.had.co.nz/)*. O'Reilly Media, Inc. (Free Online)
-- Salganik, M. J. (2019). *Bit by bit: Social research in the digital age](https://www.bitbybitbook.com/en/1st-ed/preface/)*. Princeton University Press. (Free Online)
+- Salganik, M. J. (2019). [*Bit by bit: Social research in the digital age](https://www.bitbybitbook.com/en/1st-ed/preface/)*. Princeton University Press. (Free Online)
 
 # Bugs & Feedback
 

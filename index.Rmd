@@ -24,11 +24,9 @@ The most important prerequisite is motivation to work hard on possibly unfamilia
 
 
 # Communication
-Before the first session you should receive an email invitation to join our [Slack](tba.html) channel.
+Before the first session you should receive an email invitation to join our [Slack](https://methodesss.slack.com) channel.
 
-Use slack for questions regarding the content of the course, ask and answer them on our [Slack](tba.html) channel. Being active on Slack and answering your peers’ questions is encouraged and will positively impact your participation grade. Furthermore, if you have a question about the topic, it is likely that someone else had the same question. Posting questions and answers publicly allows us all to learn from each of these questions and answers.
-
-Reserve emails or private slack messages to the instructors for personal matters.
+Use slack for questions regarding the content of the course, ask and answer them on our [Slack](https://methodesss.slack.com) channel. Being active on Slack and answering your peers’ questions is encouraged and will positively impact your participation grade. Furthermore, if you have a question about the topic, it is likely that someone else had the same question. Posting questions and answers publicly allows us all to learn from each of these questions and answers.
 
 # Materials & requirements
 

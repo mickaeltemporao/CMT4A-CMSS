@@ -5,7 +5,7 @@ title: "Schedule"
 The course is divided into 9 sessions. Each group will have 9 dedicated sessions. The
 sessions in the first semester are each 3 hour sessions and 1h30 afterwards. All assignment deadlines are related to each group's respective sessions.
 
-## Content & Activities
+# Overview
 
 | Group A    | Group B    | Session | Theme                              |
 | -          | -          | :-:     | -                                  |

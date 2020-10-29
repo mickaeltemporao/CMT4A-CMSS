@@ -1,0 +1,21 @@
+---
+title: "Schedule"
+---
+
+The course is divided into 9 sessions. Each group will have 9 dedicated sessions. The
+sessions in the first semester are each 3 hour sessions and 1h30 afterwards. All assignment deadlines are related to each group's respective sessions.
+
+## Content & Activities
+
+| Group A    | Group B    | Session | Theme                              |
+| -          | -          | :-:     | -                                  |
+| 2020/11/02 | 2020/11/09 | 1       | [Introduction](tba.html)           |
+| 2020/11/16 | 2020/11/23 | 2       | [Programming](tba.html)            |
+| 2020/11/30 | 2020/12/07 | 3       | [Data](tba.html)                   |
+| 2020/11/30 | 2020/12/07 | 4       | [Supervised Methods 1](tba.html)   |
+| 2020/12/04 | 2020/12/11 | 5       | [Supervised Methods 2](tba.html)   |
+| 2021/01/11 | 2021/01/18 | 6       | [Unsupervised Methods 1](tba.html) |
+| 2020/11/20 | 2020/11/27 | 7       | [Unsupervised Methods 2](tba.html) |
+| 2020/12/04 | 2020/12/11 | 8       | [Machine Learning 1](tba.html)     |
+| 2021/01/11 | 2021/01/18 | 9       | [Machine Learning 2](tba.html)     |
+

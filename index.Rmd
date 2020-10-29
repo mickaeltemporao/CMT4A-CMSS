@@ -22,6 +22,7 @@ The most important prerequisite is motivation to work hard on possibly unfamilia
 # Grading
 - TBA
 
+
 # Communication
 For questions regarding the content of the course, ask and answer them on our [Slack](tba.html) channel. If you have a question about the topic, it is likely that someone else had the same question. Posting questions and answers publicly allows us all to learn from each of these questions and answers.
 
@@ -48,18 +49,22 @@ Students have access to a [DataCamp classroom](https://www.datacamp.com/groups/e
 
 In order to generate high-quality reports we will also use [LaTeX](https://www.latex-project.org/get/).
 
-https://miktex.org/download
 
-Make sure you have downloaded the following software before the first day of class:
 
-- R
-- RStudio
-- LaTeX
+Make sure you have downloaded the following 3 softwares before the first session:
+
+1. [R](https://cran.biotools.fr/)
+2. (RStudio)[https://rstudio.com/products/rstudio/download/#download]
+3. (LaTeX)[https://miktex.org/download]
 
 ## Books
 
-- TBA
-- TBA
+- Wickham, H., & Grolemund, G. (2016). *[R for Data Science: import, tidy, transform, visualize, and model data](http://r4ds.had.co.nz/)*. O'Reilly Media, Inc. (Free Online)
+- Salganik, M. J. (2019). *Bit by bit: Social research in the digital age](https://www.bitbybitbook.com/en/1st-ed/preface/)*. Princeton University Press. (Free Online)
+
+# Bugs & Feedback
+
+If you find any typos or other issues in this page, or any other page in the site, go to [issues](https://github.com/mickaeltemporao/CMT4A-MSS/issues), click on the "New Issue" button to create a new issue, and describe the problem.
 
 # Licence and credit
 Science should be open, and this course builds up other open licensed material. Unless otherwise noted, all materials for this class are licensed under the [GNU Affero General Public License v3.0](https://spdx.org/licenses/AGPL-3.0-or-later.html).

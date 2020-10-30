@@ -34,7 +34,7 @@ Make sure you have completed the following activities before the first session.
 # Resources
 
 ## Communication
-Before the first session you should receive an email invitation to join our [Slack](https://spb-methods.slack.com) channel.
+Before the first session you should receive an email invitation to join our [Slack](https://spb-methods.slack.com) channel (until we find a good open-source alternative).
 
 Use slack for questions regarding the content of the course, ask and answer them on our [Slack](https://spb-methods.slack.com) channel. Being active on Slack and answering your peers’ questions is encouraged and will positively impact your participation grade. Furthermore, if you have a question about the topic, it is likely that someone else had the same question. Posting questions and answers publicly allows us all to learn from each of these questions and answers.
 

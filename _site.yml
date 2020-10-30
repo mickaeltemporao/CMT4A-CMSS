@@ -1,5 +1,5 @@
 name: "CMT4A-CMSS"
-exclude: [ "LICENSE", "README.md", "assignements/*", "resources/*" ]
+exclude: [ "LICENSE", "README.md", "assignments", "resources"]
 navbar:
   title: "CMT4A-CMSS"
   type: default

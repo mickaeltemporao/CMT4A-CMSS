@@ -17,31 +17,29 @@ The course will allow you to apply your theoretical knowledge and articulate the
 ## Grading
 - TBA
 
-## Pre-requisites
-The most important prerequisite is motivation to work hard on possibly unfamiliar material.
+## Requirements
+The most important requirement is motivation to work hard on likely unfamiliar material. The second most important requirement is to have access to a computer in order to participate and complete the assignments. Finally, you can start by completing the on-boarding section below before your first session. From there, we will learn as we go!
 
+### On-boarding
 
-# Materials & Requirements
+Make sure you have completed the following activities before the first session.
 
-Students need to have access to a computer in order to participate, complete activities during each session and accomplish the assignments.
-
-
-**TLDR**: Make sure you have done the following before the first session:
-
-1. Join our [Slack](https://methodesss.slack.com) channel
+1. Join our [Slack](https://spb-methods.slack.com) channel
 2. Download [R](https://cran.biotools.fr/)
 3. Download [RStudio](https://rstudio.com/products/rstudio/download/#download)
 4. Download [LaTeX](https://miktex.org/download)
 5. Create a [GitHub](https://github.com/) account
 
 
-## Communication
-Before the first session you should receive an email invitation to join our [Slack](https://methodesss.slack.com) channel.
+# Resources
 
-Use slack for questions regarding the content of the course, ask and answer them on our [Slack](https://methodesss.slack.com) channel. Being active on Slack and answering your peers’ questions is encouraged and will positively impact your participation grade. Furthermore, if you have a question about the topic, it is likely that someone else had the same question. Posting questions and answers publicly allows us all to learn from each of these questions and answers.
+## Communication
+Before the first session you should receive an email invitation to join our [Slack](https://spb-methods.slack.com) channel.
+
+Use slack for questions regarding the content of the course, ask and answer them on our [Slack](https://spb-methods.slack.com) channel. Being active on Slack and answering your peers’ questions is encouraged and will positively impact your participation grade. Furthermore, if you have a question about the topic, it is likely that someone else had the same question. Posting questions and answers publicly allows us all to learn from each of these questions and answers.
+
 
 ## Software
-
 This course uses [R](https://www.r-project.org/), which is a free and open-source programming language primarily used for statistics and data analysis. We also use [RStudio](https://www.rstudio.com/), which is an easy-to-use interface to program in R and other languages.
 
 Instructions to install or upgrade R can be found [here](https://cran.biotools.fr/).
@@ -56,10 +54,11 @@ Students have access to a [DataCamp classroom](https://www.datacamp.com/groups/e
 
 If this does not yet make sense, don't worry; we'll cover it in the course.
 
-## Books
 
+## Books
 - Wickham, H., & Grolemund, G. (2016). *[R for Data Science: import, tidy, transform, visualize, and model data](http://r4ds.had.co.nz/)*. O'Reilly Media, Inc. (Free Online)
 - Salganik, M. J. (2019). *[Bit by bit: Social research in the digital age](https://www.bitbybitbook.com/en/1st-ed/preface/)*. Princeton University Press. (Free Online)
+
 
 # Licence & Credit
 

@@ -1,0 +1,35 @@
+---
+title: Challenges
+---
+
+The challenge workflow is:
+
+1.  Challenge is online 7 days before to the next session.
+2.  Last submission before the next session.
+
+Assignments will be graded on a 4-category scale of
+
+    ---- -------------------------------------------------
+    ✓+   exceptional, above and beyond what was expected
+    ✓    completed with good effort
+    ✓-   acceptable, but major deficiencies
+    ∅    unacceptable; did not submit
+    ---- -------------------------------------------------
+
+# Schedule
+
+| Assigned | Due | Instructions |
+| - | - | - |
+| Session 0 | Session 1 | Warm Up! |
+| Session 1 | Session 2 | Markdown Project |
+
+
+## Challenge 0: Warm Up!
+
+0. Open and accept the challenge (Warm Up)[https://classroom.github.com/a/ZQr1J_Tz]
+1. Create a new RMarkdown document in RStudio
+2. Add a new title and author.
+3. Knit the document (the blue wool yarn ball).
+4. Add the R Markdown and the generated HTML files to the assignment repository.
+5. Add a message to your commit.
+

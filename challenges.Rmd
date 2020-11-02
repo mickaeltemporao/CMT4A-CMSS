@@ -10,6 +10,8 @@ The challenge workflow is:
 2. Students start working on the challenge and making submissions on GitHub Classrooms.
 3. The last submission is due before the start of the next session.
 
+Late submissions will not be accepted!
+
 Assignments will be graded following a 4-category scale:
 
 ---- -------------------------------------------------

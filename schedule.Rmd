@@ -2,20 +2,33 @@
 title: "Schedule"
 ---
 
-The course is divided into 9 sessions. Each group will have 9 dedicated sessions. The
-sessions in the first semester are each 3 hour sessions and 1h30 afterwards. All assignment deadlines are related to each group's respective sessions.
+The course is divided into dedicated 9 sessions. The sessions in the first semester are each 3 hour sessions and 1h30 afterwards. Learning computational methods requires recurrent practice. All activities and challenges are meant to help you keep practicing. For the various challenges and projects, due dates are always related to each group's respective sessions.
+
+Each session is divided into three parts: demo, hack time, and coding challenge.
+
+## Demo
+The demo is led by the students. Each student is expected to do a live demo to help the class understand a topic during a session. A demo is an hands-on demonstration that introduces to a computational social science tool, method, or concept and illustrates how to use it through an example in RStudio. Each demo should last no longer than 10 minutes.
+
+## Hack Time
+The hack time part is where we learn and try new tools and methods together. The instructor provides code and data that illustrate the application of a specific computational social science method or tool using R and RStudio.
+
+## Coding challenges (30%)
+The coding challenge is a small puzzle shared by the instructor.
+There will be some time during class to start working on these challenges, and to address any question, but most of it should be completed after class. Each of these coding challenges will be due before the beginning of the following session. The coding challenge aims at providing new opportunities for students to continuously practice what they learn in different settings.
 
 # Overview
 
-| Group A    | Group B    | Session | Theme                              |
-| -          | -          | :-:     | -                                  |
-| 2020/11/02 | 2020/11/09 | 1       | [Introduction](tba.html)           |
-| 2020/11/16 | 2020/11/23 | 2       | [Programming](tba.html)            |
-| 2020/11/30 | 2020/12/07 | 3       | [Data](tba.html)                   |
-| 2021/01/07 | 2021/01/14 | 4       | [Supervised Methods 1](tba.html)   |
-| 2021/01/21 | 2021/01/28 | 5       | [Supervised Methods 2](tba.html)   |
-| 2021/02/04 | 2021/02/11 | 6       | [Unsupervised Methods 1](tba.html) |
-| 2021/02/25 | 2021/03/04 | 7       | [Unsupervised Methods 2](tba.html) |
-| 2021/03/11 | 2021/03/18 | 8       | [Machine Learning 1](tba.html)     |
-| 2021/03/25 | 2021/04/01 | 9       | [Machine Learning 2](tba.html)     |
+This schedule is an approximation, subject to change due needs of the students in the course. Students will be informed of changes to the schedule.
+
+| Group A    | Group B    | Session | Theme                           | Demo A | Demo B |
+| -          | -          | :-:     | -                               | -      | -      |
+| 2020/11/02 | 2020/11/09 | 1       | [Introduction](session_01.html) | -      | -      |
+| 2020/11/16 | 2020/11/23 | 2       | Programming basics              | TBA    | TBA    |
+| 2020/11/30 | 2020/12/07 | 3       | Data                            | TBA    | TBA    |
+| 2021/01/07 | 2021/01/14 | 4       | Supervised Methods 1            | TBA    | TBA    |
+| 2021/01/21 | 2021/01/28 | 5       | Supervised Methods 2            | TBA    | TBA    |
+| 2021/02/04 | 2021/02/11 | 6       | Unsupervised Methods 1          | TBA    | TBA    |
+| 2021/02/25 | 2021/03/04 | 7       | Unsupervised Methods 2          | TBA    | TBA    |
+| 2021/03/11 | 2021/03/18 | 8       | Machine Learning 1              | TBA    | TBA    |
+| 2021/03/25 | 2021/04/01 | 9       | Machine Learning 2              | TBA    | TBA    |
 

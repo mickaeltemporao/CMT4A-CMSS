@@ -1,0 +1,45 @@
+---
+title: "Session 1: Introduction"
+author: "Instructor: Mickael Temporão"
+---
+
+# Objectives
+
+- Getting familiar with the course structure
+- Setup a computational working environment
+- Learn about open source computational tools
+
+# Agenda
+## Demos
+- Election of a student representative
+- Course overview
+- Open source tools for computational social science
+
+## Hack Time
+### Setting up a computational working environment
+- Create a [GitHub Account](https://github.com/)
+- Download and Install Git
+- Install [R](https://cran.biotools.fr/) version de base 4.0.3
+- Install [LaTeX](https://miktex.org/download)
+- Install [RStudio](https://rstudio.com/products/rstudio/download/#download)
+- Create a [DataCamp] account and join the class!
+
+### Practice with GitHub, Markdown, and RStudio
+- Create a GitHub repository with a README.md file.
+- Markdown Tutorial
+- Edit and add files to GitHub
+- Edit GitHub files with RStudio and generate PDF's
+
+## Coding Challenge
+- [Challenge 0: The Warm Up!](challenges.html#challenge-0-the-warm-up)
+
+# Requirements
+
+Make sure you have completed the following activities before this first session.
+
+1. Join our [Slack](https://spb-methods.slack.com) channel
+2. Download [R](https://cran.biotools.fr/)
+3. Download [RStudio](https://rstudio.com/products/rstudio/download/#download)
+4. Download [LaTeX](https://miktex.org/download)
+5. Create a [GitHub](https://github.com/) account
+

@@ -4,14 +4,19 @@ navbar:
   title: "CMT4A-CMSS"
   type: default
   left:
-    - text: "Overview"
+    - text: ""
       href: index.html
+      icon: fa-home fa-lg
     - text: "Schedule"
       href: schedule.html
-      icon: fa-clipboard-list fa-lg
-    - text: "Assignments"
-      href: tba.html
       icon: fa-calendar-check fa-lg
+    - text: "Challenges"
+      href: challenges.html
+      icon: fa-tasks fa-lg
+    - text: "Project"
+      href: tba.html
+      icon: fa-file-code fa-lg
+
   right:
     - icon: fa-github fa-lg
       href: https://github.com/mickaeltemporao/CMT4A-CMSS

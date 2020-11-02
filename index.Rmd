@@ -38,7 +38,7 @@ Make sure you have completed the following activities before the first session.
 2. Download [R](https://cran.biotools.fr/)
 3. Download [RStudio](https://rstudio.com/products/rstudio/download/#download)
 4. Download [LaTeX](https://miktex.org/download)
-5. Create a [GitHub](https://www.datacamp.com/enterprise/computational-methods-for-social-science/) account
+5. Create a [GitHub](https://github.com/) account
 
 
 # Resources
@@ -66,8 +66,7 @@ If this does not yet make sense, don't worry; we'll cover it in the course.
 ## Books and Websites
 - Wickham, H., & Grolemund, G. (2016). *[R for Data Science: import, tidy, transform, visualize, and model data](http://r4ds.had.co.nz/)*. O'Reilly Media, Inc.
 - Salganik, M. J. (2019). *[Bit by bit: Social research in the digital age](https://www.bitbybitbook.com/en/1st-ed/preface/)*. Princeton University Press.
-- [DataCamp]().
-
+- [DataCamp](https://www.datacamp.com/enterprise/computational-methods-for-social-science/) account
 
 # Licence & Credit
 

@@ -2,12 +2,15 @@
 title: Challenges
 ---
 
+Challenges will be graded based on the best four out of six individual grades.
+
 The challenge workflow is:
 
-1.  Challenge is online 7 days before to the next session.
-2.  Last submission before the next session.
+1. The challenge is online at least 7 days before the next session.
+2. Students start working on the challenge and making submissions on GitHub Classrooms.
+3. The last submission is due before the start of the next session.
 
-Assignments will be graded on the following 4-category scale:
+Assignments will be graded following a 4-category scale:
 
 ---- -------------------------------------------------
 ✓+   exceptional, above and beyond what was expected
@@ -16,20 +19,25 @@ Assignments will be graded on the following 4-category scale:
 ∅    unacceptable; did not submit
 ---- -------------------------------------------------
 
-# Schedule
 
-| Assigned  | Due       | Instructions          |
-| -         | -         | -                     |
-| Session 0 | Session 1 | [Warm Up!](#challenge-9-warm-up)           |
-| Session 1 | Session 2 | An RMarkdown Project  |
+# Overview
+
+| Assigned  | Due       | Coding Challenge                         |
+| -         | -         | -                                        |
+| Session 0 | Session 1 | [The Warm Up!](#challenge-0-the-warm-up) |
+| Session 1 | Session 2 | The RMarkdown Project                    |
+| Session 2 | Session 3 | TBA                                      |
+| Session 4 | Session 5 | TBA                                      |
+| Session 6 | Session 7 | TBA                                      |
+| Session 8 | Session 9 | TBA                                      |
 
 
-## Challenge 0: Warm Up!
+## Challenge 0: The Warm Up!
 
-0. Open and accept the challenge: [Warm Up!](https://classroom.github.com/a/ZQr1J_Tz)
-1. Create a new RMarkdown document in RStudio
+0. Open and accept Challenge 0: [The Warm Up!](https://classroom.github.com/a/ZQr1J_Tz).
+1. Create a new RMarkdown document in RStudio.
 2. Add a new title and author.
-3. Knit the document (click the litle blue wool ball).
+3. Knit the document (click the little blue wool ball).
 4. Add the R Markdown and the generated HTML file to the assignment repository.
 5. Add a message to your commit.
 

@@ -10,9 +10,10 @@ author: "Instructor: Mickael Temporão"
 - [ ] Learn about open source computational tools
 
 # Agenda
-## Demos
-- Course overview
+## Demos (not today)
+- Introduction and course overview
 - Election of a student representative
+- Setup Demos
 - Intro to open source tools for computational social science
 
 ## Hack Time
@@ -22,7 +23,7 @@ author: "Instructor: Mickael Temporão"
 - Install [R](https://cran.biotools.fr/) version de base 4.0.3
 - Install [LaTeX](https://miktex.org/download)
 - Install [RStudio](https://rstudio.com/products/rstudio/download/#download)
-- Create a [DataCamp]() account and join the class!
+- Create a [DataCamp](https://www.datacamp.com/enterprise/computational-methods-for-social-science/) account and join the class!
 
 ### Practice with GitHub, Markdown, and RStudio
 - Create a GitHub repository with a README.md file.

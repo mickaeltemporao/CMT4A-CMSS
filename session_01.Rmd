@@ -5,24 +5,24 @@ author: "Instructor: Mickael Temporão"
 
 # Objectives
 
-- Getting familiar with the course structure
-- Setup a computational working environment
-- Learn about open source computational tools
+- [ ] Getting familiar with the course structure
+- [ ] Setup a computational working environment
+- [ ] Learn about open source computational tools
 
 # Agenda
 ## Demos
-- Election of a student representative
 - Course overview
-- Open source tools for computational social science
+- Election of a student representative
+- Intro to open source tools for computational social science
 
 ## Hack Time
 ### Setting up a computational working environment
 - Create a [GitHub Account](https://github.com/)
-- Download and Install Git
+- Download and Install [Git](https://git-scm.com/downloads)
 - Install [R](https://cran.biotools.fr/) version de base 4.0.3
 - Install [LaTeX](https://miktex.org/download)
 - Install [RStudio](https://rstudio.com/products/rstudio/download/#download)
-- Create a [DataCamp] account and join the class!
+- Create a [DataCamp]() account and join the class!
 
 ### Practice with GitHub, Markdown, and RStudio
 - Create a GitHub repository with a README.md file.

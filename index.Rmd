@@ -77,5 +77,5 @@ The source code and the materials to build this website are on GitHub at [mickae
 
 ## Bugs & Feedback
 
-If you find any typos or other issues in this page, or any other page in the site, go to [issues](https://github.com/mickaeltemporao/CMT4A-CMSS/issues), click on the "New Issue" button to create a new issue, and describe the problem.
+If you have any suggestions or find any typos, or any other issues in this page go to [issues](https://github.com/mickaeltemporao/CMT4A-CMSS/issues), click on the "New Issue" button to create a new issue, and describe the problem.
 

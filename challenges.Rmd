@@ -12,7 +12,7 @@ The challenge workflow is:
 
 Late submissions will not be accepted!
 
-Assignments will be graded following a 4-category scale:
+Challenges will be graded following a 4-category scale:
 
 ---- -------------------------------------------------
 ✓+   exceptional, above and beyond what was expected
@@ -22,7 +22,7 @@ Assignments will be graded following a 4-category scale:
 ---- -------------------------------------------------
 
 
-# Overview
+# The challenges
 
 | Assigned  | Due       | Coding Challenge                         |
 | -         | -         | -                                        |
@@ -36,10 +36,14 @@ Assignments will be graded following a 4-category scale:
 
 ## Challenge 0: The Warm Up!
 
+We will complete Challenge 0 together during the first session.
+You can and should try to finish this challenge before the first session. This will help you better understand some of the main tools we will use throughout the course.
+
+### Instructions
 0. Open and accept Challenge 0: [The Warm Up!](https://classroom.github.com/a/ZQr1J_Tz).
 1. Create a new RMarkdown document in RStudio.
 2. Add a new title and author.
 3. Knit the document (click the little blue wool ball).
-4. Add the R Markdown and the generated HTML file to the assignment repository.
+4. Add the R Markdown and the generated HTML file to the challenge repository.
 5. Add a message to your commit.
 

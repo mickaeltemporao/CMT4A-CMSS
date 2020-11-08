@@ -4,14 +4,33 @@ title: Challenges
 
 Challenges will be graded based on the best four out of six individual grades.
 
+The first challenge (Challenge 0: Warm Up!) will be completed together during the first session.
+You can and should try to do this challenge on your own before the first session. Even if you're stuck, it will help you understand the main tools we will use throughout the course.
+
 The challenge workflow is:
 
 1. The challenge is online at least 7 days before the next session.
-2. Students start working on the challenge and making submissions on GitHub Classrooms.
-3. The last submission is due before the start of the next session.
+2. You accept the challenge by clicking the link in the section below.
+3. GitHub creates and provides you a link to your challenge repository.
+4. The instructions can be found in the challenges folder the repository.
+5  You start working on the challenge and making submissions.
+6. Submission are considered until the start of the next session.
 
-Late submissions will not be accepted!
+Late submissions will not be considered!
 
+
+# Schedule
+
+| Assigned  | Due       | Coding Challenge                         |
+| -         | -         | -                                        |
+| Session 0 | Session 1 | [Warm Up!](https://classroom.github.com/a/ZQr1J_Tz) |
+| Session 1 | Session 2 | [The RMarkdown Project]()                    |
+| Session 2 | Session 3 | TBA                                      |
+| Session 4 | Session 5 | TBA                                      |
+| Session 6 | Session 7 | TBA                                      |
+| Session 8 | Session 9 | TBA                                      |
+
+## Grading
 Challenges will be graded following a 4-category scale:
 
 ---- -------------------------------------------------
@@ -21,30 +40,4 @@ Challenges will be graded following a 4-category scale:
 ∅    unacceptable; did not submit
 ---- -------------------------------------------------
 
-
-# The challenges
-
-| Assigned  | Due       | Coding Challenge                         |
-| -         | -         | -                                        |
-| Session 0 | Session 1 | [The Warm Up!](#challenge-0-the-warm-up) |
-| Session 1 | Session 2 | The RMarkdown Project                    |
-| Session 2 | Session 3 | TBA                                      |
-| Session 4 | Session 5 | TBA                                      |
-| Session 6 | Session 7 | TBA                                      |
-| Session 8 | Session 9 | TBA                                      |
-
-
-## Challenge 0: The Warm Up!
-This challenge illustrates the process of compiling documents and adding files on GitHub. This is how you will submit your assignments.
-We will complete Challenge 0 together during the first session.
-You can and should try to do this challenge on your own before the first session. Even if you get stuck at any of the steps, it will help you better understand the main tools we will use throughout the course.
-
-### Instructions
-0. Open RStudio.
-1. Create a new RMarkdown document (a `.Rmd` file) in RStudio (icon with a white page and a green plus sign on the upper left corner).
-2. Add a new title and author then click "OK". RStudio will create a default template page.
-3. Compile the document by clicking the Knit button (the little blue wool ball). This will ask you how you want to name your output file and were were you want to save it. Once you validate, RStudio will generate an `.Rmd` and an `.html` file. Once the compilation is completed, it will display the rendered `html` page.
-4. Accept the Challenge 0: [The Warm Up!](https://classroom.github.com/a/ZQr1J_Tz).
-5. Upload the newly created R Markdown (`.Rmd`) and the newly generated HTML (`.html`) file to the github challenge repository.
-6. Add a message to your commit (e.g. "My first submission!")
 

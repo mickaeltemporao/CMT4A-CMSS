@@ -9,7 +9,7 @@ This course introduces students to the building blocks of machine learning and a
 
 
 ## Goals
-2. Ability to motivate the usage of computational methods in a fully reproducible end to end academic research paper.
+1. Ability to motivate the usage of computational methods in a fully reproducible end to end academic research paper.
 
 2. Ability to discuss the reliability of inferences drawn from computational methods relying on "Big---non-probabilistic---Data".
 
@@ -78,5 +78,5 @@ The source code and the materials to build this website are on GitHub at [mickae
 
 ## Bugs & Feedback
 
-If you have any suggestions or find any typos, or any other issues in this page go to [issues](https://github.com/mickaeltemporao/CMT4A-CMSS/issues), click on the "New Issue" button to create a new issue, and describe the problem.
+If you have suggestions, find a typo, or any other issue on this website, please go to [issues](https://github.com/mickaeltemporao/CMT4A-CMSS/issues), click on the "New Issue" button to create a new issue, and describe the problem.
 

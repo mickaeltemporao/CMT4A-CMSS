@@ -63,10 +63,12 @@ Homework assignments will be distributed and submitted via [GitHub Classrooms](h
 If this does not yet make sense, don't worry; we'll cover it in the course.
 
 
-## Books and Websites
+## Books
 - Wickham, H., & Grolemund, G. (2016). *[R for Data Science: import, tidy, transform, visualize, and model data](http://r4ds.had.co.nz/)*. O'Reilly Media, Inc.
 - Salganik, M. J. (2019). *[Bit by bit: Social research in the digital age](https://www.bitbybitbook.com/en/1st-ed/preface/)*. Princeton University Press.
-- [DataCamp](https://www.datacamp.com/enterprise/computational-methods-for-social-science/) account
+
+## Miscellaneous
+- [DataCamp](https://www.datacamp.com/enterprise/computational-methods-for-social-science/)
 
 # Licence & Credit
 

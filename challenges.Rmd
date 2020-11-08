@@ -40,10 +40,11 @@ We will complete Challenge 0 together during the first session.
 You can and should try to finish this challenge before the first session. This will help you better understand some of the main tools we will use throughout the course.
 
 ### Instructions
-0. Open and accept Challenge 0: [The Warm Up!](https://classroom.github.com/a/ZQr1J_Tz).
-1. Create a new RMarkdown document in RStudio.
-2. Add a new title and author.
-3. Knit the document (click the little blue wool ball).
-4. Add the R Markdown and the generated HTML file to the challenge repository.
-5. Add a message to your commit.
+0. Open RStudio.
+1. Create a new RMarkdown document (a `.Rmd` file) in RStudio (icon with a white page and a green plus sign on the upper left corner).
+2. Add a new title and author then click "OK". RStudio will create a default template page.
+3. Compile the document by clicking the Knit button (the little blue wool ball). This will ask you how you want to name your output file and were were you want to save it. Once you validate, RStudio will generate an `.Rmd` and an `.html` file. Once the compilation is completed, it will display the rendered `html` page.
+4. Accept the Challenge 0: [The Warm Up!](https://classroom.github.com/a/ZQr1J_Tz).
+5. Upload the newly created R Markdown (`.Rmd`) and the newly generated HTML (`.html`) file to the github challenge repository.
+6. Add a message to your commit (e.g. "My first submission!")
 

@@ -19,24 +19,25 @@ author: "Instructor: Mickael Temporão"
 ## Hack Time
 ### Setting up a computational working environment
 - Create a [GitHub Account](https://github.com/)
-- Download and Install [Git](https://git-scm.com/downloads)
+- Download [Git](https://git-scm.com/downloads)
+- Install [Git](https://git-scm.com/downloads)
 - Install [R](https://cran.biotools.fr/) version de base 4.0.3
 - Install [LaTeX](https://miktex.org/download)
 - Install [RStudio](https://rstudio.com/products/rstudio/download/#download)
 - Create a [DataCamp](https://www.datacamp.com/enterprise/computational-methods-for-social-science/) account and join the class!
 
 ### Practice with GitHub, Markdown, and RStudio
-- Create a GitHub repository with a README.md file.
+- Create a GitHub repository with a README.md file (`.md` files are Markdown files).
 - Markdown Tutorial
 - Edit and add files to GitHub
-- Edit GitHub files with RStudio and generate PDF's
+- Edit files with RStudio and generate PDF's
 
 ## Coding Challenge
 - [Challenge 0: The Warm Up!](challenges.html#challenge-0-the-warm-up)
 
 # Requirements
 
-Make sure you have completed the following activities before this first session.
+Make sure you have completed the following activities before this session.
 
 1. Join our [Slack](https://spb-methods.slack.com) channel
 2. Download [R](https://cran.biotools.fr/)

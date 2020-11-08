@@ -36,8 +36,8 @@ Challenges will be graded following a 4-category scale:
 
 ## Challenge 0: The Warm Up!
 
-We will complete Challenge 0 together during the first session.
-You can and should try to finish this challenge before the first session. This will help you better understand some of the main tools we will use throughout the course.
+Challenge 0 will be completed together during the first session.
+You can try to do this challenge, by yourself, before the first session. This will help you better understand some of the main tools we will use throughout the course.
 
 ### Instructions
 0. Open RStudio.

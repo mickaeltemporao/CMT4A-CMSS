@@ -10,10 +10,10 @@ author: "Instructor: Mickael Temporão"
 - [ ] Learn about open source computational tools
 
 # Agenda
-## Demos (not today)
+## Demos (not today...)
 - Introduction and course overview
-- Election of a student representative
-- Setup Demos
+- Elect a student representative
+- Setup Student Demo Schedule
 - Intro to open source tools for computational social science
 
 ## Hack Time
@@ -28,9 +28,10 @@ author: "Instructor: Mickael Temporão"
 
 ### Practice with GitHub, Markdown, and RStudio
 - Create a GitHub repository with a README.md file (`.md` files are Markdown files).
-- Markdown Tutorial
+- [Markdown Tutorial](https://commonmark.org/help/tutorial/)
 - Edit and add files to GitHub
-- Edit files with RStudio and generate PDF's
+- Create and Edit files with RStudio
+- Render HTML and PDF files with RStudio
 
 ## Coding Challenge
 - [Challenge 0: The Warm Up!](challenges.html#challenge-0-the-warm-up)

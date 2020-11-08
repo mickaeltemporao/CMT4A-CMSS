@@ -20,15 +20,15 @@ There will be some time during class to start working on these challenges, and t
 
 This schedule is an approximation, subject to change due needs of the students in the course. Students will be informed of changes to the schedule.
 
-| Group A    | Group B    | Session | Theme                           | Demo A | Demo B |
-| -          | -          | :-:     | -                               | -      | -      |
-| 2020/11/02 | 2020/11/09 | 1       | [Introduction](session_01.html) | -      | -      |
-| 2020/11/16 | 2020/11/23 | 2       | Programming basics              | TBA    | TBA    |
-| 2020/11/30 | 2020/12/07 | 3       | Data                            | TBA    | TBA    |
-| 2021/01/07 | 2021/01/14 | 4       | Supervised Methods 1            | TBA    | TBA    |
-| 2021/01/21 | 2021/01/28 | 5       | Supervised Methods 2            | TBA    | TBA    |
-| 2021/02/04 | 2021/02/11 | 6       | Unsupervised Methods 1          | TBA    | TBA    |
-| 2021/02/25 | 2021/03/04 | 7       | Unsupervised Methods 2          | TBA    | TBA    |
-| 2021/03/11 | 2021/03/18 | 8       | Machine Learning 1              | TBA    | TBA    |
-| 2021/03/25 | 2021/04/01 | 9       | Machine Learning 2              | TBA    | TBA    |
+| Group A    | Group B    | Theme                           | Demo A | Demo B |
+| -          | -          | -                               | -      | -      |
+| 2020/11/02 | 2020/11/09 | 1. [Introduction](session_01.html) | -      | -      |
+| 2020/11/16 | 2020/11/23 | 2. Programming basics              | Bertille, Lison | TBA    |
+| 2020/11/30 | 2020/12/07 | 3. Data                            | TBA    | TBA    |
+| 2021/01/07 | 2021/01/14 | 4. Supervised Methods 1            | TBA    | TBA    |
+| 2021/01/21 | 2021/01/28 | 5. Supervised Methods 2            | TBA    | TBA    |
+| 2021/02/04 | 2021/02/11 | 6. Unsupervised Methods 1          | TBA    | TBA    |
+| 2021/02/25 | 2021/03/04 | 7. Unsupervised Methods 2          | TBA    | TBA    |
+| 2021/03/11 | 2021/03/18 | 8. Machine Learning 1              | TBA    | TBA    |
+| 2021/03/25 | 2021/04/01 | 9. Machine Learning 2              | TBA    | TBA    |
 

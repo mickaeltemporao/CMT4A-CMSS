@@ -35,9 +35,9 @@ Challenges will be graded following a 4-category scale:
 
 
 ## Challenge 0: The Warm Up!
-
-Challenge 0 will be completed together during the first session.
-You can try to do this challenge, by yourself, before the first session. This will help you better understand some of the main tools we will use throughout the course.
+This challenge illustrates the process of compiling documents and adding files on GitHub. This is how you will submit your assignments.
+We will complete Challenge 0 together during the first session.
+You can and should try to do this challenge on your own before the first session. Even if you get stuck at any of the steps, it will help you better understand the main tools we will use throughout the course.
 
 ### Instructions
 0. Open RStudio.

@@ -2,11 +2,6 @@
 title: Challenges
 ---
 
-Challenges will be graded based on the best four out of six individual grades.
-
-The first challenge (Challenge 0: Warm Up!) will be completed together during the first session.
-You can and should try to do this challenge on your own before the first session. Even if you're stuck, it will help you understand the main tools we will use throughout the course.
-
 The challenge workflow is:
 
 1. The challenge is online at least 7 days before the next session.
@@ -19,19 +14,27 @@ The challenge workflow is:
 Late submissions will not be considered!
 
 
+The first challenge (Challenge 0: Warm Up!) will be completed together during the first session.
+You can and should try to do this challenge on your own before the first session. Even if you're stuck, it will help you understand the main tools we will use throughout the course.
+
+*Note:* If you are stuck in a challenge, ask for help on slack. Don't be shy, it is very likely that other students also have the same question!
+
+
 # Schedule
 
 | Assigned  | Due       | Coding Challenge                         |
 | -         | -         | -                                        |
 | Session 0 | Session 1 | [Warm Up!](https://classroom.github.com/a/ZQr1J_Tz) |
-| Session 1 | Session 2 | TBA                                      |
+| Session 1 | Session 2 | [The RMarkdown Project](https://classroom.github.com/a/d59eA_be) |
 | Session 2 | Session 3 | TBA                                      |
 | Session 4 | Session 5 | TBA                                      |
 | Session 6 | Session 7 | TBA                                      |
 | Session 8 | Session 9 | TBA                                      |
 
 ## Grading
-Challenges will be graded following a 4-category scale:
+
+Challenges will be graded based on the best four out of six individual grades.
+Grades follow a 4-category scale:
 
 ---- -------------------------------------------------
 ✓+   exceptional, above and beyond what was expected
@@ -39,5 +42,4 @@ Challenges will be graded following a 4-category scale:
 ✓-   acceptable, but major deficiencies
 ∅    unacceptable; did not submit
 ---- -------------------------------------------------
-
 

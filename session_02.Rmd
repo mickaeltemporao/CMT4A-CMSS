@@ -1,27 +1,30 @@
 ---
-title: "Session 0: Some Title"
+title: "Session 2: Programming Basics"
 author: "Instructor: Mickael Temporão"
 ---
 
 # Objectives
-
-- ...
-- ...
-- ...
+- Learn how code is executed in an interactive environment.
+- Get familiar with R coding syntax, functions and packages.
+- Get familiar with `.bib` files and syntax.
 
 # Agenda
 ## Demo
-- ...
-- ...
-- ...
+- YAML front matter in RMarkdown files.
+- File types (`.R`, `.md`, `Rmd`, `.html`, `.bib`, `.pdf`)
 
 ## Hack Time
-- ...
-- ...
-- ...
+- Coding basics and guidelines.
+- Using functions.
+- Installing and loading packages.
+- Programming your own functions.
+- Coding blocks and bibliographies in `.Rmd` files.
 
 ## Coding Challenge
 
+- [TBA](tba.html).
+
 # Requirements
-- [Challenge 0: Challenge Title](challenges.html#challenge-title)
+- Complete [Challenge 1: The RMarkdown Project](https://classroom.github.com/a/d59eA_be)
+- DataCamp Assignement 1 (You should have received an invitation email if you haven't contact me on slack!)
 

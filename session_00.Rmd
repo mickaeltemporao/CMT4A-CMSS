@@ -21,7 +21,10 @@ author: "Instructor: Mickael Temporão"
 - ...
 
 ## Coding Challenge
+- See [Challenges](challenges.html) page.
 
 # Requirements
-- [Challenge 0: Challenge Title](challenges.html#challenge-title)
+
+Make sure you have completed the following activities before this session.
+
 

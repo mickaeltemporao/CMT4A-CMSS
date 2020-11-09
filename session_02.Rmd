@@ -21,10 +21,12 @@ author: "Instructor: Mickael Temporão"
 - Coding blocks and bibliographies in `.Rmd` files.
 
 ## Coding Challenge
-
-- [TBA](tba.html).
+- See [Challenges](challenges.html) page.
 
 # Requirements
+
+Make sure you have completed the following activities before this session.
+
 - Complete [Challenge 1: The RMarkdown Project](https://classroom.github.com/a/d59eA_be)
 - DataCamp Assignement 1 (You should have received an invitation email if you haven't contact me on slack!)
 

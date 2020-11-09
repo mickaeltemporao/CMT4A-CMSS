@@ -6,8 +6,8 @@ author: "Instructor: Mickael Temporão"
 # Objectives
 
 - Getting familiar with the course structure
-- Setup a computational working environment
 - Learn about open source computational tools
+- Setup a computational working environment
 
 # Agenda
 ## Demos (not today...)

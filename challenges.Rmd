@@ -25,7 +25,7 @@ You can and should try to do this challenge on your own before the first session
 | Assigned  | Due       | Coding Challenge                         |
 | -         | -         | -                                        |
 | Session 0 | Session 1 | [Warm Up!](https://classroom.github.com/a/aYJBdg6P) |
-| Session 1 | Session 2 | [The RMarkdown Project](https://classroom.github.com/a/d59eA_be) |
+| Session 1 | Session 2 | [The RMarkdown Project](https://classroom.github.com/a/cBKLpsZC) |
 | Session 2 | Session 3 | TBA                                      |
 | Session 4 | Session 5 | TBA                                      |
 | Session 6 | Session 7 | TBA                                      |

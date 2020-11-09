@@ -12,7 +12,7 @@ The challenge workflow is:
 1. The challenge is online at least 7 days before the next session.
 2. You accept the challenge by clicking the link in the section below.
 3. GitHub creates and provides you a link to your challenge repository.
-4. The instructions can be found in the challenges folder the repository.
+4. The instructions can be found in the challenges folder of the repository.
 5  You start working on the challenge and making submissions.
 6. Submission are considered until the start of the next session.
 

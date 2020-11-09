@@ -24,7 +24,7 @@ Late submissions will not be considered!
 | Assigned  | Due       | Coding Challenge                         |
 | -         | -         | -                                        |
 | Session 0 | Session 1 | [Warm Up!](https://classroom.github.com/a/ZQr1J_Tz) |
-| Session 1 | Session 2 | [The RMarkdown Project]()                    |
+| Session 1 | Session 2 | TBA                                      |
 | Session 2 | Session 3 | TBA                                      |
 | Session 4 | Session 5 | TBA                                      |
 | Session 6 | Session 7 | TBA                                      |

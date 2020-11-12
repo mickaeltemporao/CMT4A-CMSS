@@ -9,14 +9,19 @@ navbar:
       icon: fa-home fa-lg
     - text: "Schedule"
       href: schedule.html
-      icon: fa-calendar-check fa-lg
+      icon: fa-tasks fa-lg
     - text: "Challenges"
       href: challenges.html
-      icon: fa-tasks fa-lg
+      icon: fa-chess fa-lg
     - text: "Project"
       href: tba.html
       icon: fa-file-code fa-lg
-
+    - text: "Onboarding"
+      href: onboarding.html
+      icon: fa-award fa-lg
+    - text: "Resources"
+      href: resources.html
+      icon: fa-toolbox fa-lg
   right:
     - icon: fa-github fa-lg
       href: https://github.com/mickaeltemporao/CMT4A-CMSS

@@ -1,12 +1,11 @@
 ---
 title: "Session 2: Programming Basics"
-author: "Instructor: Mickael Temporão"
 ---
 
 # Objectives
 - Learn how code is executed in an interactive environment.
-- Get familiar with R coding syntax, functions and packages.
-- Get familiar with `.bib` files and syntax.
+- Become familiar with R coding syntax, functions and packages.
+- Leverage R code blocks and `.bib` files in `.Rmd` files.
 
 # Agenda
 ## Demo
@@ -14,11 +13,11 @@ author: "Instructor: Mickael Temporão"
 - File types (`.R`, `.md`, `Rmd`, `.html`, `.bib`, `.pdf`)
 
 ## Hack Time
-- Coding basics and guidelines.
-- Using functions.
-- Installing and loading packages.
-- Programming your own functions.
-- Coding blocks and bibliographies in `.Rmd` files.
+- Coding basics
+- Using functions
+- Installing and loading packages
+- Make your own functions
+- Code blocks and bibliographies in `.Rmd` files
 
 ## Coding Challenge
 - See [Challenges](challenges.html) page.

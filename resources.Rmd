@@ -1,0 +1,24 @@
+---
+title: Resources
+---
+
+Useful resources will be added as we progress throughout. You should check this page regularly!
+
+# Books
+- James, G., Witten, D., Hastie, T., & Tibshirani, R. (2013). *[An introduction to statistical learning](http://faculty.marshall.usc.edu/gareth-james/ISL/index.html)*. New York: springer.
+- Salganik, M. J. (2019). *[Bit by bit: Social research in the digital age](https://www.bitbybitbook.com/en/1st-ed/preface/)*. Princeton University Press.
+- Wickham, H., & Grolemund, G. (2016). *[R for Data Science: import, tidy, transform, visualize, and model data](http://r4ds.had.co.nz/)*. O'Reilly Media, Inc.
+
+# Cheatsheets
+- [RStudio](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
+- [R Markdown](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
+- [Base R](http://github.com/rstudio/cheatsheets/raw/master/base-r.pdf)
+
+# Software
+- [R](https://www.r-project.org/) is a free and open-source programming language primarily used for statistics and data analysis.
+- [RStudio](https://www.rstudio.com/) is a free and easy-to-use interface to program in R and other languages.
+- [git](https://git-scm.com/) is an open-source version control system that allows you to keep traces of your changes and do reproducible research.
+
+# Tutorials
+- [Markdown](https://commonmark.org/help/tutorial/)
+

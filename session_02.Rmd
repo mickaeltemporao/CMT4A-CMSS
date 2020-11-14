@@ -1,31 +1,95 @@
 ---
 title: "Session 2: Programming Basics"
+subtitle: "Learning Objectives:"
 ---
 
-# Objectives
 - Learn how code is executed in an interactive environment.
 - Become familiar with R coding syntax, functions and packages.
 - Leverage R code blocks and `.bib` files in `.Rmd` files.
 
-# Agenda
-## Demo
-- YAML front matter in RMarkdown files.
-- File types (`.R`, `.md`, `Rmd`, `.html`, `.bib`, `.pdf`)
+![](https://www.forimpact.org/wp-content/uploads/2014/01/HowToDrawOwl.jpg "Draw The Owl")
 
-## Hack Time
-- Coding basics
-- Using functions
-- Installing and loading packages
-- Make your own functions
-- Code blocks and bibliographies in `.Rmd` files
 
-## Coding Challenge
-- See [Challenges](challenges.html) page.
+# Hack Time
+
+### Interactive R
+
+You can use the *Editor* or the *Console* to execute code.
+The *Editor* allows you to easily keep track of what you are doing, so we will use it a lot!
+
+Notice in the picture that the cursor is at line 1 in the *Editor* pane.
+
+![](https://d33wubrfki0l68.cloudfront.net/8a64bb047429d7ae0e2acae35c40e421e6439bf6/80e5d/diagrams/rstudio-editor.png "RStudio IDE")
+
+The most important keyboard shortcut to remember is
+- **Ctrl + Enter** for Windows/Linux users.
+- **Cmd + Enter** for MacOs users.
+
+This shortcut send the current line in the *Editor* to the *Console*, executes it and puts the cursor on the next line in the *Editor*.
+
+If you type code in the *Console*, it will be directly executed when you press *Enter*.
+
+#### Let's try!
+
+
+Launch RStudio, open an empty R Script and run the following lines.
+
+- *Tip:* Use R Scripts to take notes during each session!
+
+```{r eval=FALSE}
+# Session 2: Programming Basics"
+print("Greetings!")
+
+# What do you see when you run the code below?
+```{r eval=FALSE}
+print(" _____")
+# This is a comment.
+print("|     |")
+## Here's another comment.
+print("|     |")
+### And yet another comment.
+print("|_____|")
+print("Each line is executed sequentially.")
+
+# Notice that in R scripts (`.R`) the lines starting with an # are comments.
+
+# Try to print your first and last name:
+```
+
+
+### Coding basics
+
+In its most basic form, R can be used as a simple calculator.
+
+_Arithmetic operators:_
+
+- Addition:       +
+- Subtraction:    -
+- Multiplication: *
+- Division:       /
+- Exponentiation: ^
+- Modulo:         %%
+
+
+```{r eval=FALSE}
+
+```
+
+### Using functions
+
+### Installing and loading packages
+
+### Make your own functions
+
+### Code blocks
+
+### Bibliographies in `.Rmd` files
+
+# Useful links
+- [Markdown Tutorial](https://commonmark.org/help/tutorial/)
+- [RMarkdown](https://r4ds.had.co.nz/r-markdown.html)
 
 # Requirements
-
-Make sure you have completed the following activities before this session.
-
 - Complete [Challenge 1: The RMarkdown Project](https://classroom.github.com/a/d59eA_be)
 - DataCamp Assignement 1 (You should have received an invitation email if you haven't contact me on slack!)
 

@@ -7,12 +7,8 @@ subtitle: "Learning Objectives:"
 - Become familiar with R coding syntax, functions and packages.
 - Leverage R code blocks and `.bib` files in `.Rmd` files.
 
-![](https://www.forimpact.org/wp-content/uploads/2014/01/HowToDrawOwl.jpg "Draw The Owl")
 
-
-# Hack Time
-
-### Interactive R
+# Interactive R
 
 You can use the *Editor* or the *Console* to execute code.
 The *Editor* allows you to easily keep track of what you are doing, so we will use it a lot!
@@ -29,15 +25,15 @@ This shortcut send the current line in the *Editor* to the *Console*, executes i
 
 If you type code in the *Console*, it will be directly executed when you press *Enter*.
 
-#### Let's try!
 
+### Hack Time!
 
 Launch RStudio, open an empty R Script and run the following lines.
 
-- *Tip:* Use R Scripts to take notes during each session!
+- *TIP:* Use R Scripts to take notes during each session!
 
-```{r eval=FALSE, attr.source='.numberLines'}
-# Session 2: Programming Basics"
+```{r eval=FALSE}
+# Programming Basics"
 print("Greetings!")
 
 # Notice that in R scripts (`.R`) the lines starting with an # are comments.
@@ -53,41 +49,147 @@ print("|     |")
 ### And yet another comment.
 print("|_____|")
 print("Each line is executed sequentially.")
-
 ```
 
+# Coding basics
 
-### Coding basics
+## Arithmetic Operators
 
 In its most basic form, R can be used as a simple calculator.
 
-_Arithmetic operators:_
+|Operator        | Symbol|
+|-               | :-:  |
+| Addition       | +  |
+| Subtraction    | -  |
+| Multiplication | *  |
+| Division       | /  |
+| Exponentiation | ^  |
+| Modulo         | %% |
 
-- Addition:       +
-- Subtraction:    -
-- Multiplication: *
-- Division:       /
-- Exponentiation: ^
-- Modulo:         %%
 
+### Hack Time!
+```{r eval=FALSE}
+# Do the following:
+# Divide 7 by 3.
+
+# Raise 2 to the 5 power.
+
+# Do something else.
+
+# Describe what you did using a comment
+```
+
+## Objects and assignment
+
+Objects are containers that allow you to store something (e.g. 5).
+
+- R uses the symbol `<-` as the assignment statement.
 
 ```{r eval=FALSE}
+# I'm assigning the value 5 to a new object called new_object
+new_object <- 5
+new_object
+```
+You can inspect an object by typing its name. Did you notice that in this case we did not use the `print()` function and yet the Console returned a value? The R Console will always return the last statement.
+
+### Hack Time!
+```{r eval=FALSE}
+# Create your own object and describe what
+# you are doing using a comment.
+
+# Assign numerical values to two variables named `day_1` and `day_2`.
+
+# Add these two variables together.
+
+# Create a `my_total` variable containing the sum of the day `day_1` and `day_2` variables.
+
+# Print the contents of the `my_total` variable.
 
 ```
 
-### Using functions
+Object names must start with a letter, and can only contain letters, numbers, _ (underscores) and . (dots). You want your object names to be descriptive.
 
-### Installing and loading packages
+R is case sensitive! Limit yourself to lowercase characters and you will not have to worry about this.
+*TIP:* Only use lowercase words separated with `_` when creating objects.
 
-### Make your own functions
+```{r eval=FALSE}
+this <- 5
+# is different than
+This
+```
 
-### Code blocks
+## Basic data types
 
-### Bibliographies in `.Rmd` files
+- A *numeric* is a decimal values like 4.2.
+- An *integer* is whole number like 4. It is also a numeric.
+- A *logical* is a boolean like TRUE or FALSE.
+- A *character* is a text or string like "potato".
 
-# Useful links
-- [Markdown Tutorial](https://commonmark.org/help/tutorial/)
-- [RMarkdown](https://r4ds.had.co.nz/r-markdown.html)
+```{r eval=FALSE}
+vote_share_1 = 50.8
+vote_share_2 = 47.2
+class(vote_share_1)
+
+party_1 = "Democratic"
+party_2 = "Republican"
+class(party_1)
+
+party_1_winner = TRUE
+party_2_winner = FALSE
+class(party_1_winner)
+```
+
+### Hack Time!
+```{r eval=FALSE}
+# Your Code Here.
+## Create a new variable containing the total percentage of the votes counted.
+
+## Print the type of this new variable.
+
+```
+
+# Functions
+Everything in a R that follows the pattern `something()` is a function. That is, a series of characters followed by an open and closed parenthesis.
+
+You've already used some functions previously. Which ones?
+
+One very important function is the `help()` function
+
+Check type of objects
+
+Built in functions
+
+### Hack Time!
+```{r eval=FALSE}
+```
+
+
+
+
+## Installing and loading packages
+### Hack Time!
+```{r eval=FALSE}
+```
+
+## Make your own functions
+### Hack Time!
+```{r eval=FALSE}
+```
+
+# Let's switch to RMarkdown
+## Code blocks
+### Hack Time!
+```{r eval=FALSE}
+```
+
+## Bibliographies in `.Rmd` files
+### Hack Time!
+```{r eval=FALSE}
+```
+
+# Recommended
+- https://r4ds.had.co.nz/workflow-basics.html
+- https://r4ds.had.co.nz/workflow-scripts.html
 
 # Requirements
 - Complete [Challenge 1: The RMarkdown Project](https://classroom.github.com/a/d59eA_be)

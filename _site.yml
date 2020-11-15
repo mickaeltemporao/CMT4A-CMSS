@@ -29,7 +29,7 @@ output_dir: "docs"
 output:
   html_document:
     theme: cosmo
-    highlight: textmate
+    highlight: zenburn
     include:
       after_body: footer.html
     self_contained: false
@@ -38,3 +38,4 @@ output:
     toc_float:
       collapsed: true
     html5: true
+

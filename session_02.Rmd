@@ -3,10 +3,15 @@ title: "Session 2: Programming Basics"
 subtitle: "Learning Objectives:"
 ---
 
+```{r setup, include = FALSE}
+chunk <- "```"
+inline <- function(x = "") paste0("`` `r ", x, "` ``")
+library(tidyverse)
+```
+
 - Learn how code is executed in an interactive environment.
 - Become familiar with R coding syntax, functions and packages.
-- Leverage R code blocks and `.bib` files in `.Rmd` files.
-
+- Leverage the strength of R in R`.Rmd` files.
 
 # Requirements
 - Complete [Challenge 1: The RMarkdown Project](https://classroom.github.com/a/d59eA_be)
@@ -17,8 +22,11 @@ subtitle: "Learning Objectives:"
 # Useful Resources
 ## Cheatsheets
 - [Base R](http://github.com/rstudio/cheatsheets/raw/master/base-r.pdf)
-- [RMarkdown](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
 - [RStudio](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
+- [RMarkdown](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
+- [Bibliographies and Citations](https://r4ds.had.co.nz/r-markdown.html?q=bib#bibliographies-and-citations)
+
+## Readings
 - [Basics](https://r4ds.had.co.nz/workflow-basics.html)
 - [Scripts](https://r4ds.had.co.nz/workflow-scripts.html)
 - [Functions](https://r4ds.had.co.nz/functions.html#functions)
@@ -241,20 +249,30 @@ Let's start making our own functions.
 
 ```
 
-# RMarkdown
+# Embed Code
+We now know some basics of R programming and how to create R scripts (`.R` files). We have also learned previously how to make and render RMarkdown files (`.Rmd`) into pdf or html files. For the most part, we ignored the code that was in `.Rmd` files.
 
-Until now we have used RMarkdown files (`.Rmd`) without really looking into what goes inside those files.
-## Code blocks
-Open a new RMarkdown document in RStudio.
+Embedded code in `.Rmd` files comes in 2 flavours:
+
+- Inline code: `r inline()`
+- Code chunks: ` ```{r} ` and ` ``` `.
 
 ### Hack Time!
 
-```{r eval=FALSE}
-```
+Let's head to RStudio and practice with embedded code.
 
+1. Creating a new RMarkdown document in RStudio.
+2. Look for embedded code.
+3. Embed an inline code bit.
+3. Embed a larger code chunk.
+5. Render the document.
+
+
+- Leverage R code blocks and `.bib` files in `.Rmd` files.
 ## Bibliographies in `.Rmd` files
-### Hack Time!
-```{r eval=FALSE}
-```
 
+One last
+You can automate citations and bibliographies in `.Rmd` files.
+
+1. Open the project
 

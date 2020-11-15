@@ -11,7 +11,7 @@
 
 
 
-<title>Session 1: Introduction</title>
+<title>Session 3: Data</title>
 
 <script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -39,97 +39,6 @@
     </style>
 
 
-<style type="text/css">code{white-space: pre;}</style>
-<style type="text/css" data-origin="pandoc">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  { color: #cccccc; background-color: #303030; }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ffcfaf; } /* Alert */
-code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
-code span.at { } /* Attribute */
-code span.bn { color: #dca3a3; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #f0dfaf; } /* ControlFlow */
-code span.ch { color: #dca3a3; } /* Char */
-code span.cn { color: #dca3a3; font-weight: bold; } /* Constant */
-code span.co { color: #7f9f7f; } /* Comment */
-code span.cv { color: #7f9f7f; font-weight: bold; } /* CommentVar */
-code span.do { color: #7f9f7f; } /* Documentation */
-code span.dt { color: #dfdfbf; } /* DataType */
-code span.dv { color: #dcdccc; } /* DecVal */
-code span.er { color: #c3bf9f; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #c0bed1; } /* Float */
-code span.fu { color: #efef8f; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #7f9f7f; font-weight: bold; } /* Information */
-code span.kw { color: #f0dfaf; } /* Keyword */
-code span.op { color: #f0efd0; } /* Operator */
-code span.ot { color: #efef8f; } /* Other */
-code span.pp { color: #ffcfaf; font-weight: bold; } /* Preprocessor */
-code span.sc { color: #dca3a3; } /* SpecialChar */
-code span.ss { color: #cc9393; } /* SpecialString */
-code span.st { color: #cc9393; } /* String */
-code span.va { } /* Variable */
-code span.vs { color: #cc9393; } /* VerbatimString */
-code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
-
-</style>
-<script>
-// apply pandoc div.sourceCode style to pre.sourceCode instead
-(function() {
-  var sheets = document.styleSheets;
-  for (var i = 0; i < sheets.length; i++) {
-    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
-    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
-      var rule = rules[j];
-      // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
-      var style = rule.style.cssText;
-      // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
-      // replace div.sourceCode by a pre.sourceCode rule
-      sheets[i].deleteRule(j);
-      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
-    }
-  }
-})();
-</script>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 
 
 <style type="text/css">
@@ -494,78 +403,52 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Session 1: Introduction</h1>
-<h3 class="subtitle">Objectives:</h3>
+<h1 class="title toc-ignore">Session 3: Data</h1>
+<h3 class="subtitle">Learning Objectives:</h3>
 
 </div>
 
 
 <ul>
-<li>Getting familiar with the course structure</li>
-<li>Learn about open source computational tools</li>
-<li>Setup a computational working environment</li>
+<li>…</li>
+<li>…</li>
+<li>Render citations and bibliographies in <code>.Rmd</code> files using <code>.bib</code> files.</li>
 </ul>
-<div id="hack-time" class="section level1">
-<h1>Hack Time</h1>
-<div id="setting-up-a-computational-working-environment" class="section level3">
-<h3>Setting Up A Computational Working Environment</h3>
-<div id="github-first-steps" class="section level4">
-<h4>GitHub first steps</h4>
-<ol style="list-style-type: decimal">
-<li>Go to <a href="https://github.com/">www.github.com</a> and identify your account name.</li>
-<li>Send a message with your <a href="https://github.com/">GitHub Account</a> name!</li>
-<li>Create your first GitHub repository with a README.md file (<code>.md</code> files are Markdown files).</li>
-<li>Edit the README file on GitHub.
-<ul>
-<li>Change the title of the file.</li>
-<li>Add a new sentence.</li>
-<li>Add a bullet list with three items.</li>
-</ul></li>
-<li>Make your first commit!</li>
-</ol>
-</div>
-<div id="rstudio-and-your-first-lines-of-code" class="section level4">
-<h4>RStudio and your first lines of code</h4>
-<ol style="list-style-type: decimal">
-<li>Launch RStudio.</li>
-<li>Create a new <code>.Rmd</code> document.</li>
-<li>Knit (render) the document as an HTML file.
-<ul>
-<li>The first time you run this, it will ask you to install functionalities.</li>
-<li>Your computer might also ask you to allow RStudio to download and install packages.</li>
-<li>We need both of these functionalities so don’t forget to accept!</li>
-</ul></li>
-</ol>
-<p>Great! You just run your first coding script and created a webpage!</p>
-<p>Now let’s try to create PDF files.</p>
-<ol style="list-style-type: decimal">
-<li><p>Locate the console pane in RStudio. It should be the bottom left pane in RStudio.</p></li>
-<li><p>Copy the following command lines in the console and hit ENTER:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;tinytex&#39;</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code></pre></div></li>
-<li><p>Click the small triangle right to the Knit button and choose Knit to PDF.</p>
-<ul>
-<li>Again, the first time you do this it will download and install the functionalities required to create PDF files. It can take a couple minutes. A PDF will pop-up once the compilation successfully completed.</li>
-</ul></li>
-</ol>
-<p>Great! You are now able to use markdown and the R language to make PDF files!</p>
-</div>
-<div id="lets-make-github-and-rstudio-work-together" class="section level4">
-<h4>Let’s make Github and RStudio work together!</h4>
-<p>Head to the <a href="challenges.html">Challenges</a> page and complete the first challenge.</p>
-</div>
-</div>
-</div>
-<div id="useful-links" class="section level1">
-<h1>Useful links</h1>
-<ul>
-<li><a href="https://commonmark.org/help/tutorial/">Markdown Tutorial</a></li>
-<li><a href="https://r4ds.had.co.nz/r-markdown.html">RMarkdown</a></li>
-</ul>
-</div>
 <div id="requirements" class="section level1">
 <h1>Requirements</h1>
-<p>Make sure you have completed the <a href="onboarding.html">onboarding section</a> prior to this session.</p>
+<ul>
+<li>Complete <a href="https://classroom.github.com/a/d59eA_be">Challenge 2: The RMarkdown Project</a></li>
+<li>DataCamp Assignment 2</li>
+</ul>
+</div>
+<div id="useful-resources" class="section level1">
+<h1>Useful Resources</h1>
+<div id="cheatsheets" class="section level2">
+<h2>Cheatsheets</h2>
+<ul>
+<li><a href="http://github.com/rstudio/cheatsheets/raw/master/base-r.pdf">Base R</a></li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf">RStudio</a></li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf">RMarkdown</a></li>
+<li><a href="https://r4ds.had.co.nz/r-markdown.html?q=bib#bibliographies-and-citations">Bibliographies and Citations</a></li>
+</ul>
+</div>
+<div id="readings" class="section level2">
+<h2>Readings</h2>
+<ul>
+<li><a href="https://r4ds.had.co.nz/workflow-basics.html">Basics</a></li>
+<li><a href="https://r4ds.had.co.nz/workflow-scripts.html">Scripts</a></li>
+<li><a href="https://r4ds.had.co.nz/functions.html#functions">Functions</a></li>
+</ul>
+</div>
+</div>
+<div id="interactive-r" class="section level1">
+<h1>Interactive R</h1>
+<div id="some-subtitle" class="section level2">
+<h2>Some subtitle</h2>
+<div id="hack-time" class="section level3">
+<h3>Hack Time!</h3>
+</div>
+</div>
 </div>
 
 

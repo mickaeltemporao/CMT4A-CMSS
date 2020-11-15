@@ -1,47 +1,56 @@
 ---
 title: "Session 1: Introduction"
-author: "Instructor: Mickael Temporão"
+subtitle: "Objectives:"
 ---
-
-# Objectives
 
 - Getting familiar with the course structure
 - Learn about open source computational tools
 - Setup a computational working environment
 
-# Agenda
-## Demos (not today...)
-- Introduction and course overview
-- Intro to open source tools for computational social science
-- Define Demo Schedule
+# Hack Time
+### Setting Up A Computational Working Environment
 
-## Hack Time
-### Setting up a computational working environment
-- Create a [GitHub Account](https://github.com/)
-- Download [Git](https://git-scm.com/downloads)
-- Install [Git](https://git-scm.com/downloads)
-- Install [R](https://cran.biotools.fr/) version de base 4.0.3
-- Install [LaTeX](https://miktex.org/download)
-- Install [RStudio](https://rstudio.com/products/rstudio/download/#download)
-- Create a [DataCamp](https://www.datacamp.com) account and join the class!
+#### GitHub first steps
+1. Go to [www.github.com](https://github.com/) and identify your account name.
+2. Send a message with your [GitHub Account](https://github.com/) name!
+3. Create your first GitHub repository with a README.md file (`.md` files are Markdown files).
+4. Edit the README file on GitHub.
+    - Change the title of the file.
+    - Add a new sentence.
+    - Add a bullet list with three items.
+5. Make your first commit!
 
-### Practice with GitHub, Markdown, and RStudio
-- Create a GitHub repository with a README.md file (`.md` files are Markdown files).
+#### RStudio and your first lines of code
+1. Launch RStudio.
+2. Create a new `.Rmd` document.
+3. Knit (render) the document as an HTML file.
+    - The first time you run this, it will ask you to install functionalities.
+    - Your computer might also ask you to allow RStudio to download and install packages.
+    - We need both of these functionalities so don't forget to accept!
+
+Great! You just run your first coding script and created a webpage!
+
+Now let's try to create PDF files.
+
+1. Locate the console pane in RStudio. It should be the bottom left pane in RStudio.
+2. Copy the following command lines in the console and hit ENTER:
+    ```{r eval=FALSE}
+    install.packages('tinytex')
+    tinytex::install_tinytex()
+    ```
+
+3. Click the small triangle right to the Knit button and choose Knit to PDF.
+    - Again, the first time you do this it will download and install the functionalities required to create PDF files. It can take a couple minutes. A PDF will pop-up once the compilation successfully completed.
+
+Great! You are now able to use markdown and the R language to make PDF files!
+
+#### Let's make Github and RStudio work together!
+Head to the [Challenges](challenges.html) page and complete the first challenge.
+
+# Useful links
 - [Markdown Tutorial](https://commonmark.org/help/tutorial/)
-- Edit and add files to GitHub
-- Create and Edit files with RStudio
-- Render HTML and PDF files with RStudio
-
-## Coding Challenge
-- See the [Challenges](challenges.html) page.
+- [RMarkdown](https://r4ds.had.co.nz/r-markdown.html)
 
 # Requirements
-
-Make sure you have completed the following activities before this session.
-
-1. Join our [Slack](https://spb-methods.slack.com) channel
-2. Download [R](https://cran.biotools.fr/)
-3. Download [RStudio](https://rstudio.com/products/rstudio/download/#download)
-4. Download [LaTeX](https://miktex.org/download)
-5. Create a [GitHub](https://github.com/) account
+Make sure you have completed the [onboarding section](onboarding.html) prior to this session.
 

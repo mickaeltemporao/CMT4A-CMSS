@@ -9,7 +9,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Instructor: Mickael Temporão" />
 
 
 <title>Session 2: Programming Basics</title>
@@ -25,8 +24,6 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
@@ -41,22 +38,98 @@
   ul.task-list{list-style: none;}
     </style>
 
+
 <style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  { color: #cccccc; background-color: #303030; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ffcfaf; } /* Alert */
+code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #dca3a3; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #f0dfaf; } /* ControlFlow */
+code span.ch { color: #dca3a3; } /* Char */
+code span.cn { color: #dca3a3; font-weight: bold; } /* Constant */
+code span.co { color: #7f9f7f; } /* Comment */
+code span.cv { color: #7f9f7f; font-weight: bold; } /* CommentVar */
+code span.do { color: #7f9f7f; } /* Documentation */
+code span.dt { color: #dfdfbf; } /* DataType */
+code span.dv { color: #dcdccc; } /* DecVal */
+code span.er { color: #c3bf9f; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #c0bed1; } /* Float */
+code span.fu { color: #efef8f; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #7f9f7f; font-weight: bold; } /* Information */
+code span.kw { color: #f0dfaf; } /* Keyword */
+code span.op { color: #f0efd0; } /* Operator */
+code span.ot { color: #efef8f; } /* Other */
+code span.pp { color: #ffcfaf; font-weight: bold; } /* Preprocessor */
+code span.sc { color: #dca3a3; } /* SpecialChar */
+code span.ss { color: #cc9393; } /* SpecialString */
+code span.st { color: #cc9393; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #cc9393; } /* VerbatimString */
+code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
 <style type="text/css">
   pre:not([class]) {
     background-color: white;
   }
 </style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
-
 
 
 <style type="text/css">
@@ -371,14 +444,14 @@ div.tocify {
 </li>
 <li>
   <a href="schedule.html">
-    <span class="fa fa-calendar-check fa-lg"></span>
+    <span class="fa fa-tasks fa-lg"></span>
      
     Schedule
   </a>
 </li>
 <li>
   <a href="challenges.html">
-    <span class="fa fa-tasks fa-lg"></span>
+    <span class="fa fa-chess fa-lg"></span>
      
     Challenges
   </a>
@@ -388,6 +461,20 @@ div.tocify {
     <span class="fa fa-file-code fa-lg"></span>
      
     Project
+  </a>
+</li>
+<li>
+  <a href="onboarding.html">
+    <span class="fa fa-award fa-lg"></span>
+     
+    Onboarding
+  </a>
+</li>
+<li>
+  <a href="resources.html">
+    <span class="fa fa-toolbox fa-lg"></span>
+     
+    Resources
   </a>
 </li>
       </ul>
@@ -408,52 +495,310 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Session 2: Programming Basics</h1>
-<h4 class="author">Instructor: Mickael Temporão</h4>
+<h3 class="subtitle">Learning Objectives:</h3>
 
 </div>
 
 
-<div id="objectives" class="section level1">
-<h1>Objectives</h1>
 <ul>
 <li>Learn how code is executed in an interactive environment.</li>
-<li>Get familiar with R coding syntax, functions and packages.</li>
-<li>Get familiar with <code>.bib</code> files and syntax.</li>
+<li>Become familiar with R coding syntax, functions and packages.</li>
+<li>Leverage the strength of R in R<code>.Rmd</code> files.</li>
 </ul>
-</div>
-<div id="agenda" class="section level1">
-<h1>Agenda</h1>
-<div id="demo" class="section level2">
-<h2>Demo</h2>
-<ul>
-<li>YAML front matter in RMarkdown files.</li>
-<li>File types (<code>.R</code>, <code>.md</code>, <code>Rmd</code>, <code>.html</code>, <code>.bib</code>, <code>.pdf</code>)</li>
-</ul>
-</div>
-<div id="hack-time" class="section level2">
-<h2>Hack Time</h2>
-<ul>
-<li>Coding basics and guidelines.</li>
-<li>Using functions.</li>
-<li>Installing and loading packages.</li>
-<li>Programming your own functions.</li>
-<li>Coding blocks and bibliographies in <code>.Rmd</code> files.</li>
-</ul>
-</div>
-<div id="coding-challenge" class="section level2">
-<h2>Coding Challenge</h2>
-<ul>
-<li>See <a href="challenges.html">Challenges</a> page.</li>
-</ul>
-</div>
-</div>
 <div id="requirements" class="section level1">
 <h1>Requirements</h1>
-<p>Make sure you have completed the following activities before this session.</p>
 <ul>
 <li>Complete <a href="https://classroom.github.com/a/d59eA_be">Challenge 1: The RMarkdown Project</a></li>
-<li>DataCamp Assignement 1 (You should have received an invitation email if you haven’t contact me on slack!)</li>
+<li>DataCamp Assignment 1
+<ul>
+<li>You should have received an invitation email if you haven’t contact me on slack!)</li>
+</ul></li>
 </ul>
+</div>
+<div id="useful-resources" class="section level1">
+<h1>Useful Resources</h1>
+<div id="cheatsheets" class="section level2">
+<h2>Cheatsheets</h2>
+<ul>
+<li><a href="http://github.com/rstudio/cheatsheets/raw/master/base-r.pdf">Base R</a></li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf">RStudio</a></li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf">RMarkdown</a></li>
+<li><a href="https://r4ds.had.co.nz/r-markdown.html?q=bib#bibliographies-and-citations">Bibliographies and Citations</a></li>
+</ul>
+</div>
+<div id="readings" class="section level2">
+<h2>Readings</h2>
+<ul>
+<li><a href="https://r4ds.had.co.nz/workflow-basics.html">Basics</a></li>
+<li><a href="https://r4ds.had.co.nz/workflow-scripts.html">Scripts</a></li>
+<li><a href="https://r4ds.had.co.nz/functions.html#functions">Functions</a></li>
+</ul>
+</div>
+</div>
+<div id="interactive-r" class="section level1">
+<h1>Interactive R</h1>
+<p>You can use the <em>Editor</em> or the <em>Console</em> to execute code. The <em>Editor</em> allows you to easily keep track of what you are doing, so we will use it a lot!</p>
+<p>Notice in the picture that the cursor is at line 1 in the <em>Editor</em> pane.</p>
+<p><img src="https://d33wubrfki0l68.cloudfront.net/8a64bb047429d7ae0e2acae35c40e421e6439bf6/80e5d/diagrams/rstudio-editor.png" title="RStudio IDE" /></p>
+<p>The most important keyboard shortcut to remember is:</p>
+<ul>
+<li><strong>Ctrl + Enter</strong> for Windows/Linux users.</li>
+<li><strong>Cmd + Enter</strong> for MacOs users.</li>
+</ul>
+<p>This shortcut send the current line in the <em>Editor</em> to the <em>Console</em>, executes it and puts the cursor on the next line in the <em>Editor</em>.</p>
+<p>If you type code in the <em>Console</em>, it will be directly executed when you press <em>Enter</em>.</p>
+<div id="hack-time" class="section level3">
+<h3>Hack Time!</h3>
+<p>Launch RStudio, open an empty R Script and run the following lines.</p>
+<ul>
+<li><em>TIP:</em> Use R Scripts to take notes during each session!</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Programming Basics&quot;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Greetings!&quot;</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Notice that in R scripts (`.R`) the lines starting with an # are comments.</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Try to print your first and last name:</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># What do you see when you run the lines below?</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot; _____&quot;</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a comment.</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;|     |&quot;</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Here&#39;s another comment.</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;|     |&quot;</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="do">### And yet another comment.</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;|_____|&quot;</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Each line is executed sequentially.&quot;</span>)</span></code></pre></div>
+<p>Let’s create our first real figure by running the following lines:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>my_plotting_function <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># A simple plotting function</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  my_title <span class="ot">&lt;-</span> <span class="st">&quot;My first figure&quot;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  growth <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(<span class="at">x=</span>growth, <span class="at">main=</span>my_title)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lines</span>(growth)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">my_plotting_function</span>()</span></code></pre></div>
+<p>Does this look complicated? Don’t worry, by the end of the session, you should be able to understand what’s happening here!</p>
+</div>
+</div>
+<div id="coding-basics" class="section level1">
+<h1>Coding basics</h1>
+<div id="arithmetic-operators" class="section level2">
+<h2>Arithmetic Operators</h2>
+<p>In its most basic form, R can be used as a simple calculator.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th align="center">Symbol</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Addition</td>
+<td align="center">+</td>
+</tr>
+<tr class="even">
+<td>Subtraction</td>
+<td align="center">-</td>
+</tr>
+<tr class="odd">
+<td>Multiplication</td>
+<td align="center">*</td>
+</tr>
+<tr class="even">
+<td>Division</td>
+<td align="center">/</td>
+</tr>
+<tr class="odd">
+<td>Exponentiation</td>
+<td align="center">^</td>
+</tr>
+<tr class="even">
+<td>Modulo</td>
+<td align="center">%%</td>
+</tr>
+</tbody>
+</table>
+<div id="hack-time-1" class="section level3">
+<h3>Hack Time!</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Do the following:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Divide 7 by 3.</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Raise 2 to the 5 power.</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Do another calculation.</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Describe what you did using a comment</span></span></code></pre></div>
+</div>
+</div>
+<div id="objects-and-assignment" class="section level2">
+<h2>Objects and assignment</h2>
+<p>Objects are containers that allow you to store something (e.g. 5).</p>
+<ul>
+<li>R uses the symbol <code>&lt;-</code> as the assignment statement.</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># I&#39;m assigning the value 5 to a new object called new_object</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>new_object <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>new_object</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>New_object  <span class="co"># What&#39;s wrong here?</span></span></code></pre></div>
+<p>You can inspect an object by typing its name. Did you notice that in this case we did not use the <code>print()</code> function and yet the Console returned a value?</p>
+<ul>
+<li>The R Console will always return the last statement.</li>
+</ul>
+<div id="object-names" class="section level4">
+<h4>Object names</h4>
+<ul>
+<li>R is case sensitive!</li>
+<li>must start with a letter</li>
+<li>can only contain letters, numbers, _ (underscores) and . (dots).</li>
+<li>object names should be descriptive</li>
+</ul>
+<p><em>TIP:</em> use lowercase words separated by <code>_</code> when naming your objects.</p>
+</div>
+<div id="hack-time-2" class="section level3">
+<h3>Hack Time!</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create your own object and describe what you are doing in a comment.</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign numerical values to two variables named `day_1` and `day_2`.</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Add these two variables together.</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a `my_total` variable containing the sum of the day `day_1` and `day_2` variables.</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the contents of the `my_total` variable.</span></span></code></pre></div>
+</div>
+</div>
+<div id="basic-data-types" class="section level2">
+<h2>Basic data types</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>numeric</em></td>
+<td>Decimal values</td>
+<td>4.2</td>
+</tr>
+<tr class="even">
+<td><em>integer</em></td>
+<td>Whole numbers (also <em>numeric</em>)</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td><em>logical</em></td>
+<td>Booleans</td>
+<td>TRUE or FALSE</td>
+</tr>
+<tr class="even">
+<td><em>character</em></td>
+<td>A text or string</td>
+<td>“The Democratic Party”</td>
+</tr>
+</tbody>
+</table>
+<div id="hack-time-3" class="section level3">
+<h3>Hack Time!</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the class of each object using the class() function</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>vote_share <span class="ot">&lt;-</span> <span class="fl">50.8</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>party <span class="ot">&lt;-</span> <span class="st">&quot;Democratic&quot;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>is_winner <span class="ot">&lt;-</span> vote_share <span class="sc">&gt;</span> <span class="dv">50</span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="functions" class="section level1">
+<h1>Functions</h1>
+<p>In a R any series of characters followed by an open and closed “()” parenthesis with or without any inputs is a function.</p>
+<ul>
+<li><code>my_object &lt;- my_function(input)</code></li>
+<li>The function contains related statements that perform a specific task.</li>
+<li>They help breaking our code into smaller and modular chunks.</li>
+<li>This makes your code more organized and manageable.</li>
+<li>It avoids repetition and makes code reusable!</li>
+</ul>
+<div id="built-in-functions" class="section level2">
+<h2>Built in functions</h2>
+<p>Out of the box, R comes with some very useful functions.</p>
+<ul>
+<li>You’ve already used some functions previously. Which ones?</li>
+</ul>
+<div id="hack-time-4" class="section level3">
+<h3>Hack time</h3>
+<p>Let’s open the <a href="http://github.com/rstudio/cheatsheets/raw/master/base-r.pdf">Base R</a> cheatsheet and hack together to get familiar with the basics!</p>
+</div>
+</div>
+<div id="packages-or-libraries" class="section level2">
+<h2>Packages or Libraries</h2>
+<p>When working on a project users will develop their own functions. People will gather their functions into a library. To access functions from other users, you need to install library using <code>install.packages()</code> function. Once that is installed you can load it in memory with the <code>library()</code> function and start using the new functions.</p>
+<div id="hack-time-5" class="section level3">
+<h3>Hack Time!</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install the &quot;ggplot2&quot; library</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the library</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Make nice plot</span></span></code></pre></div>
+</div>
+</div>
+<div id="make-your-own-functions" class="section level2">
+<h2>Make your own functions</h2>
+<p>As we saw previously, anyone can create functions. This is the beauty of programming!</p>
+<p>To make a function in R we use the <code>function()</code> function.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>object_name <span class="ot">&lt;-</span> <span class="cf">function</span>(arguments) {</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># A one line comment describing what the function does.</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  output <span class="ot">&lt;-</span> <span class="fu">do_something</span>()</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(output)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Let’s start making our own functions.</p>
+<div id="hack-time-6" class="section level3">
+<h3>Hack Time!</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a function that prints your first and last name.</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Do some math inside a function and return the result.</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine what we learned to make a special mean function.</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an empty R script and put your functions inside.</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="embed-code" class="section level1">
+<h1>Embed Code</h1>
+<p>We now know some basics of R programming and how to create R scripts (<code>.R</code> files). We have also learned previously how to make and render RMarkdown files (<code>.Rmd</code>) into pdf or html files. For the most part, we ignored the code that was in <code>.Rmd</code> files.</p>
+<p>Embedded code in <code>.Rmd</code> files comes in 2 flavours:</p>
+<ul>
+<li>Inline code: <code>`r `</code></li>
+<li>Code chunks: <code>```{r}</code> and <code>```</code>.</li>
+</ul>
+<div id="hack-time-7" class="section level3">
+<h3>Hack Time!</h3>
+<p>Let’s head to RStudio and practice with embedded code.</p>
+<ol style="list-style-type: decimal">
+<li>Creating a new RMarkdown document in RStudio.</li>
+<li>Look for embedded code.</li>
+<li>Embed an inline code bit.</li>
+<li>Embed a larger code chunk.</li>
+<li>Render the document.</li>
+</ol>
+<ul>
+<li>Leverage R code blocks and <code>.bib</code> files in <code>.Rmd</code> files. ## Bibliographies in <code>.Rmd</code> files</li>
+</ul>
+<p>One last You can automate citations and bibliographies in <code>.Rmd</code> files.</p>
+<ol style="list-style-type: decimal">
+<li>Open the project</li>
+</ol>
+</div>
 </div>
 
 

@@ -25,8 +25,6 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
@@ -41,21 +39,6 @@
   ul.task-list{list-style: none;}
     </style>
 
-<style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
 
 
 
@@ -371,14 +354,14 @@ div.tocify {
 </li>
 <li>
   <a href="schedule.html">
-    <span class="fa fa-calendar-check fa-lg"></span>
+    <span class="fa fa-tasks fa-lg"></span>
      
     Schedule
   </a>
 </li>
 <li>
   <a href="challenges.html">
-    <span class="fa fa-tasks fa-lg"></span>
+    <span class="fa fa-chess fa-lg"></span>
      
     Challenges
   </a>
@@ -388,6 +371,20 @@ div.tocify {
     <span class="fa fa-file-code fa-lg"></span>
      
     Project
+  </a>
+</li>
+<li>
+  <a href="onboarding.html">
+    <span class="fa fa-award fa-lg"></span>
+     
+    Onboarding
+  </a>
+</li>
+<li>
+  <a href="resources.html">
+    <span class="fa fa-toolbox fa-lg"></span>
+     
+    Resources
   </a>
 </li>
       </ul>
@@ -417,6 +414,9 @@ div.tocify {
 <div id="course-overview" class="section level1">
 <h1>Course Overview</h1>
 <p>This course introduces students to the building blocks of machine learning and artificial intelligence using real world “Big Data” and applications in political science, sociology or economics. The goal is to introduce to new computational social science methods and tools required to explore and harness the potential of “Big Data”. Learning such methods and tools requires practice. This course follows a “learn-by-doing” approach and will place emphasis on gaining experience by analyzing real-world data and solving problems using cutting edge yet free open source software. It will allow you to apply your theoretical knowledge and articulate the methods learned in an end to end research project throughout the course. The course is designed for social science students that are not necessarily familiar with quantitative methods or computer programming.</p>
+<center>
+<img src="https://www.forimpact.org/wp-content/uploads/2014/01/HowToDrawOwl.jpg" title="Draw The Owl" />
+</center>
 <div id="goals" class="section level2">
 <h2>Goals</h2>
 <ol style="list-style-type: decimal">
@@ -425,66 +425,31 @@ div.tocify {
 <li><p>Equip you with the ethical, theoretical, and methodological tools of tomorrow, allowing you to harness the potential of “Big Data”, machine learning and artificial intelligence.</p></li>
 </ol>
 </div>
-<div id="grading" class="section level2">
-<h2>Grading</h2>
-<div id="participation-30" class="section level3">
-<h3>Participation (30%)</h3>
+</div>
+<div id="grading" class="section level1">
+<h1>Grading</h1>
+<div id="participation-30" class="section level2">
+<h2>Participation (30%)</h2>
 <p>Participation is divided into three parts: demos, activities, and a-sync participation. The demo part is led by the students. Each student is expected to do a live demo to help the class understand a topic during a session. A demo is an hands-on demonstration that introduces a programming or a statistical concept and illustrates how to use it through an example in RStudio. Each demo should last no longer than 10 minutes. For the activities part, students are expected to do the required preparation exercises before each session (mostly in Data Camp) to allow them to follow along with the exercises conducted during each session. Finally, students are encouraged to use and be active on our dedicated communication channels Slack. For more details regarding the Slack check the <a href="#Communication">Communication section</a> below.</p>
 </div>
-<div id="coding-challenges-30" class="section level3">
-<h3>Coding challenges (30%)</h3>
+<div id="coding-challenges-30" class="section level2">
+<h2>Coding challenges (30%)</h2>
 <p>Learning computational methods requires practice. The goal of these coding challenges is to help students practice and learn continuously and incrementally and allow them to apply what they learn in new but similar contexts. For more details regarding the coding challenges see the <a href="challenges.html">Challenges page</a>.</p>
 </div>
-<div id="research-project-40" class="section level3">
-<h3>Research project (40%)</h3>
+<div id="research-project-40" class="section level2">
+<h2>Research project (40%)</h2>
 <p>Students are required to submit an individual research paper that uses some of the methods and tools introduced in the course. Your project will introduce a motivated forecasting machine learning model of the 2020 United States Presidential election. You will discuss the challenges related to data you are using, carry out a motivated and valid algorithmic implementation, and assess the strengths and weaknesses of your data and model(s). More details about the project and the deadlines will be made available in the second semester in the <a href="tba.html">Project page</a>.</p>
 </div>
 </div>
-<div id="requirements" class="section level2">
-<h2>Requirements</h2>
-<p>The most important requirement is motivation to work hard on likely unfamiliar material. The second most important requirement is to have access to a computer in order to participate and complete the assignments. Finally, you can start by completing the on-boarding section below before your first session. From there, we will learn as we go!</p>
-<div id="on-boarding" class="section level3">
-<h3>On-boarding</h3>
-<p>Make sure you have completed the following activities before the first session.</p>
-<ol style="list-style-type: decimal">
-<li>Join our <a href="https://spb-methods.slack.com">Slack</a> channel</li>
-<li>Download <a href="https://cran.biotools.fr/">R</a></li>
-<li>Download <a href="https://rstudio.com/products/rstudio/download/#download">RStudio</a></li>
-<li>Download <a href="https://miktex.org/download">LaTeX</a></li>
-<li>Create a <a href="https://github.com/">GitHub</a> account</li>
-</ol>
+<div id="requirements" class="section level1">
+<h1>Requirements</h1>
+<p>The most important requirement is motivation to work hard on likely unfamiliar material. The second most important requirement is to have access to a computer in order to participate and complete the assignments. Finally, make sure you have completed the <a href="onboarding.html">Onboarding</a> section before the first session.</p>
+<p>From there, we will learn as we go!</p>
 </div>
-</div>
-</div>
-<div id="resources" class="section level1">
-<h1>Resources</h1>
-<div id="communication" class="section level2">
-<h2>Communication</h2>
+<div id="communication" class="section level1">
+<h1>Communication</h1>
 <p>Before the first session you should receive an email invitation to join our <a href="https://spb-methods.slack.com">Slack</a> channel (until we find a good open-source alternative).</p>
 <p>Use slack for questions regarding the content of the course, ask and answer them on our <a href="https://spb-methods.slack.com">Slack</a> channel. Being active on Slack and answering your peers’ questions is encouraged and will positively impact your participation grade. Furthermore, if you have a question about the topic, it is likely that someone else had the same question. Posting questions and answers publicly allows us all to learn from each of these questions and answers.</p>
-</div>
-<div id="software" class="section level2">
-<h2>Software</h2>
-<p>This course uses <a href="https://www.r-project.org/">R</a>, which is a free and open-source programming language primarily used for statistics and data analysis. We also use <a href="https://www.rstudio.com/">RStudio</a>, which is an easy-to-use interface to program in R and other languages.</p>
-<p>Instructions to install or upgrade R can be found <a href="https://cran.biotools.fr/">here</a>.</p>
-<p>In order to generate high-quality reports we will also use <a href="https://www.latex-project.org/get/">LaTeX</a>.</p>
-<p>We will also use <a href="https://git-scm.com/">git</a> and <a href="https://github.com/">GitHub</a> for version control. This will allow you to track your changes and help you do reproducible research.</p>
-<p>Homework assignments will be distributed and submitted via <a href="https://classroom.github.com/classrooms">GitHub Classrooms</a>.</p>
-<p>If this does not yet make sense, don’t worry; we’ll cover it in the course.</p>
-</div>
-<div id="books" class="section level2">
-<h2>Books</h2>
-<ul>
-<li>Wickham, H., &amp; Grolemund, G. (2016). <em><a href="http://r4ds.had.co.nz/">R for Data Science: import, tidy, transform, visualize, and model data</a></em>. O’Reilly Media, Inc.</li>
-<li>Salganik, M. J. (2019). <em><a href="https://www.bitbybitbook.com/en/1st-ed/preface/">Bit by bit: Social research in the digital age</a></em>. Princeton University Press.</li>
-</ul>
-</div>
-<div id="miscellaneous" class="section level2">
-<h2>Miscellaneous</h2>
-<ul>
-<li><a href="https://www.datacamp.com/enterprise/computational-methods-for-social-science/">DataCamp</a></li>
-</ul>
-</div>
 </div>
 <div id="licence-credit" class="section level1">
 <h1>Licence &amp; Credit</h1>

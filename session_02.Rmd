@@ -17,7 +17,8 @@ Notice in the picture that the cursor is at line 1 in the *Editor* pane.
 
 ![](https://d33wubrfki0l68.cloudfront.net/8a64bb047429d7ae0e2acae35c40e421e6439bf6/80e5d/diagrams/rstudio-editor.png "RStudio IDE")
 
-The most important keyboard shortcut to remember is
+The most important keyboard shortcut to remember is:
+
 - **Ctrl + Enter** for Windows/Linux users.
 - **Cmd + Enter** for MacOs users.
 
@@ -51,6 +52,24 @@ print("|_____|")
 print("Each line is executed sequentially.")
 ```
 
+Let's create our first real figure by running the following lines:
+
+```{r eval=FALSE}
+my_plotting_function <- function() {
+  # A simple plotting function
+  my_title <- "My first figure"
+  growth <- seq(1:10)
+
+  plot(x=growth, main=my_title)
+  lines(growth)
+}
+
+my_plotting_function()
+```
+
+Does this look complicated? Don't worry, by the end of the session, you should be able to understand what's happening here!
+
+
 # Coding basics
 
 ## Arithmetic Operators
@@ -58,7 +77,7 @@ print("Each line is executed sequentially.")
 In its most basic form, R can be used as a simple calculator.
 
 |Operator        | Symbol|
-|-               | :-:  |
+|-               | :-:   |
 | Addition       | +  |
 | Subtraction    | -  |
 | Multiplication | *  |
@@ -74,7 +93,7 @@ In its most basic form, R can be used as a simple calculator.
 
 # Raise 2 to the 5 power.
 
-# Do something else.
+# Do another calculation.
 
 # Describe what you did using a comment
 ```
@@ -89,13 +108,25 @@ Objects are containers that allow you to store something (e.g. 5).
 # I'm assigning the value 5 to a new object called new_object
 new_object <- 5
 new_object
+
+New_object  # What's wrong here?
 ```
-You can inspect an object by typing its name. Did you notice that in this case we did not use the `print()` function and yet the Console returned a value? The R Console will always return the last statement.
+You can inspect an object by typing its name. Did you notice that in this case we did not use the `print()` function and yet the Console returned a value?
+
+- The R Console will always return the last statement.
+
+#### Object names
+
+- R is case sensitive!
+- must start with a letter
+- can only contain letters, numbers, _ (underscores) and . (dots).
+- object names should be descriptive
+
+*TIP:* use lowercase words separated by `_` when naming your objects.
 
 ### Hack Time!
 ```{r eval=FALSE}
-# Create your own object and describe what
-# you are doing using a comment.
+# Create your own object and describe what you are doing in a comment.
 
 # Assign numerical values to two variables named `day_1` and `day_2`.
 
@@ -107,76 +138,86 @@ You can inspect an object by typing its name. Did you notice that in this case w
 
 ```
 
-Object names must start with a letter, and can only contain letters, numbers, _ (underscores) and . (dots). You want your object names to be descriptive.
-
-R is case sensitive! Limit yourself to lowercase characters and you will not have to worry about this.
-*TIP:* Only use lowercase words separated with `_` when creating objects.
-
-```{r eval=FALSE}
-this <- 5
-# is different than
-This
-```
-
 ## Basic data types
 
-- A *numeric* is a decimal values like 4.2.
-- An *integer* is whole number like 4. It is also a numeric.
-- A *logical* is a boolean like TRUE or FALSE.
-- A *character* is a text or string like "potato".
-
-```{r eval=FALSE}
-vote_share_1 = 50.8
-vote_share_2 = 47.2
-class(vote_share_1)
-
-party_1 = "Democratic"
-party_2 = "Republican"
-class(party_1)
-
-party_1_winner = TRUE
-party_2_winner = FALSE
-class(party_1_winner)
-```
+|Type         | Description      | Example |
+| -           | -                | -       |
+| *numeric*   | Decimal values   | 4.2     |
+| *integer*   | Whole numbers (also *numeric*) | 4 |
+| *logical*   | Booleans         | TRUE or FALSE |
+| *character* | A text or string | "The Democratic Party" |
 
 ### Hack Time!
 ```{r eval=FALSE}
-# Your Code Here.
-## Create a new variable containing the total percentage of the votes counted.
+# Check the class of each object using the class() function
+vote_share <- 50.8
 
-## Print the type of this new variable.
+party <- "Democratic"
 
+is_winner <- vote_share > 50
 ```
 
 # Functions
-Everything in a R that follows the pattern `something()` is a function. That is, a series of characters followed by an open and closed parenthesis.
+## The syntax
 
-You've already used some functions previously. Which ones?
+In a R any series of characters followed by an open and closed "()" parenthesis with or without any inputs is a function.
 
-One very important function is the `help()` function
+- `my_object <- my_function(input)`
+- The function contains related statements that perform a specific task.
+- They help breaking our code into smaller and modular chunks.
+- This makes your code more organized and manageable.
+- It avoids repetition and makes code reusable!
 
-Check type of objects
+## Built in functions
 
-Built in functions
+Out of the box, R comes with some very useful functions.
+
+- You've already used some functions previously. Which ones?
+
+Let's open the [Base R](http://github.com/rstudio/cheatsheets/raw/master/base-r.pdf) cheatsheet and hack together to get familiar with the basics!
+
+
+## Packages or Libraries
+
+When working on a project users will develop their own functions.
+People will gather their functions into a library.
+To access functions from other users, you need to install library using `install.packages()` function.
+Once that is installed you can load it in memory with the `library()` function and start using the new functions.
 
 ### Hack Time!
 ```{r eval=FALSE}
-```
+# Install the "ggplot2" library
 
+# Load the library
 
+# Make nice plot
 
-
-## Installing and loading packages
-### Hack Time!
-```{r eval=FALSE}
 ```
 
 ## Make your own functions
-### Hack Time!
+
+As we saw previously, anyone can create functions.
+This is the beauty of programming!
+
+To make a function in R we use the `function()` function.
+
 ```{r eval=FALSE}
+object_name <- function(arguments) {
+  # A one line comment describing what the function does.
+  output <- do_something()
+  return(output)
+}
 ```
 
-# Let's switch to RMarkdown
+Let's start make our own functions.
+
+### Hack Time!
+```{r eval=FALSE}
+# Let's create a function that prints our first and last name.
+
+```
+
+# RMarkdown
 ## Code blocks
 ### Hack Time!
 ```{r eval=FALSE}
@@ -187,11 +228,14 @@ Built in functions
 ```{r eval=FALSE}
 ```
 
-# Recommended
-- https://r4ds.had.co.nz/workflow-basics.html
-- https://r4ds.had.co.nz/workflow-scripts.html
+# To go further
+- The [Base R](http://github.com/rstudio/cheatsheets/raw/master/base-r.pdf) cheatsheet
+- [Basics](https://r4ds.had.co.nz/workflow-basics.html)
+- [Scripts](https://r4ds.had.co.nz/workflow-scripts.html)
+- [Functions](https://r4ds.had.co.nz/functions.html#functions)
 
 # Requirements
 - Complete [Challenge 1: The RMarkdown Project](https://classroom.github.com/a/d59eA_be)
-- DataCamp Assignement 1 (You should have received an invitation email if you haven't contact me on slack!)
+- DataCamp Assignement 1
+    - You should have received an invitation email if you haven't contact me on slack!)
 

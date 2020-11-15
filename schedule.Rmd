@@ -4,9 +4,9 @@ title: "Schedule"
 
 The course is divided into dedicated 9 sessions. The sessions in the first semester are each 3 hour sessions and 1h30 afterwards. Learning computational methods requires recurrent practice. All activities and challenges are meant to help you keep practicing. For the various challenges and projects, due dates are always related to each group's respective sessions.
 
-Each session is divided into three parts: demo, hack time, and coding challenge.
+Each session is divided into three parts: live demo, hack time, and coding challenge.
 
-## Demo
+## Live Demo
 The demo is led by the students. Each student is expected to do a live demo to help the class understand a topic during a session. A demo is an hands-on demonstration that introduces to a computational social science tool, method, or concept and illustrates how to use it through an example in RStudio. Each demo should last no longer than 10 minutes.
 
 ## Hack Time

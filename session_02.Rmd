@@ -36,12 +36,15 @@ Launch RStudio, open an empty R Script and run the following lines.
 
 - *Tip:* Use R Scripts to take notes during each session!
 
-```{r eval=FALSE}
+```{r eval=FALSE, attr.source='.numberLines'}
 # Session 2: Programming Basics"
 print("Greetings!")
 
-# What do you see when you run the code below?
-```{r eval=FALSE}
+# Notice that in R scripts (`.R`) the lines starting with an # are comments.
+
+# Try to print your first and last name:
+
+# What do you see when you run the lines below?
 print(" _____")
 # This is a comment.
 print("|     |")
@@ -51,9 +54,6 @@ print("|     |")
 print("|_____|")
 print("Each line is executed sequentially.")
 
-# Notice that in R scripts (`.R`) the lines starting with an # are comments.
-
-# Try to print your first and last name:
 ```
 
 

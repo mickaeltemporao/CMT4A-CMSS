@@ -7,6 +7,9 @@ author: "Instructor: Mickael Temporão"
 # Course Overview
 This course introduces students to the building blocks of machine learning and artificial intelligence using real world "Big Data" and applications in political science, sociology or economics. The goal is to introduce to new computational social science methods and tools required to explore and harness the potential of "Big Data". Learning such methods and tools requires practice. This course follows a "learn-by-doing" approach and will place emphasis on gaining experience by analyzing real-world data and solving problems using cutting edge yet free open source software. It will allow you to apply your theoretical knowledge and articulate the methods learned in an end to end research project throughout the course. The course is designed for social science students that are not necessarily familiar with quantitative methods or computer programming.
 
+<center>
+![](https://www.forimpact.org/wp-content/uploads/2014/01/HowToDrawOwl.jpg "Draw The Owl")
+</center>
 
 ## Goals
 1. Ability to motivate the usage of computational methods in a fully reproducible end to end academic research paper.
@@ -16,59 +19,28 @@ This course introduces students to the building blocks of machine learning and a
 3. Equip you with the ethical, theoretical, and methodological tools of tomorrow, allowing you to harness the potential of "Big Data", machine learning and artificial intelligence.
 
 
-## Grading
-### Participation (30%)
+# Grading
+## Participation (30%)
 Participation is divided into three parts: demos, activities, and a-sync participation. The demo part is led by the students. Each student is expected to do a live demo to help the class understand a topic during a session. A demo is an hands-on demonstration that introduces a programming or a statistical concept and illustrates how to use it through an example in RStudio. Each demo should last no longer than 10 minutes. For the activities part, students are expected to do the required preparation exercises before each session (mostly in Data Camp) to allow them to follow along with the exercises conducted during each session. Finally, students are encouraged to use and be active on our dedicated communication channels Slack. For more details regarding the Slack check the [Communication section](#Communication) below.
 
-### Coding challenges (30%)
+## Coding challenges (30%)
 Learning computational methods requires practice. The goal of these coding challenges is to help students practice and learn continuously and incrementally and allow them to apply what they learn in new but similar contexts. For more details regarding the coding challenges see the [Challenges page](challenges.html).
 
-### Research project (40%)
+## Research project (40%)
 Students are required to submit an individual research paper that uses some of the methods and tools introduced in the course. Your project will introduce a motivated forecasting machine learning model of the 2020 United States Presidential election. You will discuss the challenges related to data you are using, carry out a motivated and valid algorithmic implementation, and assess the strengths and weaknesses of your data and model(s). More details about the project and the deadlines will be made available in the second semester in the [Project page](tba.html).
 
 
-## Requirements
-The most important requirement is motivation to work hard on likely unfamiliar material. The second most important requirement is to have access to a computer in order to participate and complete the assignments. Finally, you can start by completing the on-boarding section below before your first session. From there, we will learn as we go!
+# Requirements
+The most important requirement is motivation to work hard on likely unfamiliar material. The second most important requirement is to have access to a computer in order to participate and complete the assignments. Finally, make sure you have completed the [Onboarding](onboarding.html) section before the first session.
 
-### On-boarding
-
-Make sure you have completed the following activities before the first session.
-
-1. Join our [Slack](https://spb-methods.slack.com) channel
-2. Download [R](https://cran.biotools.fr/)
-3. Download [RStudio](https://rstudio.com/products/rstudio/download/#download)
-4. Download [LaTeX](https://miktex.org/download)
-5. Create a [GitHub](https://github.com/) account
+From there, we will learn as we go!
 
 
-# Resources
-
-## Communication
+# Communication
 Before the first session you should receive an email invitation to join our [Slack](https://spb-methods.slack.com) channel (until we find a good open-source alternative).
 
 Use slack for questions regarding the content of the course, ask and answer them on our [Slack](https://spb-methods.slack.com) channel. Being active on Slack and answering your peers’ questions is encouraged and will positively impact your participation grade. Furthermore, if you have a question about the topic, it is likely that someone else had the same question. Posting questions and answers publicly allows us all to learn from each of these questions and answers.
 
-
-## Software
-This course uses [R](https://www.r-project.org/), which is a free and open-source programming language primarily used for statistics and data analysis. We also use [RStudio](https://www.rstudio.com/), which is an easy-to-use interface to program in R and other languages.
-
-Instructions to install or upgrade R can be found [here](https://cran.biotools.fr/).
-
-In order to generate high-quality reports we will also use [LaTeX](https://www.latex-project.org/get/).
-
-We will also use [git](https://git-scm.com/) and [GitHub](https://github.com/) for version control. This will allow you to track your changes and help you do reproducible research.
-
-Homework assignments will be distributed and submitted via [GitHub Classrooms](https://classroom.github.com/classrooms).
-
-If this does not yet make sense, don't worry; we'll cover it in the course.
-
-
-## Books
-- Wickham, H., & Grolemund, G. (2016). *[R for Data Science: import, tidy, transform, visualize, and model data](http://r4ds.had.co.nz/)*. O'Reilly Media, Inc.
-- Salganik, M. J. (2019). *[Bit by bit: Social research in the digital age](https://www.bitbybitbook.com/en/1st-ed/preface/)*. Princeton University Press.
-
-## Miscellaneous
-- [DataCamp](https://www.datacamp.com/enterprise/computational-methods-for-social-science/)
 
 # Licence & Credit
 

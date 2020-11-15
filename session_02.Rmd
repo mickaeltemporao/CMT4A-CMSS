@@ -8,6 +8,22 @@ subtitle: "Learning Objectives:"
 - Leverage R code blocks and `.bib` files in `.Rmd` files.
 
 
+# Requirements
+- Complete [Challenge 1: The RMarkdown Project](https://classroom.github.com/a/d59eA_be)
+- DataCamp Assignment 1
+    - You should have received an invitation email if you haven't contact me on slack!)
+
+
+# Useful Resources
+## Cheatsheets
+- [Base R](http://github.com/rstudio/cheatsheets/raw/master/base-r.pdf)
+- [RMarkdown](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
+- [RStudio](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
+- [Basics](https://r4ds.had.co.nz/workflow-basics.html)
+- [Scripts](https://r4ds.had.co.nz/workflow-scripts.html)
+- [Functions](https://r4ds.had.co.nz/functions.html#functions)
+
+
 # Interactive R
 
 You can use the *Editor* or the *Console* to execute code.
@@ -158,7 +174,6 @@ is_winner <- vote_share > 50
 ```
 
 # Functions
-## The syntax
 
 In a R any series of characters followed by an open and closed "()" parenthesis with or without any inputs is a function.
 
@@ -174,8 +189,8 @@ Out of the box, R comes with some very useful functions.
 
 - You've already used some functions previously. Which ones?
 
+### Hack time
 Let's open the [Base R](http://github.com/rstudio/cheatsheets/raw/master/base-r.pdf) cheatsheet and hack together to get familiar with the basics!
-
 
 ## Packages or Libraries
 
@@ -201,6 +216,7 @@ This is the beauty of programming!
 
 To make a function in R we use the `function()` function.
 
+
 ```{r eval=FALSE}
 object_name <- function(arguments) {
   # A one line comment describing what the function does.
@@ -209,17 +225,30 @@ object_name <- function(arguments) {
 }
 ```
 
-Let's start make our own functions.
+Let's start making our own functions.
 
 ### Hack Time!
 ```{r eval=FALSE}
-# Let's create a function that prints our first and last name.
+# Create a function that prints your first and last name.
+
+# Do some math inside a function and return the result.
+
+# Combine what we learned to make a special mean function.
+
+# Create an empty R script and put your functions inside.
+
+#
 
 ```
 
 # RMarkdown
+
+Until now we have used RMarkdown files (`.Rmd`) without really looking into what goes inside those files.
 ## Code blocks
+Open a new RMarkdown document in RStudio.
+
 ### Hack Time!
+
 ```{r eval=FALSE}
 ```
 
@@ -228,14 +257,4 @@ Let's start make our own functions.
 ```{r eval=FALSE}
 ```
 
-# To go further
-- The [Base R](http://github.com/rstudio/cheatsheets/raw/master/base-r.pdf) cheatsheet
-- [Basics](https://r4ds.had.co.nz/workflow-basics.html)
-- [Scripts](https://r4ds.had.co.nz/workflow-scripts.html)
-- [Functions](https://r4ds.had.co.nz/functions.html#functions)
-
-# Requirements
-- Complete [Challenge 1: The RMarkdown Project](https://classroom.github.com/a/d59eA_be)
-- DataCamp Assignement 1
-    - You should have received an invitation email if you haven't contact me on slack!)
 

@@ -267,12 +267,3 @@ Let's head to RStudio and practice with embedded code.
 3. Embed a larger code chunk.
 5. Render the document.
 
-
-- Leverage R code blocks and `.bib` files in `.Rmd` files.
-## Bibliographies in `.Rmd` files
-
-One last
-You can automate citations and bibliographies in `.Rmd` files.
-
-1. Open the project
-

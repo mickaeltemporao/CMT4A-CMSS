@@ -16,20 +16,7 @@ library(tidyverse)
 # Requirements
 - Complete [Challenge 1: The RMarkdown Project](https://classroom.github.com/a/d59eA_be)
 - DataCamp Assignment 1
-    - You should have received an invitation email if you haven't contact me on slack!)
-
-
-# Useful Resources
-## Cheatsheets
-- [Base R](http://github.com/rstudio/cheatsheets/raw/master/base-r.pdf)
-- [RStudio](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
-- [RMarkdown](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
-- [Bibliographies and Citations](https://r4ds.had.co.nz/r-markdown.html?q=bib#bibliographies-and-citations)
-
-## Readings
-- [Basics](https://r4ds.had.co.nz/workflow-basics.html)
-- [Scripts](https://r4ds.had.co.nz/workflow-scripts.html)
-- [Functions](https://r4ds.had.co.nz/functions.html#functions)
+    - You should have received an invitation email if you haven't contact me on slack!
 
 
 # Interactive R
@@ -266,4 +253,18 @@ Let's head to RStudio and practice with embedded code.
 3. Embed an inline code bit.
 3. Embed a larger code chunk.
 5. Render the document.
+
+
+# Useful Resources
+## Cheatsheets
+- [Base R](http://github.com/rstudio/cheatsheets/raw/master/base-r.pdf)
+- [RStudio](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
+- [RMarkdown](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
+- [Bibliographies and Citations](https://r4ds.had.co.nz/r-markdown.html?q=bib#bibliographies-and-citations)
+
+## Readings
+- [Basics](https://r4ds.had.co.nz/workflow-basics.html)
+- [Scripts](https://r4ds.had.co.nz/workflow-scripts.html)
+- [Functions](https://r4ds.had.co.nz/functions.html#functions)
+
 

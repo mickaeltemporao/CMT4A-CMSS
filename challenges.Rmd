@@ -2,7 +2,7 @@
 title: Challenges
 ---
 
-## Challenge Workflow
+## The Challenge Workflow
 
 1. The challenge is online at least 7 days before the next session.
 2. You accept the challenge by clicking the link in the section below.

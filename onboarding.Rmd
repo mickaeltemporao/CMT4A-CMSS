@@ -8,8 +8,8 @@ Make sure you have completed the following activities before the first session:
 2. Download and install [RStudio](https://rstudio.com/products/rstudio/download/#download).
 3. Download and install [Git](https://git-scm.com/).
 4. Create a [GitHub](https://github.com/) account.
-5. Join [Slack](https://spb-methods.slack.com): You should have received an email invitation email.
-6. Join [DataCamp](https://www.datacamp.com): You should have received an email invitation email.
+5. Download and install [Slack](https://spb-methods.slack.com): You should have received an invitation email.
+6. Join the course on [DataCamp](https://www.datacamp.com): You should have received an invitation email.
 
 If all of these software do not yet make sense, don't worry; we'll cover them in the course.
 

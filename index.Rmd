@@ -21,18 +21,18 @@ This course introduces students to the building blocks of machine learning and a
 
 # Grading
 ## Participation (30%)
-Participation is divided into three parts: live demos, activities, and a-sync participation.
+Participation is divided into three parts: activities, live demos, and a-sync participation.
 
-- The line demos are led by students. Each student is expected to do a live demo that helps the class understand a topic during a session. A demo is an hands-on demonstration that introduces a programming or a statistical concept and illustrates how to use it through an example in RStudio. Each demo should last no longer than 10 minutes.
-- For the activities part, students are expected to do the required preparation exercises before each session (mostly in Data Camp) to allow them to follow along with the exercises conducted during each session.
-- Finally, students are encouraged to use and be active on our dedicated communication channels Slack. For more details regarding the Slack check the [Communication section](#Communication) below.
+- **Activities:** Students are expected to do the weekly practice activities in DataCamp in order to come prepared for the next session. The goal is to provide students with opportunities to continuously practice and learn incrementally. Before the first session you should have received an email invitation to the course on DataCamp.
+
+- **Live demos:** Students are expected to do a live demo that helps the class understand a topic during a session. A demo is an hands-on demonstration that introduces a programming or a statistical concept and illustrates how to use it through an example in RStudio. Each demo should last no longer than 10 minutes.
+- **A-Sync:** Students are expected to be active on our dedicated communication Slack channels, that is asking questions and helping other students when they have questions. For more details regarding the Slack check the [Communication section](#Communication) below.
 
 ## Coding challenges (30%)
-Learning computational methods requires lots of practice. The goal of these coding challenges is to help students practice and learn continuously and incrementally and allow them to apply what they learn in new but similar contexts. For more details regarding the coding challenges see the [Challenges page](challenges.html).
+Learning computational methods requires lots of practice. The goal of these coding challenges is to provide students with opportunities to to apply what they learn during live sessions in new but similar contexts. For more details regarding the coding challenges see the [Challenges page](challenges.html).
 
 ## Research project (40%)
 Students are required to submit an individual research paper that uses some of the methods and tools introduced in the course. Your project will introduce a motivated forecasting machine learning model of the 2020 United States Presidential election. You will discuss the challenges related to the data you are using, carry out a motivated and valid algorithmic implementation, and assess the strengths and weaknesses of your data and model(s). More details about the project and the deadlines will be made available in the second semester in the [Project page](tba.html).
-
 
 # Requirements
 The most important requirement is motivation to work hard on likely unfamiliar material. The second most important requirement is to have access to a computer in order to participate and complete the assignments. Finally, make sure you have completed the [Onboarding](onboarding.html) section before the first session.

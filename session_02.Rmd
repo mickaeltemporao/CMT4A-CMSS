@@ -53,7 +53,7 @@ print("Greetings!")
 # Try to print your first and last name:
 ```
 
-### What do you see when you ***source*** the lines below?
+#### What do you see when you ***source*** the lines below?
 
 ```{r eval=FALSE}
 print(" _____")
@@ -67,7 +67,7 @@ print("|_____|")
 
 Did you notice that each line is executed sequentially?
 
-### What happens when you ***run*** or ***source*** the lines below?
+#### What happens when you ***run*** or ***source*** the lines below?
 
 ```{r eval=FALSE}
 my_plotting_function <- function() {

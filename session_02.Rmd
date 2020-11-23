@@ -11,7 +11,7 @@ library(tidyverse)
 
 - Learn how code is executed in an interactive environment.
 - Become familiar with R coding syntax, functions and packages.
-- Leverage the strength of R in R`.Rmd` files.
+- Leverage the strength of R in `.Rmd` files.
 
 # Requirements
 - Complete [Challenge 1: The RMarkdown Project](https://classroom.github.com/a/d59eA_be)

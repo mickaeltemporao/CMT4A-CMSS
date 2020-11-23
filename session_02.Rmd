@@ -38,7 +38,7 @@ This shortcut send the current line in the *Editor* to the *Console*, executes i
 If you type code in the *Console*, it will be directly executed when you press *Enter*.
 
 
-### Hack Time!
+You need to accept the DataCamp invite!### Hack Time!
 
 Launch RStudio, open an empty R Script and run the following lines.
 
@@ -51,8 +51,11 @@ print("Greetings!")
 # Notice that in R scripts (`.R`) the lines starting with an # are comments.
 
 # Try to print your first and last name:
+```
 
-# What do you see when you run the lines below?
+### What do you see when you ***source*** the lines below?
+
+```{r eval=FALSE}
 print(" _____")
 # This is a comment.
 print("|     |")
@@ -60,14 +63,15 @@ print("|     |")
 print("|     |")
 ### And yet another comment.
 print("|_____|")
-print("Each line is executed sequentially.")
 ```
 
-Let's create our first real figure by running the following lines:
+Did you notice that each line is executed sequentially?
+
+### What happens when you ***run*** or ***source*** the lines below?
 
 ```{r eval=FALSE}
 my_plotting_function <- function() {
-  # A simple plotting function
+  # A simple function that creates a plot.
   my_title <- "My first figure"
   growth <- seq(1:10)
 

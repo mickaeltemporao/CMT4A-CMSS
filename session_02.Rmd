@@ -33,12 +33,12 @@ The most important keyboard shortcut to remember is:
 - **Ctrl + Enter** for Windows/Linux users.
 - **Cmd + Enter** for MacOs users.
 
-This shortcut send the current line in the *Editor* to the *Console*, executes it and puts the cursor on the next line in the *Editor*.
+This shortcut runs the current line, which means that the current line in the *Editor* is sent to the *Console*, executed, and the cursor is moved to the next line in the *Editor*.
 
-If you type code in the *Console*, it will be directly executed when you press *Enter*.
+When you type code in the *Console*, it will be directly executed when you press *Enter*.
 
 
-You need to accept the DataCamp invite!### Hack Time!
+### Hack Time!
 
 Launch RStudio, open an empty R Script and run the following lines.
 

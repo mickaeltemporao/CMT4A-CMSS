@@ -14,15 +14,18 @@ subtitle: "Objectives:"
 - [RMarkdown](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
 
 ## Readings
-- [R Markdown](https://r4ds.had.co.nz/r-markdown.html#r-markdown)
+- [RMarkdown](https://r4ds.had.co.nz/r-markdown.html#r-markdown)
 
 ## Practice
-- [Markdown Tutorial](https://commonmark.org/help/tutorial/)
-- [Reporting with RMarkdown](https://learn.datacamp.com/courses/reporting-with-rmarkdown)
+- [Markdown](https://commonmark.org/help/tutorial/)
+- [RMarkdown](https://learn.datacamp.com/courses/reporting-with-rmarkdown)
 
 # GitHub
 
-### First steps
+### Hack Time!
+
+Your first steps on GitHub:
+
 1. Go to [www.github.com](https://github.com/) and identify your account name.
 2. Share your [GitHub Account](https://github.com/) name with the class.
 3. Create your first GitHub repository with a README.md file
@@ -36,7 +39,10 @@ subtitle: "Objectives:"
 
 # RStudio
 
-**Your first lines of code**
+### Hack Time!
+
+Your first lines of code:
+
 1. Launch RStudio.
 2. Create a new RMarkdown document (`.Rmd`).
 3. Knit (render) the document as an HTML file.
@@ -61,9 +67,11 @@ Great! You are now able to use markdown and the R language to make PDF files!
 
 # Github and RStudio
 Let's make them work together!
-Head to the [Challenges](challenges.html) page and complete the first challenge.
+
+- Head to the [Challenges](challenges.html) page and complete the first challenge.
 
 
 # Requirements
+
 Make sure you have completed the [onboarding section](onboarding.html) prior to this session.
 

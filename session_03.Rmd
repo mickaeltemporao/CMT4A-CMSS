@@ -8,11 +8,8 @@ subtitle: "Learning Objectives:"
 - Render citations and bibliographies in `.Rmd` files using `.bib` files.
 
 
-# Requirements
-- Complete [Challenge 2: The RMarkdown Project](https://classroom.github.com/a/d59eA_be)
-- DataCamp Assignment 2
+# Resources
 
-# Useful Resources
 ## Cheatsheets
 - [Base R](http://github.com/rstudio/cheatsheets/raw/master/base-r.pdf)
 - [RStudio](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
@@ -20,9 +17,15 @@ subtitle: "Learning Objectives:"
 - [Bibliographies and Citations](https://r4ds.had.co.nz/r-markdown.html?q=bib#bibliographies-and-citations)
 
 ## Readings
+
+
+
+## Readings
 - [Basics](https://r4ds.had.co.nz/workflow-basics.html)
 - [Scripts](https://r4ds.had.co.nz/workflow-scripts.html)
 - [Functions](https://r4ds.had.co.nz/functions.html#functions)
+
+## Practice
 
 
 # Interactive R
@@ -33,3 +36,6 @@ subtitle: "Learning Objectives:"
 ```{r eval=FALSE}
 ```
 
+# Requirements
+- Complete [Challenge 2: The RMarkdown Project](https://classroom.github.com/a/d59eA_be)
+- DataCamp Assignment 2

@@ -7,12 +7,23 @@ subtitle: "Objectives:"
 - Learn about open source computational tools
 - Setup a computational working environment
 
-# Hack Time
-### Setting Up A Computational Working Environment
+# Resources
 
-#### GitHub first steps
+## Cheatsheets
+- [RStudio](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
+- [RMarkdown](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
+
+## Readings
+- [R Markdown](https://r4ds.had.co.nz/r-markdown.html#r-markdown)
+
+## Practice
+- [Reporting with RMarkdown](https://learn.datacamp.com/courses/reporting-with-rmarkdown)
+
+# Computational Environment
+
+### GitHub first steps
 1. Go to [www.github.com](https://github.com/) and identify your account name.
-2. Send a message with your [GitHub Account](https://github.com/) name!
+2. Share your [GitHub Account](https://github.com/) name on Slack!
 3. Create your first GitHub repository with a README.md file (`.md` files are Markdown files).
 4. Edit the README file on GitHub.
     - Change the title of the file.

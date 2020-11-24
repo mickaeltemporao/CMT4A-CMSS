@@ -13,10 +13,20 @@ library(tidyverse)
 - Become familiar with R coding syntax, functions and packages.
 - Leverage the strength of R in R`.Rmd` files.
 
-# Requirements
-- Complete [Challenge 1: The RMarkdown Project](https://classroom.github.com/a/d59eA_be)
-- DataCamp Assignment 1
-    - You should have received an invitation email if you haven't contact me on slack!
+# Resources
+
+## Cheatsheets
+- [Base R](http://github.com/rstudio/cheatsheets/raw/master/base-r.pdf)
+
+## Readings
+- [Workflow Basics](https://r4ds.had.co.nz/workflow-basics.html)
+- [R Scripts](https://r4ds.had.co.nz/workflow-scripts.html)
+- [Code chunks](https://r4ds.had.co.nz/r-markdown.html#code-chunks)
+- [Using Functions](https://r4ds.had.co.nz/functions.html#functions)
+
+## Practice
+- [Introduction to R](https://learn.datacamp.com/courses/free-introduction-to-r)
+- [Intermediate R](https://learn.datacamp.com/courses/intermediate-r)
 
 
 # Interactive R
@@ -42,7 +52,7 @@ When you type code in the *Console*, it will be directly executed when you press
 
 Launch RStudio, open an empty R Script and run the following lines.
 
-- *TIP:* Use R Scripts to take notes during each session!
+- **TIP:** Use R Scripts to take notes during each session!
 
 ```{r eval=FALSE}
 # Programming Basics"
@@ -53,7 +63,7 @@ print("Greetings!")
 # Try to print your first and last name:
 ```
 
-#### What do you see when you ***source*** the lines below?
+What do you see when you ***source*** the lines below?
 
 ```{r eval=FALSE}
 print(" _____")
@@ -67,7 +77,7 @@ print("|_____|")
 
 Did you notice that each line is executed sequentially?
 
-#### What happens when you ***run*** or ***source*** the lines below?
+*What happens when you ***run*** or ***source*** the lines below?*
 
 ```{r eval=FALSE}
 my_plotting_function <- function() {
@@ -259,16 +269,6 @@ Let's head to RStudio and practice with embedded code.
 5. Render the document.
 
 
-# Useful Resources
-## Cheatsheets
-- [Base R](http://github.com/rstudio/cheatsheets/raw/master/base-r.pdf)
-- [RStudio](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
-- [RMarkdown](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
-- [Bibliographies and Citations](https://r4ds.had.co.nz/r-markdown.html?q=bib#bibliographies-and-citations)
-
-## Readings
-- [Basics](https://r4ds.had.co.nz/workflow-basics.html)
-- [Scripts](https://r4ds.had.co.nz/workflow-scripts.html)
-- [Functions](https://r4ds.had.co.nz/functions.html#functions)
-
+# Requirements
+- Complete [Challenge 1: The RMarkdown Project](https://classroom.github.com/a/d59eA_be)
 

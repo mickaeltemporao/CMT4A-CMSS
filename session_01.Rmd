@@ -73,5 +73,5 @@ Let's make them work together!
 
 # Requirements
 
-Make sure you have completed the [onboarding section](onboarding.html) prior to this session.
+- Complete the [onboarding](onboarding.html) tasks.
 

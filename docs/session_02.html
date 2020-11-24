@@ -505,15 +505,30 @@ div.tocify {
 <li>Become familiar with R coding syntax, functions and packages.</li>
 <li>Leverage the strength of R in R<code>.Rmd</code> files.</li>
 </ul>
-<div id="requirements" class="section level1">
-<h1>Requirements</h1>
+<div id="resources" class="section level1">
+<h1>Resources</h1>
+<div id="cheatsheets" class="section level2">
+<h2>Cheatsheets</h2>
 <ul>
-<li>Complete <a href="https://classroom.github.com/a/d59eA_be">Challenge 1: The RMarkdown Project</a></li>
-<li>DataCamp Assignment 1
-<ul>
-<li>You should have received an invitation email if you haven’t contact me on slack!</li>
-</ul></li>
+<li><a href="http://github.com/rstudio/cheatsheets/raw/master/base-r.pdf">Base R</a></li>
 </ul>
+</div>
+<div id="readings" class="section level2">
+<h2>Readings</h2>
+<ul>
+<li><a href="https://r4ds.had.co.nz/workflow-basics.html">Workflow Basics</a></li>
+<li><a href="https://r4ds.had.co.nz/workflow-scripts.html">R Scripts</a></li>
+<li><a href="https://r4ds.had.co.nz/r-markdown.html#code-chunks">Code chunks</a></li>
+<li><a href="https://r4ds.had.co.nz/functions.html#functions">Using Functions</a></li>
+</ul>
+</div>
+<div id="practice" class="section level2">
+<h2>Practice</h2>
+<ul>
+<li><a href="https://learn.datacamp.com/courses/free-introduction-to-r">Introduction to R</a></li>
+<li><a href="https://learn.datacamp.com/courses/intermediate-r">Intermediate R</a></li>
+</ul>
+</div>
 </div>
 <div id="interactive-r" class="section level1">
 <h1>Interactive R</h1>
@@ -531,7 +546,7 @@ div.tocify {
 <h3>Hack Time!</h3>
 <p>Launch RStudio, open an empty R Script and run the following lines.</p>
 <ul>
-<li><em>TIP:</em> Use R Scripts to take notes during each session!</li>
+<li><strong>TIP:</strong> Use R Scripts to take notes during each session!</li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Programming Basics&quot;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Greetings!&quot;</span>)</span>
@@ -539,8 +554,7 @@ div.tocify {
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Notice that in R scripts (`.R`) the lines starting with an # are comments.</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Try to print your first and last name:</span></span></code></pre></div>
-<div id="what-do-you-see-when-you-source-the-lines-below" class="section level4">
-<h4>What do you see when you <strong><em>source</em></strong> the lines below?</h4>
+<p>What do you see when you <strong><em>source</em></strong> the lines below?</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot; _____&quot;</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a comment.</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;|     |&quot;</span>)</span>
@@ -549,9 +563,7 @@ div.tocify {
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="do">### And yet another comment.</span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;|_____|&quot;</span>)</span></code></pre></div>
 <p>Did you notice that each line is executed sequentially?</p>
-</div>
-<div id="what-happens-when-you-run-or-source-the-lines-below" class="section level4">
-<h4>What happens when you <strong><em>run</em></strong> or <strong><em>source</em></strong> the lines below?</h4>
+<p><em>What happens when you </em><strong>run</strong>* or <strong><em>source</em></strong> the lines below?*</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>my_plotting_function <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># A simple function that creates a plot.</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  my_title <span class="ot">&lt;-</span> <span class="st">&quot;My first figure&quot;</span></span>
@@ -563,7 +575,6 @@ div.tocify {
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">my_plotting_function</span>()</span></code></pre></div>
 <p>Does this look complicated? Don’t worry, by the end of the session, you should be able to understand what’s happening here!</p>
-</div>
 </div>
 </div>
 <div id="coding-basics" class="section level1">
@@ -776,25 +787,11 @@ div.tocify {
 </ol>
 </div>
 </div>
-<div id="useful-resources" class="section level1">
-<h1>Useful Resources</h1>
-<div id="cheatsheets" class="section level2">
-<h2>Cheatsheets</h2>
+<div id="requirements" class="section level1">
+<h1>Requirements</h1>
 <ul>
-<li><a href="http://github.com/rstudio/cheatsheets/raw/master/base-r.pdf">Base R</a></li>
-<li><a href="https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf">RStudio</a></li>
-<li><a href="https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf">RMarkdown</a></li>
-<li><a href="https://r4ds.had.co.nz/r-markdown.html?q=bib#bibliographies-and-citations">Bibliographies and Citations</a></li>
+<li>Complete <a href="https://classroom.github.com/a/d59eA_be">Challenge 1: The RMarkdown Project</a></li>
 </ul>
-</div>
-<div id="readings" class="section level2">
-<h2>Readings</h2>
-<ul>
-<li><a href="https://r4ds.had.co.nz/workflow-basics.html">Basics</a></li>
-<li><a href="https://r4ds.had.co.nz/workflow-scripts.html">Scripts</a></li>
-<li><a href="https://r4ds.had.co.nz/functions.html#functions">Functions</a></li>
-</ul>
-</div>
 </div>
 
 

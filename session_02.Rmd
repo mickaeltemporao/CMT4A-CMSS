@@ -34,6 +34,8 @@ library(tidyverse)
 You can use the *Editor* or the *Console* to execute code.
 The *Editor* allows you to easily keep track of what you are doing, so we will use it a lot!
 
+- **TIP:** Use R Scripts in RStudio to take notes during each session!
+
 Notice in the picture that the cursor is at line 1 in the *Editor* pane.
 
 ![](https://d33wubrfki0l68.cloudfront.net/8a64bb047429d7ae0e2acae35c40e421e6439bf6/80e5d/diagrams/rstudio-editor.png "RStudio IDE")
@@ -47,12 +49,9 @@ This shortcut runs the current line, which means that the current line in the *E
 
 When you type code in the *Console*, it will be directly executed when you press *Enter*.
 
-
 ### Hack Time!
 
 Launch RStudio, open an empty R Script and run the following lines.
-
-- **TIP:** Use R Scripts to take notes during each session!
 
 ```{r eval=FALSE}
 # Programming Basics"

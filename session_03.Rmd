@@ -1,9 +1,9 @@
 ---
-title: "Session 3: Data"
+title: "Session 3: Data Management"
 subtitle: "Learning Objectives:"
 ---
 
-- ...
+- Exploring and Visualizing your own Data
 - ...
 - Render citations and bibliographies in `.Rmd` files using `.bib` files.
 
@@ -17,25 +17,113 @@ subtitle: "Learning Objectives:"
 - [Bibliographies and Citations](https://r4ds.had.co.nz/r-markdown.html?q=bib#bibliographies-and-citations)
 
 ## Readings
-
-
-
-## Readings
 - [Basics](https://r4ds.had.co.nz/workflow-basics.html)
 - [Scripts](https://r4ds.had.co.nz/workflow-scripts.html)
 - [Functions](https://r4ds.had.co.nz/functions.html#functions)
 
 ## Practice
 
+![](https://d33wubrfki0l68.cloudfront.net/571b056757d68e6df81a3e3853f54d3c76ad6efc/32d37/diagrams/data-science.png "")
 
-# Interactive R
+
+# Data wrangling
+
+## Introduction
+
+The ANES 2016 Time Series Study.
+- Download the User Guide and Codebook: https://electionstudies.org/data-center/2016-time-series-study/
+
+
+```{r eval=FALSE}
+
+# Load the tidyverse package
+
+# ...
+data_url <- "https://github.com/mickaeltemporao/CMT4A-CMSS-TEMPLATE/blob/main/data/ts_2016.rds"
+
+# ...
+if(!file.exists("ts_2016.rds")) {
+  download.file(data_url, "ts_2016.rds")
+}
+
+# ...
+tb <- readRDS("ts_2016.rds")
+
+# Check the dataset
+# class, head, dim, ...
+
+```
+
+## Filter
+
+```{r eval=FALSE}
+# The Filter Verb & The Pipe
+## Keep respondents who voted in 2012
+tb %>%
+  filter(V161005 == 1)
+
+## Keep respondents below 25 years old
+
+## Store these in a new object call young_voters
+
+```
+
+## Arrange
+
+```{r eval=FALSE}
+# The Arrange Verb
+## Sort respondents by age
+tb %>%
+  arrange(V161267)
+
+## Pipe filter and arrange into a single operation
+
+## Store this in a new object call young_voters
+
+```
+
+## Mutate
+
+```{r eval=FALSE}
+# The Mutate Verb
+## Replace
+tb %>%
+  arrange(V161267)
+
+## Pipe filter and arrange into a single operation
+
+## Store this in a new object call young_voters
+
+```
+
+
+
+
+# Data visualization
 ## Some subtitle
-
 ### Hack Time!
 
 ```{r eval=FALSE}
 ```
 
+
+# Data aggregation
+## Some subtitle
+### Hack Time!
+
+```{r eval=FALSE}
+```
+
+
+# More plots
+## Some subtitle
+### Hack Time!
+
+```{r eval=FALSE}
+```
+
+####
+
 # Requirements
-- Complete [Challenge 2: The RMarkdown Project](https://classroom.github.com/a/d59eA_be)
-- DataCamp Assignment 2
+- Complete [Challenge 3: Functioning Functions](https://classroom.github.com/a/d59eA_be)
+

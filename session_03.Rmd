@@ -3,7 +3,9 @@ title: "Session 3: Data Management"
 subtitle: "Learning Objectives:"
 ---
 
-- Exploring and Visualizing your own Data
+Challenge identify the names of the variables
+
+- Exploring and Visualizing real world data
 - ...
 - Render citations and bibliographies in `.Rmd` files using `.bib` files.
 
@@ -11,7 +13,7 @@ subtitle: "Learning Objectives:"
 # Resources
 
 ## Cheatsheets
-- [Base R](http://github.com/rstudio/cheatsheets/raw/master/base-r.pdf)
+- [dplyr]()
 - [RStudio](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
 - [RMarkdown](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
 - [Bibliographies and Citations](https://r4ds.had.co.nz/r-markdown.html?q=bib#bibliographies-and-citations)
@@ -28,76 +30,105 @@ subtitle: "Learning Objectives:"
 
 # Data wrangling
 
-## Introduction
+We use real data to illustrate the various concepts. We rely on a popular dataset often used to study public opinion and political behaviour: The American National Election Study from 2016 (ANES 2016).
 
-The ANES 2016 Time Series Study.
 - Download the User Guide and Codebook: https://electionstudies.org/data-center/2016-time-series-study/
 
+We use `dplyr`'s verbs to solve common data manipulation challenges:
+
+- `select()` picks variables based on their names.
+- `filter()` picks cases based on their values.
+- `mutate()` adds new variables that are functions.
+- `arrange()` changes the ordering of the rows.
+- `summarise()` reduces multiple values down to a single summary.
+
+### Hack Time!
+
+```{r klippy, echo=FALSE, include=TRUE}
+klippy::klippy()
+```
 
 ```{r eval=FALSE}
+# Session 3: Data Management 1/2 ----
 
+
+# Getting Started ====
 # Load the tidyverse package
+...
 
-# ...
+## ...
 data_url <- "https://github.com/mickaeltemporao/CMT4A-CMSS-TEMPLATE/blob/main/data/ts_2016.rds"
 
-# ...
+## ...
 if(!file.exists("ts_2016.rds")) {
   download.file(data_url, "ts_2016.rds")
 }
 
-# ...
-tb <- readRDS("ts_2016.rds")
+## ...
+dataset <- readRDS("ts_2016.rds")
 
 # Check the dataset
-# class, head, dim, ...
+# class, head, dim, etc.
+...
 
-```
 
-## Filter
+# The Select Verb & The Pipe ====
 
-```{r eval=FALSE}
-# The Filter Verb & The Pipe
-## Keep respondents who voted in 2012
-tb %>%
+# ...
+dataset %>%
+  select(V161005, V161267, V161126, V161031, V161155)
+
+# Select a single variable
+...
+
+# Select the previous 5 variables and store them into a new object called `tmp_data`
+...
+
+
+# The Filter Verb ====
+# Keep only respondents who voted in 2012
+dataset %>%
   filter(V161005 == 1)
 
 ## Keep respondents below 25 years old
+...
 
-## Store these in a new object call young_voters
+## Keep respondents below 25 years who are not missing and who voted
+...
 
-```
+# Select the previous 5 variables, filter them and store them into a new object called `tmp_data`
 
-## Arrange
-
-```{r eval=FALSE}
-# The Arrange Verb
-## Sort respondents by age
-tb %>%
+# The Arrange Verb ====
+# Sort respondents by age
+tmp_data %>%
   arrange(V161267)
 
-## Pipe filter and arrange into a single operation
+# Select 5 variables, filter young voters and arrange observations by age
+...
 
-## Store this in a new object call young_voters
+
+# Store the output in a new object called young_voters
+...
+
+# Return young voters in descending order
+
+
+# The Mutate Verb ====
+
+## TIP: Always check your variables with table()
+
+# Change an existing column/variable
+table(young_voters$V161126)
+...
+
+# Create a new variable/column
+table(young_voters$V161031)
+...
+
+# Combine select, filter, mutate, and arrange
+...
 
 ```
-
-## Mutate
-
-```{r eval=FALSE}
-# The Mutate Verb
-## Replace
-tb %>%
-  arrange(V161267)
-
-## Pipe filter and arrange into a single operation
-
-## Store this in a new object call young_voters
-
-```
-
-
-
 
 # Data visualization
 ## Some subtitle

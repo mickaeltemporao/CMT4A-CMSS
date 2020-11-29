@@ -14,25 +14,42 @@ Challenge identify the names of the variables
 
 ## Cheatsheets
 - [dplyr]()
-- [RStudio](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
-- [RMarkdown](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
+- [ggplot]()
+- tidyverse cheatsheeet
+https://datacamp-community-prod.s3.amazonaws.com/e63a8f6b-2aa3-4006-89e0-badc294b179c
 - [Bibliographies and Citations](https://r4ds.had.co.nz/r-markdown.html?q=bib#bibliographies-and-citations)
 
 ## Readings
 - [Basics](https://r4ds.had.co.nz/workflow-basics.html)
 - [Scripts](https://r4ds.had.co.nz/workflow-scripts.html)
 - [Functions](https://r4ds.had.co.nz/functions.html#functions)
-
+https://r4ds.had.co.nz/transform.html
+https://r4ds.had.co.nz/data-visualisation.html
+https://r4ds.had.co.nz/exploratory-data-analysis.html
 ## Practice
+
 
 ![](https://d33wubrfki0l68.cloudfront.net/571b056757d68e6df81a3e3853f54d3c76ad6efc/32d37/diagrams/data-science.png "")
 
 
-# Data wrangling
+We use real data to illustrate the various concepts.
 
-We use real data to illustrate the various concepts. We rely on a popular dataset often used to study public opinion and political behaviour: The American National Election Study from 2016 (ANES 2016).
+We rely on a popular dataset often used to study public opinion and political behaviour: The American National Election Study from 2016 (ANES 2016).
 
 - Download the User Guide and Codebook: https://electionstudies.org/data-center/2016-time-series-study/
+
+# Exploration basics
+
+- `class()` returns the class of an object.
+- `dim()` returns the dimension of an object.
+- `head()` returns the first elements of the object.
+- `names()` returns the names of an object.
+- `str()` returns the structure of an object.
+- `table()` returns the counts at each combination.
+- `summary()` returns the result summaries of the object.
+
+
+# Data wrangling
 
 We use `dplyr`'s verbs to solve common data manipulation challenges:
 
@@ -40,7 +57,7 @@ We use `dplyr`'s verbs to solve common data manipulation challenges:
 - `filter()` picks cases based on their values.
 - `mutate()` adds new variables that are functions.
 - `arrange()` changes the ordering of the rows.
-- `summarise()` reduces multiple values down to a single summary.
+- `rename()` changes the name of individual variables.
 
 ### Hack Time!
 
@@ -131,6 +148,16 @@ table(young_voters$V161031)
 ```
 
 # Data visualization
+
+We use the `ggplot2` package to create visualizations.
+
+- `select()` picks variables based on their names.
+- `filter()` picks cases based on their values.
+- `mutate()` adds new variables that are functions.
+- `arrange()` changes the ordering of the rows.
+- `rename()` changes the name of individual variables.
+
+
 ## Some subtitle
 ### Hack Time!
 
@@ -158,3 +185,6 @@ table(young_voters$V161031)
 # Requirements
 - Complete [Challenge 3: Functioning Functions](https://classroom.github.com/a/d59eA_be)
 
+
+# Next week
+https://r4ds.had.co.nz/tidy-data.html

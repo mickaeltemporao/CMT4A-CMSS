@@ -24,7 +24,7 @@ subtitle: "Learning Objectives:"
 - [Introduction do the Tidyverse](https://campus.datacamp.com/courses/introduction-to-the-tidyverse)
 
 
-# Exploratory Data Analysis (EDA)
+# EDA
 
 Before creating statistical models we need to become familiar with the data we have. This preliminary approach meant to uncover the structure of the data is also known as exploratory data analysis (EDA). We will use real world data to learn basic EDA manipulations.
 

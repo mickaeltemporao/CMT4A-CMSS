@@ -1,0 +1,29 @@
+fake-news/
+    assets/
+    data/
+        raw/
+        processed/
+    deploy/
+    fake-news/
+        model/
+        utils/
+    model_checkpoints/
+    notebooks/
+    scripts/
+    LICENSE
+    README.md
+    requirements.txt
+
+Here is what each each item is responsible for:
+
+- assets: This will store any images, plots, and other non-source files generated throughout the project.
+- data: This will store our fake news data in both its raw (untouched from the original source) and processed (featurized or updated for our usecase) form.
+- deploy: This will store any files needed for our deployment including Dockerfiles, etc.
+- fake-news: This will store all the source for building, training, and evaluating our models.
+- model_checkpoints: This will store the model binaries that we train and eventually want to deploy.
+- notebooks: This will store any Jupyter notebooks used for any data analysis.
+- scripts: This will store any one-off scripts for generating model artifacts, setting up application environments, or processing the data.
+- LICENSE: Our software license.
+- README.md: A high-level description of our project.
+- requirements.txt: This will store the code dependencies for our project. This is a standard practice for Python-based projects, which our application will be.
+

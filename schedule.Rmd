@@ -12,10 +12,10 @@ This schedule is an approximation, subject to change due needs of the students i
 | -          | -          | -                                        | -                | -           |
 | 2020/11/02 | 2020/11/09 | 1. [Introduction](session_01.html)       | -                | -           |
 | 2020/11/16 | 2020/11/23 | 2. [Programming basics](session_02.html) | Bertille, Lison  | -           |
-| 2020/11/30 | 2020/12/07 | 3. Data Management                       | Colum, Julie Du. | Marie, Tess |
-| 2021/01/07 | 2021/01/14 | 4. Data Management                       | TBA              | TBA         |
+| 2020/11/30 | 2020/12/07 | 3. [Data Management 1](session_03.html)  | Colum, Julie Du. | Marie, Tess |
+| 2021/01/07 | 2021/01/14 | 4. Data Management 2                   | TBA              | TBA         |
 | 2021/01/21 | 2021/01/28 | 5. Supervised Methods 1                  | TBA              | TBA         |
-| 2021/02/04 | 2021/02/11 | 6. Supervised Methods 1                  | TBA              | TBA         |
+| 2021/02/04 | 2021/02/11 | 6. Supervised Methods 2                  | TBA              | TBA         |
 | 2021/02/25 | 2021/03/04 | 7. Unsupervised Methods 1                | TBA              | TBA         |
 | 2021/03/11 | 2021/03/18 | 8. Unsupervised Methods 2                | TBA              | TBA         |
 | 2021/03/25 | 2021/04/01 | 9. Machine Learning 1                    | TBA              | TBA         |

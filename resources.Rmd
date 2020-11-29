@@ -10,9 +10,12 @@ Useful resources will be added as we progress throughout. You should check this 
 - Wickham, H., & Grolemund, G. (2016). *[R for Data Science: import, tidy, transform, visualize, and model data](http://r4ds.had.co.nz/)*. O'Reilly Media, Inc.
 
 # Cheatsheets
-- [RStudio](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
-- [R Markdown](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
 - [Base R](http://github.com/rstudio/cheatsheets/raw/master/base-r.pdf)
+- [Data Visualization](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
+- [Data transformation](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf)
+- [R Markdown](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
+- [RStudio](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
+
 
 # Software
 - [R](https://www.r-project.org/) is a free and open-source programming language primarily used for statistics and data analysis.

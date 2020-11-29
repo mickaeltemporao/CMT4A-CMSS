@@ -172,7 +172,6 @@ ggplot(filter(tmp_data), aes(x=as.factor(vote_part), y=age)) +
 # Add meaningful x- and y-axis labels
 ...
 
+# Bonus: Themes
+# see https://ggplot2.tidyverse.org/reference/ggtheme.html
 
-# Data Summaries ===============================================================
-
-tmp_data

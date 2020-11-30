@@ -7,6 +7,10 @@ subtitle: "Learning Objectives:"
 - Become familiar with citations and bibliographies in Rmarkdown.
 - Conduct exploratory data analysis (EDA) in Rmarkdown documents.
 
+Commit in RStudio
+Recode variables
+Fix missing values
+Coding good habits
 
 # Resources
 

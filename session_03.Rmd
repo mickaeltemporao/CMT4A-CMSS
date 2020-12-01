@@ -87,16 +87,15 @@ klippy::klippy()
 ...
 
 # ...
-data_url <- "https://github.com/mickaeltemporao/CMT4A-CMSS-TEMPLATE/blob/2de22f76cbeb9994395995931f8d0f9fcdec93c5/data/2016.rda?raw=true"
+data_url <- "https://github.com/mickaeltemporao/CMT4A-CMSS-TEMPLATE/raw/main/data/ts_2016.rds"
 
 # ...
-if(!file.exists("ts_2016.rda")) {
-  download.file(data_url, "ts_2016.rda")
+if(!file.exists("ts_2016.rds")) {
+  download.file(data_url, "ts_2016.rds")
 }
 
 # ...
-load("ts_2016.rda")
-dataset <- timeseries_2016
+dataset <- readRDS("ts_2016.rds")
 
 # Peek at the dataset
 ...

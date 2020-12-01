@@ -72,14 +72,14 @@ We use `.bib` files to create automated citations and references in `.Rmd` files
 
 To create a citation in a .Rmd file you combine ‘@’ + the citation key you hvae in your bibliography file (`.bib`).
 
-### Hack Time!
+# Hack Time!
 
 ```{r klippy, echo=FALSE, include=TRUE}
 klippy::klippy()
 ```
 
 ```{r eval=FALSE}
-# Session 3: Data Management 1/2 -----------------------------------------------
+# Session 3: Data Exploration --------------------------------------------------
 
 
 # Getting Started ==============================================================

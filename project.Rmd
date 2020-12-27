@@ -15,15 +15,12 @@ You are a young data scientist working for a polling agency during the 2016 Unit
 - Accept the assignment by clicking the link at the top of this page.
 
 - Your submission will consist a RMarkdown document (`.Rmd`) and a rendered PDF document (`.pdf`).
+- Your rendered PDF document is expected to be around 2500 words.
 - All data and code necessary to reproduce the project must be included in the RMarkdown document (`.Rmd`).
 - The data and analyses should be well documented and understandable to a reader.
-- The analysis code must run and reproduce the analyses as presented in the paper.
-
-
-You will discuss the challenges related to the data you are using, carry out a motivated and valid algorithmic implementation, and assess the strengths and weaknesses of your data and model(s).
-More details about the project and the deadlines will be made available in the second semester in the [Project page](tba.html).
-
-
+- The RMarkdown document must knit and reproduce all the analyses as presented in the PDF document (`.pdf`).
+- Use visualizations where possible to illustrate your results.
+- Discuss the challenges related to the data and assess the strengths and weaknesses of your data and algorithm.
 
 
 The project will be evaluated on the appropriateness of the statistical methods applied to the data and question, and not the novelty or contribution of the question itself.

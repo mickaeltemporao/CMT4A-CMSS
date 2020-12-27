@@ -1,12 +1,34 @@
 ---
 title: "Project"
-subtitle: "Instructions"
+subtitle: "**Due Date:** April 25, 2020, 23:59 CET"
+author: "[Accept assignment here]()"
 ---
 
-## Research project (40%)
-Students are required to submit an individual research paper that uses some of the methods and tools introduced in the course.
-Your project will introduce a motivated forecasting machine learning model of the 2020 United States Presidential election.
+**Objective:** Articulate political science theories, statistical and computational methods in a reproducible research project. You will demonstrate that you can effectively combine prose, code, and results to answer a research question.
+
+# Context
+
+You are a young data scientist working for a polling agency during the 2016 United States Presidential election. You are tasked to forecast individual level voting intentions. You were provided with a pre-election survey (ANES 2016). You are expected to submit an end to end research project of (~2500 words) that introduces a machine learning algorithm predicting voting intentions based on the dataset. The project can use any of the methods introduced during the course and any of the variables available in the pre-election survey of the 2016 ANES Dataset. You will explain the methods and the variables you choose to incorporate in your algorithm and why those are appropriate to predict voting intentions. You can use theory or data to motivate your choices. You will also discuss the assumptions made by the methods and the data and the limits of what we can learn from your project.
+
+# Instructions
+
+- Accept the assignment by clicking the link at the top of this page.
+
+- Your submission will consist a RMarkdown document (`.Rmd`) and a rendered PDF document (`.pdf`).
+- All data and code necessary to reproduce the project must be included in the RMarkdown document (`.Rmd`).
+- The data and analyses should be well documented and understandable to a reader.
+- The analysis code must run and reproduce the analyses as presented in the paper.
+
+
 You will discuss the challenges related to the data you are using, carry out a motivated and valid algorithmic implementation, and assess the strengths and weaknesses of your data and model(s).
 More details about the project and the deadlines will be made available in the second semester in the [Project page](tba.html).
+
+
+
+
+The project will be evaluated on the appropriateness of the statistical methods applied to the data and question, and not the novelty or contribution of the question itself.
+
+The final output of this project will use methods and introduced in this course to answer a well-defined research question (descriptive, predictive, or causal). The final product will be a reproducible R Markdown document combining code and description.
+
 
 

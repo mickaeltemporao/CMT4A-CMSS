@@ -1,5 +1,6 @@
 ---
 title: "Project"
+subtitle: "Instructions"
 ---
 
 ## Research project (40%)

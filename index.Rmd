@@ -23,7 +23,7 @@ This course introduces students to the building blocks of machine learning and a
 ## Participation (30%)
 Participation is divided into three parts: activities, live demos, and a-sync participation.
 
-- **Activities:** Students are expected to do the weekly practice activities in DataCamp in order to come prepared for the next session. The goal is to provide students with opportunities to continuously practice and learn incrementally. Before the first session you should have received an email invitation to the course on DataCamp.
+- **Activities:** Students are expected to practice every week in DataCamp in order to be prepared for the live sessions. The goal is to provide students with opportunities to continuously practice and learn incrementally. Before the first session you should have received an email invitation to the course on DataCamp.
 
 - **Live demos:** Students are expected to do a live demo that helps the class understand a topic during a session. A demo is an hands-on demonstration that introduces a programming or a statistical concept and illustrates how to use it through an example in RStudio. Each demo should last no longer than 10 minutes.
 

@@ -17,9 +17,10 @@ This schedule is an approximation, subject to change due needs of the students i
 | 2021/01/21   | 2021/01/28   | 5. Supervised Methods 1                  | Solène, Apolline | Nathan, Elias    |
 | 2021/02/04   | 2021/02/11   | 6. Supervised Methods 2                  | Julie De., Jean  | Clem, Louison    |
 | 2021/02/25   | 2021/03/04   | 7. Unsupervised Methods 1                | Alice, Jeanne    | Thomas, Jade     |
-| *2021/03/13* | *2021/03/13* | *Mid-Term Exam *                         | *Mid-Term Exam * | *Mid-Term Exam * |
+| **2021/03/13** | **2021/03/13** | **Mid-Term Exam**                          | **Mid-Term Exam ** | **Mid-Term Exam ** |
 | 2021/03/11   | 2021/03/18   | 8. Unsupervised Methods 2                | -                | Mélanie, Anaïs   |
 | 2021/03/25   | 2021/04/01   | 9. Machine Learning 1                    | -                | Nina             |
+| **2021/04/25** | **2021/04/25** | **Final Project**                          | **Final Project**  | **Final Project**  |
 
 
 # Session Overview

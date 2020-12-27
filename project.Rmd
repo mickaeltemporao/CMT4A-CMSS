@@ -4,28 +4,43 @@ subtitle: "**Due Date:** April 25, 2020, 23:59 CET"
 author: "[Accept assignment here]()"
 ---
 
-**Objective:** Articulate political science theories, statistical and computational methods in a reproducible research project. You will demonstrate that you can effectively combine prose, code, and results to answer a research question.
+# Objective
+
+Articulate political science theories, statistical and computational methods in a reproducible research project. You will demonstrate that you can effectively combine prose, code, and results to answer a research question.
 
 # Context
 
-You are a young data scientist working for a polling agency during the 2016 United States Presidential election. You are tasked to forecast individual level voting intentions. You were provided with a pre-election survey (ANES 2016). You are expected to submit an end to end research project of (~2500 words) that introduces a machine learning algorithm predicting voting intentions based on the dataset. The project can use any of the methods introduced during the course and any of the variables available in the pre-election survey of the 2016 ANES Dataset. You will explain the methods and the variables you choose to incorporate in your algorithm and why those are appropriate to predict voting intentions. You can use theory or data to motivate your choices. You will also discuss the assumptions made by the methods and the data and the limits of what we can learn from your project.
+You are a young data scientist working for a polling agency during the 2016 United States Presidential election. You are tasked to forecast individual level voting intentions using the ANES 2016 dataset. You are expected to submit an end to end research project of that introduces a machine learning algorithm predicting voting intentions using only the pre-election variables in the ANES 2016 dataset. The project can use any of the methods introduced during the course and only the variables available in the pre-election survey of the 2016 ANES dataset. You will explain the methods and the variables you choose to incorporate in your algorithm and why those are appropriate to predict voting intentions. You can use theory or data to motivate your choices. You will also discuss the assumptions made by the methods and the data and the limits of what we can learn from your project.
 
 # Instructions
 
-- Accept the assignment by clicking the link at the top of this page.
+Your submission will consist of a RMarkdown document (`.Rmd`), a bibliography file (`.bib`) and a rendered PDF document (`.pdf`).
 
-- Your submission will consist a RMarkdown document (`.Rmd`) and a rendered PDF document (`.pdf`).
-- Your rendered PDF document is expected to be around 2500 words.
-- All data and code necessary to reproduce the project must be included in the RMarkdown document (`.Rmd`).
-- The data and analyses should be well documented and understandable to a reader.
-- The RMarkdown document must knit and reproduce all the analyses as presented in the PDF document (`.pdf`).
-- Use visualizations where possible to illustrate your results.
-- Discuss the challenges related to the data and assess the strengths and weaknesses of your data and algorithm.
+**The RMarkdown script**:
+- Contains all the code necessary to reproduce the project.
+    - Loads, cleans and prepares the dataset.
+    - Makes summary statistics and appropriate visualizations of the distributions of the target variable and explanatory variables you expect to use.
+    - Uses code chunks and in-line code that is understandable to the reader.
+    - Uses prose to describe the algorithmic implementation and variable choices to the reader.
+    - Uses relevant citations when appropriate and ground the project theoretically.
+    - The document successfully knits.
 
+**The PDF document:**
+- Your rendered PDF document is expected to be no longer than 2500 words.
 
-The project will be evaluated on the appropriateness of the statistical methods applied to the data and question, and not the novelty or contribution of the question itself.
+- Discusses the challenges related to the data and assess the strengths and weaknesses of your data and algorithm.
 
 The final output of this project will use methods and introduced in this course to answer a well-defined research question (descriptive, predictive, or causal). The final product will be a reproducible R Markdown document combining code and description.
 
+# Evaluation
 
+The project will be evaluated on
+effective use of code
+valid algorithmic implementation
+You can use theory or data to motivate your choices.
+
+the appropriateness of the statistical methods applied to the data
+discussion of the assumptions made by those methods and the limits of what
+
+and question, and not the novelty or contribution of the question itself.
 

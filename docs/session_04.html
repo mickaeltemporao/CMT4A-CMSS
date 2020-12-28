@@ -11,7 +11,7 @@
 
 
 
-<title>Session 3: Data Management</title>
+<title>Session 4: Data Management</title>
 
 <script src="site_libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -497,90 +497,96 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Session 3: Data Management</h1>
+<h1 class="title toc-ignore">Session 4: Data Management</h1>
 <h3 class="subtitle">Learning Objectives:</h3>
 
 </div>
 
 
 <ul>
-<li>Learn how to explore, transform and visualize real world data.</li>
-<li>Become familiar with citations and bibliographies in Rmarkdown.</li>
-<li>Conduct exploratory data analysis (EDA) in Rmarkdown documents.</li>
+<li>Transform, recode, and create variables.</li>
+<li></li>
+<li></li>
 </ul>
-<p>Commit in RStudio Recode variables Fix missing values Coding good habits</p>
-<p>data types</p>
-<p>discrete continuous num cat ord binary dummy</p>
-<p>how to viz</p>
+<div id="recode-variables" class="section level2">
+<h2>Recode variables</h2>
+</div>
+<div id="fix-missing-values" class="section level2">
+<h2>Fix missing values</h2>
+</div>
+<div id="coding-good-habits" class="section level2">
+<h2>Coding good habits</h2>
+</div>
+<div id="section" class="section level2">
+<h2></h2>
+</div>
+<div id="path" class="section level2">
+<h2>Path</h2>
+</div>
+<div id="section-1" class="section level2">
+<h2></h2>
+</div>
+<div id="section-2" class="section level2">
+<h2></h2>
+</div>
+<div id="data-types" class="section level2">
+<h2>Data types</h2>
+</div>
+<div id="section-3" class="section level2">
+<h2></h2>
+</div>
+<div id="discrete-continuous" class="section level2">
+<h2>Discrete continuous</h2>
+</div>
+<div id="num" class="section level2">
+<h2>num</h2>
+</div>
+<div id="cat" class="section level2">
+<h2>cat</h2>
+</div>
+<div id="ord" class="section level2">
+<h2>ord</h2>
+</div>
+<div id="binary" class="section level2">
+<h2>binary</h2>
+</div>
+<div id="dummy" class="section level2">
+<h2>dummy</h2>
+</div>
+<div id="section-4" class="section level2">
+<h2></h2>
+</div>
+<div id="how-to-viz" class="section level2">
+<h2>How to viz</h2>
+</div>
+<div id="commit-in-rstudio" class="section level2">
+<h2>Commit in RStudio</h2>
+</div>
 <div id="resources" class="section level1">
 <h1>Resources</h1>
 <div id="cheatsheets" class="section level2">
 <h2>Cheatsheets</h2>
-<ul>
-<li><a href="https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf">Data transformation</a></li>
-<li><a href="https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf">Data Visualization</a></li>
-</ul>
 </div>
 <div id="readings" class="section level2">
 <h2>Readings</h2>
-<ul>
-<li><a href="https://r4ds.had.co.nz/transform.html">Data transformation</a></li>
-<li><a href="https://r4ds.had.co.nz/data-visualisation.html">Data visualisation</a></li>
-<li><a href="https://r4ds.had.co.nz/r-markdown.html#bibliographies-and-citations">Bibliographies and Citations</a></li>
-</ul>
 </div>
 <div id="practice" class="section level2">
 <h2>Practice</h2>
-<ul>
-<li><a href="https://campus.datacamp.com/courses/introduction-to-the-tidyverse">Introduction do the Tidyverse</a></li>
-</ul>
 </div>
 </div>
 <div id="exploratory-data-analysis-eda" class="section level1">
 <h1>Exploratory Data Analysis (EDA)</h1>
-<p>Before creating statistical models we need to become familiar with the data we have. This preliminary approach meant to uncover the structure of the data is also known as exploratory data analysis (EDA). We will use real world data to learn basic EDA manipulations.</p>
-<p><img src="https://d33wubrfki0l68.cloudfront.net/571b056757d68e6df81a3e3853f54d3c76ad6efc/32d37/diagrams/data-science.png" /></p>
-<p>The American National Election Study from 2016 (ANES 2016), a popular dataset often used to study public opinion and political behaviour, will be used throughout this and future sessions. Have you notices that this is the dataset you have been using in your challenges?</p>
-<ul>
-<li>Download the User Guide and Codebook: <a href="https://electionstudies.org/data-center/2016-time-series-study/" class="uri">https://electionstudies.org/data-center/2016-time-series-study/</a></li>
-</ul>
 <div id="exploration-basics" class="section level2">
 <h2>Exploration Basics</h2>
-<p>We use basic R functions to quickly peek at the data.</p>
-<ul>
-<li><code>class()</code> returns the class of an object.</li>
-<li><code>dim()</code> returns the dimension of an object.</li>
-<li><code>head()</code> returns the first elements of the object.</li>
-<li><code>names()</code> returns the names of an object.</li>
-<li><code>str()</code> returns the structure of an object.</li>
-<li><code>table()</code> returns the counts at each combination.</li>
-<li><code>summary()</code> returns the result summaries of the object.</li>
-</ul>
 </div>
 <div id="data-wrangling" class="section level2">
 <h2>Data Wrangling</h2>
-<p>We use <code>dplyr</code>’s verbs to solve common data manipulation challenges.</p>
-<ul>
-<li><code>select()</code> picks variables based on their names.</li>
-<li><code>filter()</code> picks cases based on their values.</li>
-<li><code>mutate()</code> adds new variables that are functions.</li>
-<li><code>arrange()</code> changes the ordering of the rows.</li>
-<li><code>rename()</code> changes the name of individual variables.</li>
-</ul>
 </div>
 <div id="data-visualization" class="section level2">
 <h2>Data Visualization</h2>
-<p>We use the <code>ggplot2</code> package to create visualizations or figures.</p>
-<ul>
-<li><code>ggplot()</code> initializes a figure (ggplot object).</li>
-<li><code>aes()</code> defines how variables are mapped in a figure.</li>
-<li><code>geom_***()</code> adds new variables that are functions.</li>
-</ul>
 </div>
 <div id="reporting" class="section level2">
 <h2>Reporting</h2>
-<p>We use <code>.bib</code> files to create automated citations and references in <code>.Rmd</code> files.</p>
-<p>To create a citation in a .Rmd file you combine ‘@’ + the citation key you hvae in your bibliography file (<code>.bib</code>).</p>
 <div id="hack-time" class="section level3">
 <h3>Hack Time!</h3>
 <script>
@@ -787,7 +793,7 @@ div.tocify {
 <h2>Some subtitle</h2>
 <div id="hack-time-2" class="section level3">
 <h3>Hack Time!</h3>
-<div id="section" class="section level4">
+<div id="section-5" class="section level4">
 <h4></h4>
 </div>
 </div>

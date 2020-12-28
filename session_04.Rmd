@@ -1,80 +1,53 @@
 ---
-title: "Session 3: Data Management"
+title: "Session 4: Data Management"
 subtitle: "Learning Objectives:"
 ---
 
-- Learn how to explore, transform and visualize real world data.
-- Become familiar with citations and bibliographies in Rmarkdown.
-- Conduct exploratory data analysis (EDA) in Rmarkdown documents.
+- Transform, recode, and create variables.
+-
+-
 
-Commit in RStudio
-Recode variables
-Fix missing values
-Coding good habits
+## Recode variables
+## Fix missing values
+## Coding good habits
+##
+## Path
+##
+##
+## Data types
+##
+## Discrete continuous
+## num
+## cat
+## ord
+## binary
+## dummy
+##
+## How to viz
+
+## Commit in RStudio
 
 # Resources
 
 ## Cheatsheets
-- [Data transformation](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf)
-- [Data Visualization](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
 
 ## Readings
-- [Data transformation](https://r4ds.had.co.nz/transform.html)
-- [Data visualisation](https://r4ds.had.co.nz/data-visualisation.html)
-- [Bibliographies and Citations](https://r4ds.had.co.nz/r-markdown.html#bibliographies-and-citations)
 
 ## Practice
 
-- [Introduction do the Tidyverse](https://campus.datacamp.com/courses/introduction-to-the-tidyverse)
+
+
 
 
 # Exploratory Data Analysis (EDA)
 
-Before creating statistical models we need to become familiar with the data we have. This preliminary approach meant to uncover the structure of the data is also known as exploratory data analysis (EDA). We will use real world data to learn basic EDA manipulations.
-
-![](https://d33wubrfki0l68.cloudfront.net/571b056757d68e6df81a3e3853f54d3c76ad6efc/32d37/diagrams/data-science.png "")
-
-
-The American National Election Study from 2016 (ANES 2016), a popular dataset often used to study public opinion and political behaviour, will be used throughout this and future sessions. Have you notices that this is the dataset you have been using in your challenges?
-
-- Download the User Guide and Codebook: https://electionstudies.org/data-center/2016-time-series-study/
-
 ## Exploration Basics
-
-We use basic R functions to quickly peek at the data.
-
-- `class()` returns the class of an object.
-- `dim()` returns the dimension of an object.
-- `head()` returns the first elements of the object.
-- `names()` returns the names of an object.
-- `str()` returns the structure of an object.
-- `table()` returns the counts at each combination.
-- `summary()` returns the result summaries of the object.
-
 
 ## Data Wrangling
 
-We use `dplyr`'s verbs to solve common data manipulation challenges.
-
-- `select()` picks variables based on their names.
-- `filter()` picks cases based on their values.
-- `mutate()` adds new variables that are functions.
-- `arrange()` changes the ordering of the rows.
-- `rename()` changes the name of individual variables.
-
 ## Data Visualization
 
-We use the `ggplot2` package to create visualizations or figures.
-
-- `ggplot()` initializes a figure (ggplot object).
-- `aes()` defines how variables are mapped in a figure.
-- `geom_***()` adds new variables that are functions.
-
 ## Reporting
-
-We use `.bib` files to create automated citations and references in `.Rmd` files.
-
-To create a citation in a .Rmd file you combine ‘@’ + the citation key you hvae in your bibliography file (`.bib`).
 
 ### Hack Time!
 

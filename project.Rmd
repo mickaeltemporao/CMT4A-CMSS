@@ -1,0 +1,60 @@
+---
+title: "Project"
+subtitle: "**Due Date:** April 25, 2020, 23:59 CET"
+author: "[-> Accept assignment <- ](https://classroom.github.com/a/9zAyI8FJ)"
+---
+
+# Objective
+
+Articulate political science theories, statistical and computational methods in a reproducible research project. You will demonstrate that you can effectively combine prose, code, and results to answer a research question.
+
+# Context
+
+You are a young data scientist working for a polling agency during the 2016 United States Presidential election. You are tasked to forecast individual level voting intentions using the ANES 2016 dataset. You are expected to submit an end to end research project of that introduces a machine learning algorithm predicting voting intentions using only the pre-election variables in the ANES 2016 dataset. The project can use any of the methods introduced during the course and only the variables available in the pre-election survey of the 2016 ANES dataset. You will explain the methods and the variables you choose to incorporate in your algorithm and why those are appropriate to predict voting intentions. You can use theory or data to motivate your choices. You will also discuss the assumptions made by the methods and the data and the limits of what we can learn from your project.
+
+# Instructions
+
+The project starter code will be automatically created for you when you accept the assignment.
+
+Your submission will consist of at least three files:
+
+1. a RMarkdown script (`.Rmd`),
+2. a bibliography file (`.bib`) and
+3. a rendered PDF document (`.pdf`)
+
+**The RMarkdown script**:
+
+- Contains all the code necessary to reproduce the project.
+- Uses code chunks and in-line code that is understandable to the reader.
+- Loads, cleans and prepares the data.
+- Makes summary statistics and appropriate visualizations of the target variable and explanatory variables you expect to use.
+- Trains an algorithm using the selected variables in the ANES 2016 pre-election dataset.
+- Uses the trained algorithm to make predictions of the voting intentions.
+- Evaluates and summarises the performance of the algorithm compared to the actual voting intentions and the actual vote.
+    - You will use appropriate tables and visualizations.
+- Uses prose to describe the algorithmic implementation and variable choices to the reader.
+    - You will discuss the strengths and weaknesses of the data and the algorithm.
+    - You will discuss the differences, if any, between the algorithm performance compared to actual voting intentions and actual vote.
+- Uses relevant citations when appropriate and ground the project theoretically.
+- Contains a bibliography section with the all the used references.
+- The script successfully knits.
+
+**The bibliography file:**
+
+- Contains all the used references
+- The references are properly used in the main RMarkdown script
+
+**The PDF document:**
+
+- The rendered PDF document is no longer than 2500 words.
+
+# Evaluation
+
+Your project will be evaluated based five criteria:
+
+- Algorithm:  The computational methods applied to the data are appropriate.
+- Code quality: The code is of good quality and appropriately documented.
+- Document structure: The document is well formatted and uses the right tools.
+- Expression: The methods used and the variables selected or created are properly motivated using theory and empirics.
+- Originality: The algorithmic implementation is original and uses a good depth of course material.
+

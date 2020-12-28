@@ -2,23 +2,25 @@
 title: "Schedule"
 ---
 
-The course is divided into dedicated 9 sessions. The sessions in the first semester are each 3 hour sessions and 1h30 afterwards. Learning computational methods requires recurrent practice. All activities and challenges are meant to help you keep practicing. For the various challenges and projects, due dates are always related to each group's respective sessions.
+The course is divided into 9 live sessions. The first three sessions are 3 hour sessions. The last six sessions are 1 hour 30 minutes each. Learning computational methods requires continuous practice. All activities and challenges are meant to help you keep practicing. For the various challenges and projects, due dates are always related to each group's respective sessions.
 
 # Overview
 
 This schedule is an approximation, subject to change due needs of the students in the course. Students will be informed of changes to the schedule.
 
-| Group A    | Group B    | Theme                                    | Demo A           | Demo B         |
-| -          | -          | -                                        | -                | -              |
-| 2020/11/02 | 2020/11/09 | 1. [Introduction](session_01.html)       | -                | -              |
-| 2020/11/16 | 2020/11/23 | 2. [Programming basics](session_02.html) | Bertille, Lison  | -              |
-| 2020/11/30 | 2020/12/07 | 3. [Data Exploration](session_03.html)   | Colum, Julie Du. | Marie, Tess    |
-| 2021/01/07 | 2021/01/14 | 4. Data Management                       | Héloïse, Ronan   | Darius, Hugo   |
-| 2021/01/21 | 2021/01/28 | 5. Supervised Methods 1                  | Solène, Apolline | Nathan, Elias  |
-| 2021/02/04 | 2021/02/11 | 6. Supervised Methods 2                  | Julie De., Jean  | Clem, Louison  |
-| 2021/02/25 | 2021/03/04 | 7. Unsupervised Methods 1                | Alice, Jeanne    | Thomas, Jade   |
-| 2021/03/11 | 2021/03/18 | 8. Unsupervised Methods 2                | -                | Mélanie, Anaïs |
-| 2021/03/25 | 2021/04/01 | 9. Machine Learning 1                    | -                | Nina           |
+| Group A      | Group B      | Theme                                    | Demo A           | Demo B           |
+| -            | -            | -                                        | -                | -                |
+| 2020/11/02   | 2020/11/09   | 1. [Introduction](session_01.html)       | -                | -                |
+| 2020/11/16   | 2020/11/23   | 2. [Programming basics](session_02.html) | Bertille, Lison  | -                |
+| 2020/11/30   | 2020/12/07   | 3. [Data Exploration](session_03.html)   | Colum, Julie Du. | Marie, Tess      |
+| 2021/01/07   | 2021/01/14   | 4. Data Management                       | Héloïse, Ronan   | Darius, Hugo     |
+| 2021/01/21   | 2021/01/28   | 5. Supervised Methods 1                  | Solène, Apolline | Nathan, Elias    |
+| 2021/02/04   | 2021/02/11   | 6. Supervised Methods 2                  | Julie De., Jean  | Clem, Louison    |
+| 2021/02/25   | 2021/03/04   | 7. Unsupervised Methods 1                | Alice, Jeanne    | Thomas, Jade     |
+| **2021/03/13** | **2021/03/13** | **Mid-Term Exam**                          | **Mid-Term Exam ** | **Mid-Term Exam ** |
+| 2021/03/11   | 2021/03/18   | 8. Unsupervised Methods 2                | -                | Mélanie, Anaïs   |
+| 2021/03/25   | 2021/04/01   | 9. Machine Learning 1                    | -                | Nina             |
+| **2021/04/25** | **2021/04/25** | **Final Project**                          | **Final Project**  | **Final Project**  |
 
 
 # Session Overview

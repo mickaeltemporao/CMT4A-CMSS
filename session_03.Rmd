@@ -12,7 +12,7 @@ subtitle: "Learning Objectives:"
 
 ## Cheatsheets
 - [Data transformation](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf)
-- [Data Visualization](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
+- [Data visualization](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
 
 ## Readings
 - [Data transformation](https://r4ds.had.co.nz/transform.html)

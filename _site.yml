@@ -14,7 +14,7 @@ navbar:
       href: challenges.html
       icon: fa-chess fa-lg
     - text: "Project"
-      href: tba.html
+      href: project.html
       icon: fa-file-code fa-lg
     - text: "Onboarding"
       href: onboarding.html

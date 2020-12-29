@@ -3,178 +3,211 @@ title: "Session 4: Data Management"
 subtitle: "Learning Objectives:"
 ---
 
-- Transform, recode, and create variables.
--
--
+- Learn to recode, transform and create new useful variables.
+- Learn to group and summarise data into useful bits of information.
+- Learn how to report and visualize different types of data.
 
-## Recode variables
-## Fix missing values
-## Coding good habits
-##
-## Path
-##
-##
-## Data types
-##
-## Discrete continuous
-## num
-## cat
-## ord
-## binary
-## dummy
-##
-## How to viz
-
-## Commit in RStudio
 
 # Resources
 
 ## Cheatsheets
 
+- [Data transformation](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf)
+- [Data visualization](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
+
 ## Readings
+- [Exploratory Data Analysis](https://r4ds.had.co.nz/exploratory-data-analysis.html)
 
 ## Practice
 
+- [Data visualization with ggplot2](https://learn.datacamp.com/courses/introduction-to-data-visualization-with-ggplot2)
+- [Exploratory Data Analysis](https://learn.datacamp.com/courses/exploratory-data-analysis-in-r)
+- [Data Cleaning](https://learn.datacamp.com/courses/cleaning-data-in-r)
 
 
+# Data Management
+
+Once we know more about our dataset, it is time to more fix the identified flaws in the data and begin to extract useful insights. We continue the explore, transform and visualize loop to learn more from the data and create useful variables also known as features. This process can easily take 80% or more of a researcher's time.
+
+We will continue to use dplyr's verbs to manipulate the data.
+
+- `select()` picks variables based on their names.
+- `filter()` picks cases based on their values.
+- `mutate()` adds new variables that are functions.
+- `arrange()` changes the ordering of the rows.
+- `rename()` changes the name of individual variables.
+
+We will focus on data aggregation functions:
+
+- `summary()` produces result summaries based on the class of the object.
+- `groub_by()` group by one or more variables.
+- `summarise()` summarise each group to fewer rows.
+
+![](https://uw-madison-datascience.github.io/2019-09-11-uwmadison-dc/slides/dplyr/dplyr-4.png "")
 
 
-# Exploratory Data Analysis (EDA)
+## Types of data
 
-## Exploration Basics
+We have seen that there are different types of data in R (numeric, character, factor, logical, ...). In the real world, we can group data in two broad families:
 
-## Data Wrangling
+**Discrete** data can only take a finite number of values.
 
-## Data Visualization
+- eg. The number of students in a class.
 
-## Reporting
+**Continuous** data can take an infinite number of values.
 
-### Hack Time!
+- eg. The height of a student.
+
+## Levels of Measurement
+
+We can further divide each of these data types into four families:
+
+**Nominal:** Differences of kind. There is no mathematical relationship between the values.
+
+eg. Political parties.
+
+**Ordinal:** Differences of degree. There is a mathematical relationships among the values. Symbols like <, ≤, =, ≥, and > have meaning but the distance between two elements is not constant.
+
+eg. Levels of education.
+
+**Interval:** There is a mathematical relationship among the elements and the distance between them is constant but they do not have a meaningful zero value.
+
+eg. Feelings thermometer (0 to 100).
+
+**Ratio:** Similar to the interval variables but they have a meaningful zero value.
+
+eg. Feelings thermometer (-50 to 50)
+
+We can notice that each subsequent level of measurement has the properties of levels before it. For more details on this see [Chapter 1, Siegel, 2013](https://press.princeton.edu/books/paperback/9780691159171/a-mathematics-course-for-political-and-social-research).
+
+Understanding these variable types helps us recode the variables in our datasets into their appropriate types in order to extract proper insights or create useful features for our predictive models. To recode the variables we will often use a combination of functions such as:
+
+- `mutate()`
+- `as.numeric()`
+- `as.character(`)
+- `as.factor()`
+- `as.logical()`
+
+# Hack Time!
 
 ```{r klippy, echo=FALSE, include=TRUE}
 klippy::klippy()
 ```
 
 ```{r eval=FALSE}
-# Session 3: Data Management 1/2 -----------------------------------------------
-
-# Data Wrangling ===============================================================
-
-# Getting Started ##############################################################
-# Load the tidyverse package
+# Session 4: Data Management  --------------------------------------------------
+# Load required libraries
 library(tidyverse)
-...
 
-# ...
-data_url <- "https://github.com/mickaeltemporao/CMT4A-CMSS-TEMPLATE/blob/main/data/ts_2016.rds"
+# Identify the path to the `ts_2016.rds` dataset on your machine
+data_path <- "..."
+data_path <- "../template/data/ts_2016.rds"
 
-# ...
-if(!file.exists("ts_2016.rds")) {
-  download.file(data_url, "ts_2016.rds")
-}
-
-# ...
-dataset <- readRDS("ts_2016.rds")
-
-# Check the dataset
-
-# TIP: Always check your variables using exploration basics!
-# class()    returns the class of an object.
-# dim()      returns the dimension of an object.
-# head()     returns the first elements of an object.
-# names()    returns the names of an object.
-# str()      returns the structure of an object.
-# table()    returns the counts at each combination.
-# summary()  returns the result summaries of an object.
-
-# class, head, dim, etc.
-...
+# Read your data and save it into an object called `dataset`
+dataset <- ...
+dataset <- readRDS(data_path)
 
 
-# The Select Verb & The Pipe ###################################################
-
-# ...
-dataset %>%
-  select(V161005, V161267, V161126, V161031, V161155)
-
-# Whare are theses variables?
-...
-
-# Select a single variable
-...
-
-# Select the previous 5 variables and store them into a new object called `tmp_data`
-...
+# Let's work on a subset of the dataset with meaningful names
 tmp_data <- dataset %>%
-  select(V161005, V161267, V161126, V161031, V161155)
+  select(
+    V161031,  # vote_intent
+    V161086,  # ft_democrat
+    V161087,  # ft_republican
+    V161126,  # ideology
+    V161181,  # defense
+    V161184,  # healthcare
+    V161178,  # government
+    V161155   # party_id
+  ) %>%
+  rename(
+    "vote_intent"   = "V161031",
+    "ft_democrat"   = "V161086",
+    "ft_republican" = "V161087",
+    "ideology"      = "V161126",
+    "defense"       = "V161181",
+    "healthcare"    = "V161184",
+    "government"    = "V161178",
+    "party_id"      = "V161155"
+  )
 
-# The Filter Verb ##############################################################
-# Keep only respondents who casted a vote in 2012
-dataset %>%
-  filter(V161005 == 1)
-
-# Keep respondents below 25 years old
+# Peek at the newly created dataset
 ...
-dataset %>%
-  filter(V161267 < 25)
+head(tmp_data)
 
-# Keep respondents below 25 years who are not missing and casted a vote
+# Plot the vote_intent variable
+  ggplot(tmp_data, aes(x=...)) +
+  geom_bar()
+
+# Drop the missing values for vote_intent and save it into a new object
 ...
-tmp_data <- dataset %>%
-  filter(between(V161267, 1, 25))
+vote_clean <- tmp_data %>%
+  select(vote_intent) %>%
+  filter(vote_intent>0)
 
-# Select the previous 5 variables,
-# filter the age variable by removing missing values
-# and store the output into a new object called `tmp_data`
+# What is the current class of this variable? And is this class appropriate?
 ...
-tmp_data <- dataset %>%
-  select(V161005, V161267, V161126, V161031, V161155) %>%
-  filter(between(V161267, 1, 98))
+class(tmp_data$vote_intent)
 
-
-# The Arrange Verb #############################################################
-# Sort respondents by age
-tmp_data %>%
-  arrange(V161267)
-
-# Select 5 variables, filter non-missing young voters and arrange observations by age
+# Pass the newly created dataset as an argument to the `summary()` function
 ...
+summary(tmp_data)
 
-# Store the output in a new object called young_voters
-...
-young_voters <- tmp_data %>%
-  arrange(V161267)
+clean data
 
-# Return young voters in descending order
-...
-tmp_data %>%
-  arrange(desc(V161267))
+makes summaries
+
+plot summaries
 
 
-# The Mutate Verb ##############################################################
-# ...
-table(young_voters$V161031)
-young_voters %>%
-  mutate(V161031 = V161031 == 1)
 
-# Create a new variable/column
-...
-table(young_voters$V161031)
-young_voters %>%
-  mutate(vote_dem = V161031 == 1) %>%
-  select(vote_dem) %>%
-  table
+# Transform the code fto make a function and use it on the other variables
 
-# Combine select, filter, mutate, and arrange
+
+
+# Fix
+  geom_text(
+    aes(label=scales::percent(..prop..), y=..prop..*100), stat="count", vjust = -.5
+  ) +
+  ylab("Percentage (%)") +
+  xlab("Candidates") +
+  theme_minimal() +
+  theme(legend.position="none") +
+  scale_x_discrete(
+    limits=c("1"="H. Clinton", "2"="D. Trump", "3"="G. Johnson", "4"="J. Stein")
+  ) +
+  scale_fill_brewer(limits=c("2", "1", "4", "3"), palette="Set1")
 ...
 
-# The Rename Verb ##############################################################
-# ...
-young_voters %>%
-  rename(vote_intention = V161031)
 
-# Rename V161005 with a meaningful name
+
+
+
+
+# What are the types of the variables in `tmp_data`
+
 ...
+sapply(tmp_data, class)
+
+# Let's fix the types
+tmp_data <- tmp_data %>%
+  mutate(
+  ...
+  )
+
+tmp_data <- tmp_data %>%
+  mutate(
+    "vote_intent"   = "V161031",
+    "ft_democrat"   = "V161086",
+    "ft_republican" = "V161087",
+    "ideology"      = "V161126",
+    "defense"       = "V161181",
+    "healthcare"    = "V161184",
+    "government"    = "V161178",
+    "party_id"      = "V161155"
+  )
+
+# Make a function to clean
 
 # Create meaningful names for each of the 5 variables in tmp_data and save them.
 ...
@@ -188,83 +221,9 @@ tmp_data <- tmp_data %>%
   )
 
 
-# Data Visualization ===========================================================
-# ggplot basic functions #######################################################
-
-# ...
-ggplot(dataset, aes(V161267)) +
-  geom_bar()
-
-# Filter the data and plot again
-...
-ggplot(filter(dataset, between(V161267, 1, 90)), aes(V161267)) +
-  geom_bar()
-
-# Add meaningful x and y axis labels
-...
-ggplot(filter(dataset, between(V161267, 1, 90)), aes(V161267)) +
-  geom_bar() +
-  labs(x="test", y="test2")
-
-# Make a barplot of the ideological self-placement variable
-...
-ggplot(filter(tmp_data, between(left_right, 1,7)), aes(left_right)) +
-  geom_bar()
-
-# Explore the relationship between ideology and age using a scatter plot.
-...
-ggplot(filter(tmp_data, between(left_right, 1,7)), aes(x=left_right, y=age)) +
-  geom_point()
-
-# Explore the relationship between ideology and age using box plots.
-# WARNING: We will need to fix the variable type!
-...
-ggplot(filter(tmp_data, between(left_right, 1,7)), aes(x=as.factor(left_right), y=age)) +
-  geom_boxplot()
-
-# Explore the relationship between age and voting participation
-...
-ggplot(filter(tmp_data), aes(x=as.factor(vote_part), y=age)) +
-  geom_boxplot()
-
-# Add meaningful x- and y-axis labels
-...
-
-# Bonus: Themes
-# see https://ggplot2.tidyverse.org/reference/ggtheme.html
-
 ```
 
 
 # Requirements
-- Complete [Challenge 2: Functioning Functions](https://classroom.github.com/a/6ConAKQs)
-
-
-
-# Data aggregation
-## Some subtitle
-### Hack Time!
-
-```{r eval=FALSE}
-```
-
-
-# More plots
-## Some subtitle
-### Hack Time!
-
-```{r eval=FALSE}
-```
-
-####
-
-
-# Next week
-https://r4ds.had.co.nz/tidy-data.html
-
-change variable types
-
-Challenge identify the names of the variables
-
-https://r4ds.had.co.nz/exploratory-data-analysis.html
+- Complete [Challenge 3: The Explorer](https://classroom.github.com/a/f4bspIRM)
 

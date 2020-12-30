@@ -3,9 +3,9 @@ title: "Session 3: Data Exploration"
 subtitle: "Learning Objectives:"
 ---
 
-- Learn how to explore, transform and visualize real world data.
-- Become familiar with citations and bibliographies in Rmarkdown.
-- Conduct exploratory data analysis (EDA) in Rmarkdown documents.
+- Learn to explore and get familiar with a dataset
+- Learn how include figures in Rmarkdown files.
+- Learn to use citations and bibliographies in Rmarkdown files.
 
 
 # Resources
@@ -24,7 +24,7 @@ subtitle: "Learning Objectives:"
 - [Introduction do the Tidyverse](https://campus.datacamp.com/courses/introduction-to-the-tidyverse)
 
 
-# EDA
+# Data Exploration
 
 Before creating statistical models we need to become familiar with the data we have. This preliminary approach meant to uncover the structure of the data is also known as exploratory data analysis (EDA). We will use real world data to learn basic EDA manipulations.
 

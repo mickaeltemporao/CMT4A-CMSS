@@ -96,29 +96,29 @@ klippy::klippy()
 
 ```{r eval=FALSE}
 # Session 4: Data Management  --------------------------------------------------
-# Load required libraries
-library(tidyverse)
 
-# Identify the path to the `ts_2016.rds` dataset on your machine
+# Getting Started ==============================================================
+# Load the tidyverse package
+...
+
+# Identify the path to a `ts_2016.rds` dataset on your machine
 data_path <- "..."
-data_path <- "../template/data/ts_2016.rds"
 
 # Read your data and save it into an object called `dataset`
 dataset <- ...
-dataset <- readRDS(data_path)
 
-
-# Let's work on a subset of the dataset with meaningful names
+# Let's work on a subset of the dataset using meaningful names
 tmp_data <- dataset %>%
   select(
-    V161031,  # vote_intent
-    V161086,  # ft_democrat
-    V161087,  # ft_republican
-    V161126,  # ideology
-    V161181,  # defense
-    V161184,  # healthcare
-    V161178,  # government
-    V161155   # party_id
+    V161031,   # vote_intent
+    V161086,   # ft_democrat
+    V161087,   # ft_republican
+    V161126,   # ideology
+    V161181,   # defense
+    V161184,   # healthcare
+    V161178,   # government
+    V161155,   # party_id
+    V162034a   # actual_vote
   ) %>%
   rename(
     "vote_intent"   = "V161031",
@@ -128,101 +128,175 @@ tmp_data <- dataset %>%
     "defense"       = "V161181",
     "healthcare"    = "V161184",
     "government"    = "V161178",
-    "party_id"      = "V161155"
+    "party_id"      = "V161155",
+    "actual_vote"   = "V162034a"
   )
 
-# Peek at the newly created dataset
+# Let's focus on the voting intention variable for now.
+# Peek at the variable in the newly created dataset
+head(...)
+
+# How would you do this using the tidyverse pipes?
 ...
-head(tmp_data)
 
 # Plot the vote_intent variable
-  ggplot(tmp_data, aes(x=...)) +
+  ggplot(tmp_data, aes(x = ...)) +
   geom_bar()
 
-# Drop the missing values for vote_intent and save it into a new object
-...
-vote_clean <- tmp_data %>%
-  select(vote_intent) %>%
-  filter(vote_intent>0)
+# What's wrong with this variable?
 
-# What is the current class of this variable? And is this class appropriate?
-...
-class(tmp_data$vote_intent)
-
-# Pass the newly created dataset as an argument to the `summary()` function
-...
-summary(tmp_data)
-
-clean data
-
-makes summaries
-
-plot summaries
+# The summary function can also help to see flaws in the data.
+summary(...)
 
 
+# Data Cleaning ===============================================================
+# Handle missing values and save it into a new object
+clean_data <- tmp_data %>%
+  filter(... > ...)
 
-# Transform the code fto make a function and use it on the other variables
+# Plot gain
+ggplot(clean_data, aes(x = vote_intent)) +
+geom_bar()
 
+# Note that a whole course could be given on how to handle missing values.
+# For now we are just going to filter out those observations.
 
-
-# Fix
-  geom_text(
-    aes(label=scales::percent(..prop..), y=..prop..*100), stat="count", vjust = -.5
-  ) +
-  ylab("Percentage (%)") +
-  xlab("Candidates") +
-  theme_minimal() +
-  theme(legend.position="none") +
-  scale_x_discrete(
-    limits=c("1"="H. Clinton", "2"="D. Trump", "3"="G. Johnson", "4"="J. Stein")
-  ) +
-  scale_fill_brewer(limits=c("2", "1", "4", "3"), palette="Set1")
+# What is the current class of this variable?
 ...
 
+# Is this class appropriate for this variable? If no, change its the type.
+clean_data <- tmp_data %>%
+  filter(vote_intent > 0) %>%
+  mutate(... = as . ...(...))
 
+# Let's look again
+ggplot(clean_data, aes(x=vote_intent)) +
+geom_bar()
 
+# What do the 1-8 numbers mean? Keep only what's relevant.
+clean_data <- tmp_data %>%
+  filter(vote_intent > 0, ...) %>%
+  mutate(vote_intent = as.character(vote_intent))
 
+# Check again
+ggplot(clean_data, aes(x=vote_intent)) +
+geom_bar()
 
-
-# What are the types of the variables in `tmp_data`
-
-...
-sapply(tmp_data, class)
-
-# Let's fix the types
-tmp_data <- tmp_data %>%
+# Recode the values of the variable
+clean_data <- tmp_data %>%
+  filter(vote_intent > 0, vote_intent < 5) %>%
+  mutate(vote_intent = as.character(vote_intent)) %>%
   mutate(
+    ... = recode(
+      vote_intent,
+      "1" = "...",
+      "..." = "...",
+      "..." = "...",
+      "..." = "..."
+    )
+  )
+
+# Plot again
+ggplot(clean_data, aes(x=vote_intent)) +
+geom_bar()
+
+
+# Grouping, aggregating and summarising ========================================
+
+# How can we get the exact frequencies ?
+# This is where `groub_by()` and `summarise()` will come in handy!
+
+clean_data %>%
+  group_by(...) %>%
+  summarise(... = n())
+
+# Notice that we did not save the information in an object.
+# Instead we printed the information directly in the console.
+
+vote_intent_freq <- clean_data %>%
   ...
+
+# What is the predicted vote share for each candidate using voting intentions?
+
+clean_data %>%
+  group_by(vote_intent) %>%
+  summarise(freq = n()) %>%
+  ...(
+    prop = ...
   )
 
-tmp_data <- tmp_data %>%
+# How good are those numbers relative to the actual numbers?
+# Check Wikipedia for the actual numbers and compare.
+
+# Note that if we want to reuse the information we should save it!
+# Let's do that.
+
+vote_intent_summary <- ...
+
+
+# Plotting data summaries ======================================================
+
+# Now let's make an actual plot with the percentages
+ggplot(..., aes(x=...)) +
+geom_bar()
+
+# What's wrong here?
+
+# Try again using geom_col() instead of geom_bar
+ggplot(vote_intent_summary, aes(x=vote_intent, y=...))+
+geom_...()
+
+ggplot(vote_intent_summary, aes(x=vote_intent, y=prop))+
+geom_col()
+
+# Let's quickly clean liberal-conservative self placement variable.
+clean_data <- clean_data %>%
+  filter(
+    ideology > 0,
+    ideology < 8
+  ) %>%
   mutate(
-    "vote_intent"   = "V161031",
-    "ft_democrat"   = "V161086",
-    "ft_republican" = "V161087",
-    "ideology"      = "V161126",
-    "defense"       = "V161181",
-    "healthcare"    = "V161184",
-    "government"    = "V161178",
-    "party_id"      = "V161155"
+    ideology = as. ... (...)
   )
 
-# Make a function to clean
+# Peek at the variables
+clean_data %>%
+  select(vote_intent, ideology) %>%
+  # WARNING: summary() is a different function summarise()!
+  summary()
 
-# Create meaningful names for each of the 5 variables in tmp_data and save them.
-...
-tmp_data <- tmp_data %>%
-  rename(
-    vote_part  = V161005,
-    age        = V161267,
-    left_right = V161126,
-    vote_int   = V161031,
-    party_id   = V161155
+# What is the average (mean) ideology per voting intention group?
+clean_data %>%
+  group_by(...) %>%
+  summarise(
+    ... = ...(...)
   )
 
+# Does this make sense?
 
+# Here's a more advanced way of summarizing this information visually
+# Saving intermediary means
+idl_means <- clean_data %>%
+  group_by(vote_intent) %>%
+  summarise(
+    avg = mean(ideology)
+  )
+
+ggplot(clean_data, aes(x = ideology, y = ..prop.., group=vote_intent)) +
+  geom_bar() +
+  facet_wrap(~vote_intent) +
+  geom_vline(
+    data=idl_means,
+    aes(xintercept=avg), color="red", linetype=2) +
+  scale_x_discrete(
+    limits=c("Ext. liberal", "", "", "Moderate", "", "", "Ext. conservative")
+  ) +
+  labs(
+    x = "Self placement",
+    y = "Proportion"
+  ) +
+  theme_bw()
 ```
-
 
 # Requirements
 - Complete [Challenge 3: The Explorer](https://classroom.github.com/a/f4bspIRM)

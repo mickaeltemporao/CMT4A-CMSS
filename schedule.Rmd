@@ -8,19 +8,19 @@ The course is divided into 9 live sessions. The first three sessions are 3 hour 
 
 This schedule is an approximation, subject to change due needs of the students in the course. Students will be informed of changes to the schedule.
 
-| Group A      | Group B      | Theme                                    | Demo A           | Demo B           |
-| -            | -            | -                                        | -                | -                |
-| 2020/11/02   | 2020/11/09   | 1. [Introduction](session_01.html)       | -                | -                |
-| 2020/11/16   | 2020/11/23   | 2. [Programming basics](session_02.html) | Bertille, Lison  | -                |
-| 2020/11/30   | 2020/12/07   | 3. [Data Exploration](session_03.html)   | Colum, Julie Du. | Marie, Tess      |
-| 2021/01/07   | 2021/01/14   | 4. Data Management                       | Héloïse, Ronan   | Darius, Hugo     |
-| 2021/01/21   | 2021/01/28   | 5. Supervised Methods 1                  | Solène, Apolline | Nathan, Elias    |
-| 2021/02/04   | 2021/02/11   | 6. Supervised Methods 2                  | Julie De., Jean  | Clem, Louison    |
-| 2021/02/25   | 2021/03/04   | 7. Unsupervised Methods 1                | Alice, Jeanne    | Thomas, Jade     |
-| **2021/03/13** | **2021/03/13** | **Mid-Term Exam**                          | **Mid-Term Exam ** | **Mid-Term Exam ** |
-| 2021/03/11   | 2021/03/18   | 8. Unsupervised Methods 2                | -                | Mélanie, Anaïs   |
-| 2021/03/25   | 2021/04/01   | 9. Machine Learning 1                    | -                | Nina             |
-| **2021/04/25** | **2021/04/25** | **Final Project**                          | **Final Project**  | **Final Project**  |
+| Group A        | Group B        | Theme                                    | Demo A             | Demo B             |
+| -              | -              | -                                        | -                  | -                  |
+| 2020/11/02     | 2020/11/09     | 1. [Introduction](session_01.html)       | -                  | -                  |
+| 2020/11/16     | 2020/11/23     | 2. [Programming basics](session_02.html) | Bertille, Lison    | -                  |
+| 2020/11/30     | 2020/12/07     | 3. [Data Exploration](session_03.html)   | Colum, Julie Du.   | Marie, Tess        |
+| 2021/01/07     | 2021/01/14     | 4. [Data Management](session_04.html)    | Héloïse, Ronan     | Darius, Hugo       |
+| 2021/01/21     | 2021/01/28     | 5. Data Management                       | Solène, Apolline   | Nathan, Elias      |
+| 2021/02/04     | 2021/02/11     | 6. Supervised Methods                    | Julie De., Jean    | Clem, Louison      |
+| 2021/02/25     | 2021/03/04     | 7. Supervised Methods                    | Alice, Jeanne      | Thomas, Jade       |
+| **2021/03/13** | **2021/03/13** | **Mid-Term Exam**                        | **Mid-Term Exam ** | **Mid-Term Exam ** |
+| 2021/03/11     | 2021/03/18     | 8. Model Optimization                    | -                  | Mélanie, Anaïs     |
+| 2021/03/25     | 2021/04/01     | 9. Model Optimization                    | -                  | Nina               |
+| **2021/04/25** | **2021/04/25** | **Final Project**                        | **Final Project**  | **Final Project**  |
 
 
 # Session Overview

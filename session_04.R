@@ -13,24 +13,20 @@ dataset <- readRDS(data_path)
 # Let's work on a subset of the dataset using meaningful names
 tmp_data <- dataset %>%
   select(
+    V163003,   # region
     V161031,   # vote_intent
     V161086,   # ft_democrat
     V161087,   # ft_republican
     V161126,   # ideology
-    V161181,   # defense
-    V161184,   # healthcare
-    V161178,   # government
     V161155,   # party_id
     V162034a   # actual_vote
   ) %>%
   rename(
+    "region"        = "V163003",
     "vote_intent"   = "V161031",
     "ft_democrat"   = "V161086",
     "ft_republican" = "V161087",
     "ideology"      = "V161126",
-    "defense"       = "V161181",
-    "healthcare"    = "V161184",
-    "government"    = "V161178",
     "party_id"      = "V161155",
     "actual_vote"   = "V162034a"
   )
@@ -105,17 +101,11 @@ ggplot(clean_data, aes(x=vote_intent)) +
 geom_bar()
 
 
-# Grouping, aggregating and summarising ========================================
+# Answering quesitons with group_by and summarise ==============================
 
-# How can we get the exact frequencies ?
+# How many respondents intend to vote for each candidate?
 # This is where `groub_by()` and `summarise()` will come in handy!
 clean_data %>%
-  group_by(vote_intent) %>%
-  summarise(freq = n())
-
-# Notice that we did not save the information in an object.
-# Instead we printed the information directly in the console.
-vote_intent_freq <- clean_data %>%
   group_by(vote_intent) %>%
   summarise(freq = n())
 

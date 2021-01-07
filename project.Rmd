@@ -1,6 +1,6 @@
 ---
 title: "Project"
-subtitle: "**Due Date:** April 25, 2020, 23:59 CET"
+subtitle: "**Due Date:** April 16, 2020, 23:59 CET"
 author: "[-> Accept assignment <- ](https://classroom.github.com/a/9zAyI8FJ)"
 ---
 

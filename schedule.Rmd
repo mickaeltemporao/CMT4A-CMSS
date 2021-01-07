@@ -20,7 +20,7 @@ This schedule is an approximation, subject to change due needs of the students i
 | **2021/03/13** | **2021/03/13** | **Mid-Term Exam**                        | **Mid-Term Exam ** | **Mid-Term Exam ** |
 | 2021/03/11     | 2021/03/18     | 8. Model Optimization                    | -                  | Mélanie, Anaïs     |
 | 2021/03/25     | 2021/04/01     | 9. Model Optimization                    | -                  | Nina               |
-| **2021/04/25** | **2021/04/25** | **Final Project**                        | **Final Project**  | **Final Project**  |
+| **2021/04/16** | **2021/04/16** | **Final Project**                        | **Final Project**  | **Final Project**  |
 
 
 # Session Overview

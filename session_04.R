@@ -159,23 +159,30 @@ clean_data %>%
   # WARNING: summary() is a different function summarise()!
   summary()
 
-# What is the average (mean) ideology per voting intention group?
+# What is the average (mean) ideology per vote intention?
 clean_data %>%
   group_by(vote_intent) %>%
   summarise(
     avg = mean(ideology)
   )
 
-# Does this make sense?
+# Do these result seem valid?
 
-# Here's a more advanced way of summarizing this information
-# Saving the means as we will use them as well in the plot
+# Now try to find which region is the most conservative?
+clean_data %>%
+  group_by(...) %>%
+  ...(avg_idl = mean(...)) %>%
+  arrange(...)
+
+# Let's try to summarise the ideology per vote intention visually
+# We need to save the intermediary averages
 idl_means <- clean_data %>%
   group_by(vote_intent) %>%
   summarise(
     avg = mean(ideology)
   )
 
+# And then we make a plot
 ggplot(clean_data, aes(x = ideology, y = ..prop.., group=vote_intent)) +
   geom_bar() +
   facet_wrap(~vote_intent) +
@@ -190,4 +197,7 @@ ggplot(clean_data, aes(x = ideology, y = ..prop.., group=vote_intent)) +
     y = "Proportion"
   ) +
   theme_bw()
+
+# Can you summarise the ideology per region in a figure?
+...
 

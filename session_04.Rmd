@@ -43,8 +43,6 @@ We will focus on data aggregation functions:
 - `groub_by()` group by one or more variables.
 - `summarise()` summarise each group to fewer rows.
 
-![](https://uw-madison-datascience.github.io/2019-09-11-uwmadison-dc/slides/dplyr/dplyr-4.png "")
-
 
 ## Types of data
 
@@ -101,7 +99,7 @@ klippy::klippy()
 # Load the tidyverse package
 ...
 
-# Identify the path to a `ts_2016.rds` dataset on your machine
+# Identify the path to the `ts_2016.rds` dataset
 data_path <- "..."
 
 # Read your data and save it into an object called `dataset`
@@ -110,6 +108,7 @@ dataset <- ...
 # Let's work on a subset of the dataset using meaningful names
 tmp_data <- dataset %>%
   select(
+    V163003,   # region
     V161031,   # vote_intent
     V161086,   # ft_democrat
     V161087,   # ft_republican
@@ -118,6 +117,7 @@ tmp_data <- dataset %>%
     V162034a   # actual_vote
   ) %>%
   rename(
+    "region"        = "V163003",
     "vote_intent"   = "V161031",
     "ft_democrat"   = "V161086",
     "ft_republican" = "V161087",
@@ -274,7 +274,7 @@ idl_means <- clean_data %>%
     avg = mean(ideology)
   )
 
-# And Plotting
+# And then we make a plot
 ggplot(clean_data, aes(x = ideology, y = ..prop.., group=vote_intent)) +
   geom_bar() +
   facet_wrap(~vote_intent) +
@@ -294,8 +294,6 @@ ggplot(clean_data, aes(x = ideology, y = ..prop.., group=vote_intent)) +
 ...
 
 ```
-
-
 
 
 # Requirements

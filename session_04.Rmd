@@ -89,7 +89,7 @@ Understanding these variable types helps us recode the variables in our datasets
 # Hack Time!
 
 ```{r klippy, echo=FALSE, include=TRUE}
-klippy::klippy()
+# klippy::klippy()
 ```
 
 ```{r eval=FALSE}

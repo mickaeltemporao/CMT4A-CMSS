@@ -3,6 +3,11 @@ title: "Session 5: Data Management"
 subtitle: "Learning Objectives:"
 ---
 
+- Learn to recode, transform and create new useful variables.
+- Learn to group and summarise data into useful bits of information.
+- Learn how to report and visualize different types of data.
+
+
 ## binary
 ## dummy
 evaluate usefulness of a variable by comparing to target
@@ -11,17 +16,8 @@ talk about pre and post election
 
 create target and real target but unaccessible
 
-
 Binary Variables vs. Dummy Variables
 https://www.statisticshowto.com/binary-variable-2/#:~:text=The%20terms%20dummy%20variable%20and,not%20exactly%20the%20same%20thing.&text=If%20your%20dummy%20variable%20has,is%20also%20a%20binary%20variable.
-
-
-- Final project introduction.
-- Learn about paths and working directories.
-- Learn about levels of measurement atypes of data andnd data types.
-- Learn to recode variable types and dealing with missing values.
-- Learn to transform variables and create new useful variables.
-
 
 ## Recode variables
 ## Fix missing values
@@ -44,4 +40,199 @@ https://www.statisticshowto.com/binary-variable-2/#:~:text=The%20terms%20dummy%2
 
 ## Practice
 
+# Resources
+
+## Cheatsheets
+
+- [Data transformation](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf)
+- [Data visualization](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
+
+## Readings
+- [Exploratory Data Analysis](https://r4ds.had.co.nz/exploratory-data-analysis.html)
+
+## Practice
+
+- [Data visualization with ggplot2](https://learn.datacamp.com/courses/introduction-to-data-visualization-with-ggplot2)
+- [Exploratory Data Analysis](https://learn.datacamp.com/courses/exploratory-data-analysis-in-r)
+- [Data Cleaning](https://learn.datacamp.com/courses/cleaning-data-in-r)
+
+
+# Data Management
+
+Once we know more about our dataset, it is time to more fix the identified flaws in the data and begin to extract useful insights. We continue the explore, transform and visualize loop to learn more from the data and create useful variables also known as features. This process can easily take 80% or more of a researcher's time.
+
+We will continue to use dplyr's verbs to manipulate the data.
+
+- `select()` picks variables based on their names.
+- `filter()` picks cases based on their values.
+- `mutate()` adds new variables that are functions.
+- `arrange()` changes the ordering of the rows.
+- `rename()` changes the name of individual variables.
+
+We will focus on data aggregation functions:
+
+- `summary()` produces result summaries based on the class of the object.
+- `groub_by()` group by one or more variables.
+- `summarise()` summarise each group to fewer rows.
+
+
+## Types of data
+
+We have seen that there are different types of data in R (numeric, character, factor, logical, ...). In the real world, we can group data in two broad families:
+
+**Discrete** data can only take a finite number of values.
+
+- eg. The number of students in a class.
+
+**Continuous** data can take an infinite number of values.
+
+- eg. The height of a student.
+
+## Levels of Measurement
+
+We can further divide each of these data types into four families:
+
+**Nominal:** Differences of kind. There is no mathematical relationship between the values.
+
+eg. Political parties.
+
+**Ordinal:** Differences of degree. There is a mathematical relationships among the values. Symbols like <, ≤, =, ≥, and > have meaning but the distance between two elements is not constant.
+
+eg. Levels of education.
+
+**Interval:** There is a mathematical relationship among the elements and the distance between them is constant but they do not have a meaningful zero value.
+
+eg. Feelings thermometer (0 to 100).
+
+**Ratio:** Similar to the interval variables but they have a meaningful zero value.
+
+eg. Feelings thermometer (-50 to 50)
+
+We can notice that each subsequent level of measurement has the properties of levels before it. For more details on this see [Chapter 1, Siegel, 2013](https://press.princeton.edu/books/paperback/9780691159171/a-mathematics-course-for-political-and-social-research).
+
+Understanding these variable types helps us recode the variables in our datasets into their appropriate types in order to extract proper insights or create useful features for our predictive models. To recode the variables we will often use a combination of functions such as:
+
+- `mutate()`
+- `as.numeric()`
+- `as.character(`)
+- `as.factor()`
+- `as.logical()`
+
+# Hack Time!
+
+```{r klippy, echo=FALSE, include=TRUE}
+# klippy::klippy()
+```
+
+```{r eval=FALSE}
+# Session 5: Data Management  --------------------------------------------------
+
+# Getting Started ==============================================================
+# Load the tidyverse package
+...
+
+# Identify the path to the `ts_2016.rds` dataset
+data_path <- "..."
+
+# Read your data and save it into an object called `dataset`
+dataset <- ...
+
+# Let's work on a subset of the dataset using meaningful names
+tmp_data <- dataset %>%
+  select(
+    V163003,   # region
+    V161031,   # vote_intent
+    V161086,   # ft_democrat
+    V161087,   # ft_republican
+    V161126,   # ideology
+    V161155,   # party_id
+    V162034a   # actual_vote
+  ) %>%
+  rename(
+    "region"        = "V163003",
+    "vote_intent"   = "V161031",
+    "ft_democrat"   = "V161086",
+    "ft_republican" = "V161087",
+    "ideology"      = "V161126",
+    "party_id"      = "V161155",
+    "actual_vote"   = "V162034a"
+  )
+
+
+# Plotting data summaries ======================================================
+
+# Now let's make an actual plot with the percentages
+ggplot(..., aes(x=...)) +
+geom_bar()
+
+# What's wrong here?
+
+# Try again using geom_col() instead of geom_bar
+ggplot(vote_intent_summary, aes(x=vote_intent, y=...))+
+geom_...()
+
+# Let's quickly clean liberal-conservative self placement variable.
+clean_data <- clean_data %>%
+  filter(
+    ideology > 0,
+    ideology < 8
+  ) %>%
+  mutate(
+    ideology = as. ... (...)
+  )
+
+# Peek at the variables
+clean_data %>%
+  select(vote_intent, ideology) %>%
+  # WARNING: summary() is a different function summarise()!
+  summary()
+
+# What is the average (mean) ideology per vote intention?
+clean_data %>%
+  group_by(...) %>%
+  summarise(
+    ... = ...(...)
+  )
+
+# Do these results seem valid?
+
+# Now try to find which region is the most conservative?
+clean_data %>%
+  group_by(...) %>%
+  ...(avg_idl = mean(...)) %>%
+  arrange(...)
+
+# Let's try to summarise the ideology per vote intention visually
+
+# We need to save the intermediary averages
+idl_means <- clean_data %>%
+  group_by(vote_intent) %>%
+  summarise(
+    avg = mean(ideology)
+  )
+
+# And then we make a plot
+ggplot(clean_data, aes(x = ideology, y = ..prop.., group=vote_intent)) +
+  geom_bar() +
+  facet_wrap(~vote_intent) +
+  geom_vline(
+    data=idl_means,
+    aes(xintercept=avg), color="red", linetype=2) +
+  scale_x_discrete(
+    limits=c("Ext. liberal", "", "", "Moderate", "", "", "Ext. conservative")
+  ) +
+  labs(
+    x = "Self placement",
+    y = "Proportion"
+  ) +
+  theme_bw()
+
+# Can you summarise the ideology per region in a figure?
+...
+
+```
+
+
+# Requirements
+- Complete [Challenge 3: The Explorer](https://classroom.github.com/a/f4bspIRM)
 

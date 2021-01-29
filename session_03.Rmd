@@ -75,7 +75,7 @@ To create a citation in a .Rmd file you combine ‘@’ + the citation key you h
 # Hack Time!
 
 ```{r klippy, echo=FALSE, include=TRUE}
-# klippy::klippy()
+klippy::klippy()
 ```
 
 ```{r eval=FALSE}

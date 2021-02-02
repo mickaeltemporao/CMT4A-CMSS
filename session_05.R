@@ -1,47 +1,3 @@
----
-title: "Session 5: Data Analysis"
-subtitle: "Learning Objectives:"
----
-
-- Summarise raw data into useful bit of information.
-- Visualize data summaries.
-- Answer questions with data.
-
-# Resources
-
-## Cheatsheets
-- [Data visualization](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
-
-## Readings
-- [Data visualization](https://r4ds.had.co.nz/data-visualisation.html)
-
-## Practice
-- [Data visualization with ggplot2](https://learn.datacamp.com/courses/introduction-to-data-visualization-with-ggplot2)
-
-
-# Data Analysis or how to start answering questions with data!
-
-It has been a long journey! You might not be fluent in R yet, but now you can understand bits of R code and also adjust it to suit your needs.Fixing data to suit your needs can easily take more than 80% of a researcher's time. Once your data is ready, the analysis or modeling parts are usually very quick.
-
-Let's recap what you have achieved so far:
-
-- You have learned to combine prose and code into reproducible working documents.
-- You have learned programming basics.
-- You have learned how to explore real world data.
-- You have learned how to clean messy data.
-- You have learned how to summarise data into useful pieces of information (more on this today).
-
-Now, it is time to start to answering questions with data using what you have learned so far!
-
-# Hack Time!
-
-This session will be a bit different as the code is ready and should run end to end. Instead, we will take time to look at the figures and derive insights from them!
-
-```{r klippy, echo=FALSE, include=TRUE}
-klippy::klippy()
-```
-
-```{r eval=FALSE}
 # Session 5: Data Management  --------------------------------------------------
 
 # Getting Started ==============================================================
@@ -52,7 +8,7 @@ data_url <- "https://github.com/mickaeltemporao/CMT4A-CMSS-TEMPLATE/raw/main/dat
 
 tb <- readRDS(url(data_url,"rb"))
 
-# Always look at the data first!
+# Always look at the data first
 head(tb)
 
 # Answering questions with data ================================================
@@ -218,25 +174,3 @@ ggplot(daily_feeling, aes(x = date)) +
   ) +
   theme_minimal()
 
-```
-
-
-####### FOR SESSION 6
-
-Anscombe %>%
-  group_by(set) %>%
-  summarize(
-    N = n(),
-    mean_of_x = mean(x),
-    std_dev_of_x = sd(x),
-    mean_of_y = mean(y),
-    std_dev_of_y = sd(y),
-    correlation_between_x_and_y = cor(x,y)
-  )
-
-mlbBat10 %>%
-  summarize(N = n(), r = cor(OBP, SLG))
-
-
-# Requirements
-- Complete [Challenge 4: The Analyst](https://classroom.github.com/a/XXXXX)

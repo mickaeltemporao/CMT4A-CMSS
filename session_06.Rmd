@@ -19,6 +19,26 @@ subtitle: "Learning Objectives:"
 - [Data visualization with ggplot2](https://learn.datacamp.com/courses/introduction-to-data-visualization-with-ggplot2)
 
 
+####### FOR SESSION 6
+
+USE cor() AND lm() in summarise
+
+datset %>%
+  group_by(set) %>%
+  summarize(
+    N = n(),
+    mean_of_x = mean(x),
+    std_dev_of_x = sd(x),
+    mean_of_y = mean(y),
+    std_dev_of_y = sd(y),
+    correlation_between_x_and_y = cor(x,y))
+
+########
+
+# Requirements
+- Complete [Challenge 4: The Analyst](https://classroom.github.com/a/XXXXX)
+
+
 # Data Analysis or how to start answering questions with data!
 
 It has been a long journey! You might not be fluent in R yet, but now you can understand bits of R code and also adjust it to suit your needs.Fixing data to suit your needs can easily take more than 80% of a researcher's time. Once your data is ready, the analysis or modeling parts are usually very quick.
@@ -220,23 +240,3 @@ ggplot(daily_feeling, aes(x = date)) +
 
 ```
 
-
-####### FOR SESSION 6
-
-Anscombe %>%
-  group_by(set) %>%
-  summarize(
-    N = n(),
-    mean_of_x = mean(x),
-    std_dev_of_x = sd(x),
-    mean_of_y = mean(y),
-    std_dev_of_y = sd(y),
-    correlation_between_x_and_y = cor(x,y)
-  )
-
-mlbBat10 %>%
-  summarize(N = n(), r = cor(OBP, SLG))
-
-
-# Requirements
-- Complete [Challenge 4: The Analyst](https://classroom.github.com/a/XXXXX)

@@ -515,7 +515,6 @@ div.tocify {
 <h2>Cheatsheets</h2>
 <ul>
 <li><a href="https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf">Data transformation</a></li>
-<li><a href="https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf">Data visualization</a></li>
 </ul>
 </div>
 <div id="readings" class="section level2">
@@ -527,9 +526,7 @@ div.tocify {
 <div id="practice" class="section level2">
 <h2>Practice</h2>
 <ul>
-<li><a href="https://learn.datacamp.com/courses/introduction-to-data-visualization-with-ggplot2">Data visualization with ggplot2</a></li>
 <li><a href="https://learn.datacamp.com/courses/exploratory-data-analysis-in-r">Exploratory Data Analysis</a></li>
-<li><a href="https://learn.datacamp.com/courses/cleaning-data-in-r">Data Cleaning</a></li>
 </ul>
 </div>
 </div>
@@ -596,11 +593,11 @@ div.tocify {
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the tidyverse package</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>...</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify the path to the `ts_2016.rds` dataset</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>data_path <span class="ot">&lt;-</span> <span class="st">&quot;...&quot;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>data_url <span class="ot">&lt;-</span> <span class="st">&quot;https://github.com/mickaeltemporao/CMT4A-CMSS-TEMPLATE/raw/main/data/ts_2016.rds&quot;</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Read your data and save it into an object called `dataset`</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> ...</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>tb <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">url</span>(data_url,<span class="st">&quot;rb&quot;</span>))</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Let&#39;s work on a subset of the dataset using meaningful names</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>tmp_data <span class="ot">&lt;-</span> dataset <span class="sc">%&gt;%</span></span>

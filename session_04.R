@@ -2,9 +2,11 @@
 
 # Getting Started ==============================================================
 # Load the tidyverse package
-library(tidyverse)
+library(dplyr)
+library(ggplot2)
 
 # Identify the path to the `ts_2016.rds` dataset on your machine
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 data_path <- "../template/data/ts_2016.rds"
 
 # Read your data and save it into an object called `dataset`
@@ -170,9 +172,9 @@ clean_data %>%
 
 # Now try to find which region is the most conservative?
 clean_data %>%
-  group_by(...) %>%
-  ...(avg_idl = mean(...)) %>%
-  arrange(...)
+  group_by(region)%>%
+  summarise(avg_idl = mean(ideology))%>%
+  arrange(avg_idl)
 
 # Let's try to summarise the ideology per vote intention visually
 # We need to save the intermediary averages
@@ -190,14 +192,10 @@ ggplot(clean_data, aes(x = ideology, y = ..prop.., group=vote_intent)) +
     data=idl_means,
     aes(xintercept=avg), color="red", linetype=2) +
   scale_x_discrete(
-    limits=c("Ext. liberal", "", "", "Moderate", "", "", "Ext. conservative")
+    limits=c("Extrm. Lib", "", "", "Moderate", "", "", "Extrm. Con.")
   ) +
   labs(
     x = "Self placement",
     y = "Proportion"
   ) +
   theme_bw()
-
-# Can you summarise the ideology per region in a figure?
-...
-

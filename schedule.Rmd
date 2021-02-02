@@ -14,7 +14,7 @@ This schedule is an approximation, subject to change due needs of the students i
 | 2020/11/16     | 2020/11/23     | 2. [Programming basics](session_02.html) | Bertille, Lison    | -                   |
 | 2020/11/30     | 2020/12/07     | 3. [Data Exploration](session_03.html)   | Colum, Julie Du.   | Marie, Tess         |
 | 2021/01/07     | 2021/01/28     | 4. [Data Management](session_04.html)    | Héloïse, Ronan     | Darius, Hugo        |
-| 2021/02/04     | 2021/02/11     | 5. Data Management                       | Solène, Apolline   | Nathan, Elias       |
+| 2021/02/04     | 2021/02/11     | 5. [Data Analysis](session_05.html)      | Solène, Apolline   | Nathan, Elias       |
 | 2021/02/25     | 2021/03/04     | 6. Supervised Methods                    | Julie De., Jean    | Clémentine, Louison |
 | **2021/03/13** | **2021/03/13** | **Mid-Term Exam**                        | **Mid-Term Exam ** | **Mid-Term Exam **  |
 | 2021/03/11     | 2021/03/18     | 7. Supervised Methods                    | Alice, Jeanne      | Thomas, Jade        |

@@ -35,6 +35,8 @@ Now, it is time to start to answering questions with data using what you have le
 
 # Hack Time!
 
+This session will be a bit different as the code is ready and should run end to end. Instead, we will take time to look at the figures and derive insights from them!
+
 ```{r klippy, echo=FALSE, include=TRUE}
 klippy::klippy()
 ```

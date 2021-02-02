@@ -11,7 +11,7 @@
 
 
 
-<title>Session 5: Data Management</title>
+<title>Session 5: Data Analysis</title>
 
 <script src="site_libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -24,6 +24,10 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/clipboard-1.7.1/clipboard.min.js"></script>
+<link href="site_libs/primer-tooltips-1.4.0/build.css" rel="stylesheet" />
+<link href="site_libs/klippy-0.0.0.9500/css/klippy.min.css" rel="stylesheet" />
+<script src="site_libs/klippy-0.0.0.9500/js/klippy.min.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -494,258 +498,243 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Session 5: Data Management</h1>
+<h1 class="title toc-ignore">Session 5: Data Analysis</h1>
 <h3 class="subtitle">Learning Objectives:</h3>
 
 </div>
 
 
 <ul>
-<li>Learn to recode, transform and create new useful variables.</li>
-<li>Learn to group and summarise data into useful bits of information.</li>
-<li>Learn how to report and visualize different types of data.</li>
+<li>Summarise raw data into useful bit of information.</li>
+<li>Visualize data summaries.</li>
+<li>Answer questions with data.</li>
 </ul>
-<div id="binary" class="section level2">
-<h2>binary</h2>
-</div>
-<div id="dummy" class="section level2">
-<h2>dummy</h2>
-<p>evaluate usefulness of a variable by comparing to target</p>
-<p>talk about pre and post election</p>
-<p>create target and real target but unaccessible</p>
-<p>Binary Variables vs. Dummy Variables <a href="https://www.statisticshowto.com/binary-variable-2/#" class="uri">https://www.statisticshowto.com/binary-variable-2/#</a>:~:text=The%20terms%20dummy%20variable%20and,not%20exactly%20the%20same%20thing.&amp;text=If%20your%20dummy%20variable%20has,is%20also%20a%20binary%20variable.</p>
-</div>
-<div id="recode-variables" class="section level2">
-<h2>Recode variables</h2>
-</div>
-<div id="fix-missing-values" class="section level2">
-<h2>Fix missing values</h2>
-</div>
-<div id="section" class="section level2">
-<h2></h2>
-</div>
-<div id="num" class="section level2">
-<h2>num</h2>
-</div>
-<div id="cat" class="section level2">
-<h2>cat</h2>
-</div>
-<div id="ord" class="section level2">
-<h2>ord</h2>
-</div>
-<div id="binary-1" class="section level2">
-<h2>binary</h2>
-</div>
-<div id="dummy-1" class="section level2">
-<h2>dummy</h2>
-</div>
-<div id="section-1" class="section level2">
-<h2></h2>
-</div>
-<div id="how-to-viz" class="section level2">
-<h2>How to viz</h2>
-</div>
-<div id="commit-in-rstudio" class="section level2">
-<h2>Commit in RStudio</h2>
-</div>
 <div id="resources" class="section level1">
 <h1>Resources</h1>
 <div id="cheatsheets" class="section level2">
 <h2>Cheatsheets</h2>
-</div>
-<div id="readings" class="section level2">
-<h2>Readings</h2>
-</div>
-<div id="practice" class="section level2">
-<h2>Practice</h2>
-</div>
-</div>
-<div id="resources-1" class="section level1">
-<h1>Resources</h1>
-<div id="cheatsheets-1" class="section level2">
-<h2>Cheatsheets</h2>
 <ul>
-<li><a href="https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf">Data transformation</a></li>
 <li><a href="https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf">Data visualization</a></li>
 </ul>
 </div>
-<div id="readings-1" class="section level2">
+<div id="readings" class="section level2">
 <h2>Readings</h2>
 <ul>
-<li><a href="https://r4ds.had.co.nz/exploratory-data-analysis.html">Exploratory Data Analysis</a></li>
+<li>[Data visualization] <a href="https://r4ds.had.co.nz/data-visualisation.html" class="uri">https://r4ds.had.co.nz/data-visualisation.html</a></li>
 </ul>
 </div>
-<div id="practice-1" class="section level2">
+<div id="practice" class="section level2">
 <h2>Practice</h2>
 <ul>
 <li><a href="https://learn.datacamp.com/courses/introduction-to-data-visualization-with-ggplot2">Data visualization with ggplot2</a></li>
-<li><a href="https://learn.datacamp.com/courses/exploratory-data-analysis-in-r">Exploratory Data Analysis</a></li>
-<li><a href="https://learn.datacamp.com/courses/cleaning-data-in-r">Data Cleaning</a></li>
 </ul>
 </div>
 </div>
-<div id="data-management" class="section level1">
-<h1>Data Management</h1>
-<p>Once we know more about our dataset, it is time to more fix the identified flaws in the data and begin to extract useful insights. We continue the explore, transform and visualize loop to learn more from the data and create useful variables also known as features. This process can easily take 80% or more of a researcher’s time.</p>
-<p>We will continue to use dplyr’s verbs to manipulate the data.</p>
+<div id="data-analysis-or-how-to-start-answering-questions-with-data" class="section level1">
+<h1>Data Analysis or how to start answering questions with data!</h1>
+<p>It has been a long journey! You might not be fluent in R yet, but now you can understand bits of R code and also adjust it to suit your needs.Fixing data to suit your needs can easily take more than 80% of a researcher’s time. Once your data is ready, the analysis or modeling parts are usually very quick.</p>
+<p>Let’s recap what you have achieved so far:</p>
 <ul>
-<li><code>select()</code> picks variables based on their names.</li>
-<li><code>filter()</code> picks cases based on their values.</li>
-<li><code>mutate()</code> adds new variables that are functions.</li>
-<li><code>arrange()</code> changes the ordering of the rows.</li>
-<li><code>rename()</code> changes the name of individual variables.</li>
+<li>You have learned to combine prose and code into reproducible working documents.</li>
+<li>You have learned programming basics.</li>
+<li>You have learned how to explore real world data.</li>
+<li>You have learned how to clean messy data.</li>
+<li>You have learned how to summarise data into useful pieces of information (more on this today).</li>
 </ul>
-<p>We will focus on data aggregation functions:</p>
-<ul>
-<li><code>summary()</code> produces result summaries based on the class of the object.</li>
-<li><code>groub_by()</code> group by one or more variables.</li>
-<li><code>summarise()</code> summarise each group to fewer rows.</li>
-</ul>
-<div id="types-of-data" class="section level2">
-<h2>Types of data</h2>
-<p>We have seen that there are different types of data in R (numeric, character, factor, logical, …). In the real world, we can group data in two broad families:</p>
-<p><strong>Discrete</strong> data can only take a finite number of values.</p>
-<ul>
-<li>eg. The number of students in a class.</li>
-</ul>
-<p><strong>Continuous</strong> data can take an infinite number of values.</p>
-<ul>
-<li>eg. The height of a student.</li>
-</ul>
-</div>
-<div id="levels-of-measurement" class="section level2">
-<h2>Levels of Measurement</h2>
-<p>We can further divide each of these data types into four families:</p>
-<p><strong>Nominal:</strong> Differences of kind. There is no mathematical relationship between the values.</p>
-<p>eg. Political parties.</p>
-<p><strong>Ordinal:</strong> Differences of degree. There is a mathematical relationships among the values. Symbols like &lt;, ≤, =, ≥, and &gt; have meaning but the distance between two elements is not constant.</p>
-<p>eg. Levels of education.</p>
-<p><strong>Interval:</strong> There is a mathematical relationship among the elements and the distance between them is constant but they do not have a meaningful zero value.</p>
-<p>eg. Feelings thermometer (0 to 100).</p>
-<p><strong>Ratio:</strong> Similar to the interval variables but they have a meaningful zero value.</p>
-<p>eg. Feelings thermometer (-50 to 50)</p>
-<p>We can notice that each subsequent level of measurement has the properties of levels before it. For more details on this see <a href="https://press.princeton.edu/books/paperback/9780691159171/a-mathematics-course-for-political-and-social-research">Chapter 1, Siegel, 2013</a>.</p>
-<p>Understanding these variable types helps us recode the variables in our datasets into their appropriate types in order to extract proper insights or create useful features for our predictive models. To recode the variables we will often use a combination of functions such as:</p>
-<ul>
-<li><code>mutate()</code></li>
-<li><code>as.numeric()</code></li>
-<li><code>as.character(</code>)</li>
-<li><code>as.factor()</code></li>
-<li><code>as.logical()</code></li>
-</ul>
-</div>
+<p>Now, it is time to start to answering questions with data using what you have learned so far!</p>
 </div>
 <div id="hack-time" class="section level1">
 <h1>Hack Time!</h1>
+<p>This session will be a bit different as the code is ready and should run end to end. Instead, we will take time to look at the figures and derive insights from them!</p>
+<script>
+  addClassKlippyTo("pre.r, pre.markdown");
+  addKlippy('left', 'top', 'auto', '1', 'Copy code', 'Copied!');
+</script>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Session 5: Data Management  --------------------------------------------------</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Getting Started ==============================================================</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the tidyverse package</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading packages &amp; data</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify the path to the `ts_2016.rds` dataset</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>data_path <span class="ot">&lt;-</span> <span class="st">&quot;...&quot;</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Read your data and save it into an object called `dataset`</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> ...</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Let&#39;s work on a subset of the dataset using meaningful names</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>tmp_data <span class="ot">&lt;-</span> dataset <span class="sc">%&gt;%</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    V163003,   <span class="co"># region</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    V161031,   <span class="co"># vote_intent</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    V161086,   <span class="co"># ft_democrat</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    V161087,   <span class="co"># ft_republican</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    V161126,   <span class="co"># ideology</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    V161155,   <span class="co"># party_id</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    V162034a   <span class="co"># actual_vote</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;region&quot;</span>        <span class="ot">=</span> <span class="st">&quot;V163003&quot;</span>,</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;vote_intent&quot;</span>   <span class="ot">=</span> <span class="st">&quot;V161031&quot;</span>,</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;ft_democrat&quot;</span>   <span class="ot">=</span> <span class="st">&quot;V161086&quot;</span>,</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;ft_republican&quot;</span> <span class="ot">=</span> <span class="st">&quot;V161087&quot;</span>,</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;ideology&quot;</span>      <span class="ot">=</span> <span class="st">&quot;V161126&quot;</span>,</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;party_id&quot;</span>      <span class="ot">=</span> <span class="st">&quot;V161155&quot;</span>,</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;actual_vote&quot;</span>   <span class="ot">=</span> <span class="st">&quot;V162034a&quot;</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting data summaries ======================================================</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Now let&#39;s make an actual plot with the percentages</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(..., <span class="fu">aes</span>(<span class="at">x=</span>...)) <span class="sc">+</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_bar</span>()</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="co"># What&#39;s wrong here?</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Try again using geom_col() instead of geom_bar</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(vote_intent_summary, <span class="fu">aes</span>(<span class="at">x=</span>vote_intent, <span class="at">y=</span>...))<span class="sc">+</span></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_...</span>()</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="co"># Let&#39;s quickly clean liberal-conservative self placement variable.</span></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>clean_data <span class="ot">&lt;-</span> clean_data <span class="sc">%&gt;%</span></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    ideology <span class="sc">&gt;</span> <span class="dv">0</span>,</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    ideology <span class="sc">&lt;</span> <span class="dv">8</span></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">ideology =</span> as. <span class="fu">...</span> (...)</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>data_url <span class="ot">&lt;-</span> <span class="st">&quot;https://github.com/mickaeltemporao/CMT4A-CMSS-TEMPLATE/raw/main/data/clean_2016.rds&quot;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>tb <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">url</span>(data_url,<span class="st">&quot;rb&quot;</span>))</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Always look at the data first!</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(tb)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Answering questions with data ================================================</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># What is the predicted vote share for each candidate using voting intentions?</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>tb <span class="sc">%&gt;%</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(voting_int) <span class="sc">%&gt;%</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">freq =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">prop =</span> freq<span class="sc">/</span><span class="fu">sum</span>(freq)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># How good are those numbers relative to the actual numbers?</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># https://en.wikipedia.org/wiki/2016_United_States_presidential_election#Electoral_results</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Are the people who intend to vote for G. Johnson left wing or right wing?</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>idl_means <span class="ot">&lt;-</span> tb <span class="sc">%&gt;%</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(voting_int) <span class="sc">%&gt;%</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg =</span> <span class="fu">mean</span>(ideology)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(avg)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>idl_means</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tb, <span class="fu">aes</span>(<span class="at">x =</span> ideology, <span class="at">y =</span> ..prop.., <span class="at">group=</span>voting_int)) <span class="sc">+</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>voting_int) <span class="sc">+</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">data=</span>idl_means,</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">xintercept=</span>avg), <span class="at">color=</span><span class="st">&quot;red&quot;</span>, <span class="at">linetype=</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">data=</span>idl_means,</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x=</span>avg, <span class="at">y=</span><span class="fl">0.25</span>, <span class="at">label=</span><span class="fu">round</span>(avg, <span class="dv">2</span>)), <span class="at">color=</span><span class="st">&quot;red&quot;</span>, <span class="at">hjust=</span><span class="sc">-</span><span class="fl">0.25</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">limits=</span><span class="fu">c</span>(<span class="st">&quot;Extrm. Lib&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;Moderate&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;Extrm. Con.&quot;</span>)</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Ideological Self placement&quot;</span>,</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Proportion&quot;</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>()</span>
 <span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="co"># Peek at the variables</span></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>clean_data <span class="sc">%&gt;%</span></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(vote_intent, ideology) <span class="sc">%&gt;%</span></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>  <span class="co"># </span><span class="al">WARNING</span><span class="co">: summary() is a different function summarise()!</span></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summary</span>()</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="co"># What is the average (mean) ideology per vote intention?</span></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>clean_data <span class="sc">%&gt;%</span></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(...) <span class="sc">%&gt;%</span></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>    <span class="at">... =</span> <span class="fu">...</span>(...)</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="co"># Do these results seem valid?</span></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="co"># Now try to find which region is the most conservative?</span></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>clean_data <span class="sc">%&gt;%</span></span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(...) <span class="sc">%&gt;%</span></span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>  <span class="fu">...</span>(<span class="at">avg_idl =</span> <span class="fu">mean</span>(...)) <span class="sc">%&gt;%</span></span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(...)</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="co"># How is ideology distributed among people for which religion is important?</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tb, <span class="fu">aes</span>(<span class="at">x =</span> ideology, <span class="at">y =</span> ..prop.., <span class="at">group=</span>religion)) <span class="sc">+</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>religion) <span class="sc">+</span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>    <span class="at">data=</span>tb <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(religion) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">avg=</span><span class="fu">mean</span>(ideology)) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(avg),</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">xintercept=</span>avg), <span class="at">color=</span><span class="st">&quot;red&quot;</span>, <span class="at">linetype=</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>    <span class="at">data=</span>tb <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(religion) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">avg=</span><span class="fu">mean</span>(ideology)) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(avg),</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x=</span>avg, <span class="at">y=</span><span class="fl">0.25</span>, <span class="at">label=</span><span class="fu">round</span>(avg, <span class="dv">2</span>)), <span class="at">color=</span><span class="st">&quot;red&quot;</span>, <span class="at">hjust=</span><span class="sc">-</span><span class="fl">0.25</span></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>    <span class="at">limits=</span><span class="fu">c</span>(<span class="st">&quot;Extrm. Lib&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;Moderate&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;Extrm. Con.&quot;</span>)</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Ideological Self placement&quot;</span>,</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Proportion&quot;</span></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>()</span>
 <span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="co"># Let&#39;s try to summarise the ideology per vote intention visually</span></span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="co"># We need to save the intermediary averages</span></span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>idl_means <span class="ot">&lt;-</span> clean_data <span class="sc">%&gt;%</span></span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(vote_intent) <span class="sc">%&gt;%</span></span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg =</span> <span class="fu">mean</span>(ideology)</span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="co"># And then we make a plot</span></span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(clean_data, <span class="fu">aes</span>(<span class="at">x =</span> ideology, <span class="at">y =</span> ..prop.., <span class="at">group=</span>vote_intent)) <span class="sc">+</span></span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>vote_intent) <span class="sc">+</span></span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(</span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>    <span class="at">data=</span>idl_means,</span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">xintercept=</span>avg), <span class="at">color=</span><span class="st">&quot;red&quot;</span>, <span class="at">linetype=</span><span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(</span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>    <span class="at">limits=</span><span class="fu">c</span>(<span class="st">&quot;Ext. liberal&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;Moderate&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;Ext. conservative&quot;</span>)</span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Self placement&quot;</span>,</span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Proportion&quot;</span></span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a><span class="co"># Can you summarise the ideology per region in a figure?</span></span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>...</span></code></pre></div>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="co"># How do relgious people intend to vote?</span></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tb, <span class="fu">aes</span>(<span class="at">x =</span> voting_int, <span class="at">y =</span> ..prop.., <span class="at">group=</span>religion)) <span class="sc">+</span></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>religion)</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="co"># Do right-wing people approve president Obama?</span></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tb, <span class="fu">aes</span>(<span class="at">x =</span> ideology, <span class="at">y =</span> ..prop.., <span class="at">group=</span>pres_appr)) <span class="sc">+</span></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>pres_appr) <span class="sc">+</span></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>    <span class="at">data=</span>tb <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(pres_appr) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">avg=</span><span class="fu">mean</span>(ideology)) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(avg),</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">xintercept=</span>avg), <span class="at">color=</span><span class="st">&quot;red&quot;</span>, <span class="at">linetype=</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>    <span class="at">data=</span>tb <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(pres_appr) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">avg=</span><span class="fu">mean</span>(ideology)) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(avg),</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x=</span>avg, <span class="at">y=</span><span class="fl">0.25</span>, <span class="at">label=</span><span class="fu">round</span>(avg, <span class="dv">2</span>)), <span class="at">color=</span><span class="st">&quot;red&quot;</span>, <span class="at">hjust=</span><span class="sc">-</span><span class="fl">0.25</span></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>    <span class="at">limits=</span><span class="fu">c</span>(<span class="st">&quot;Extrm. Lib&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;Moderate&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;Extrm. Con.&quot;</span>)</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Ideological Self placement&quot;</span>,</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Proportion&quot;</span></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>()</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a><span class="co"># Are people who express sexist attitudes left-wing or right-wing?</span></span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tb, <span class="fu">aes</span>(<span class="at">x =</span> ideology, <span class="at">y =</span> ..prop.., <span class="at">group=</span>sexism)) <span class="sc">+</span></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>sexism) <span class="sc">+</span></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>    <span class="at">data=</span>tb <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(sexism) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">avg=</span><span class="fu">mean</span>(ideology)) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(avg),</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">xintercept=</span>avg), <span class="at">color=</span><span class="st">&quot;red&quot;</span>, <span class="at">linetype=</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>    <span class="at">data=</span>tb <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(sexism) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">avg=</span><span class="fu">mean</span>(ideology)) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(avg),</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x=</span>avg, <span class="at">y=</span><span class="fl">0.25</span>, <span class="at">label=</span><span class="fu">round</span>(avg, <span class="dv">2</span>)), <span class="at">color=</span><span class="st">&quot;red&quot;</span>, <span class="at">hjust=</span><span class="sc">-</span><span class="fl">0.25</span></span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>    <span class="at">limits=</span><span class="fu">c</span>(<span class="st">&quot;Extrm. Lib&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;Moderate&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;Extrm. Con.&quot;</span>)</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Ideological Self placement&quot;</span>,</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Proportion&quot;</span></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>()</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(tb)</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a><span class="co"># Are young people more right or left wing?</span></span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tb, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">factor</span>(ideology), <span class="at">y=</span>age)) <span class="sc">+</span></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>latino) <span class="sc">+</span></span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>    <span class="at">data=</span>tb <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(latino) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">avg =</span> <span class="fu">mean</span>(ideology)) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(avg),</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">xintercept=</span>avg), <span class="at">color=</span><span class="st">&quot;red&quot;</span>, <span class="at">linetype=</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Ideological Self placement&quot;</span>,</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Proportion&quot;</span></span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>()</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a><span class="co"># Is there a difference among Latinos?</span></span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tb, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">factor</span>(ideology), <span class="at">y=</span>age)) <span class="sc">+</span></span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>latino) <span class="sc">+</span></span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>    <span class="at">data=</span>tb <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(latino) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">avg =</span> <span class="fu">mean</span>(ideology)) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(avg),</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">xintercept=</span>avg), <span class="at">color=</span><span class="st">&quot;red&quot;</span>, <span class="at">linetype=</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Ideological Self placement&quot;</span>,</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Proportion&quot;</span></span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>()</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a><span class="co"># How were citizens feeling towards Democrats?</span></span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>daily_feeling <span class="ot">&lt;-</span> tb <span class="sc">%&gt;%</span></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(date) <span class="sc">%&gt;%</span></span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>    <span class="at">Democrat=</span><span class="fu">mean</span>(feeling_dem),</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>    <span class="at">Republican=</span><span class="fu">mean</span>(feeling_rep)</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(daily_feeling, <span class="fu">aes</span>(<span class="at">x =</span> date)) <span class="sc">+</span></span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">y =</span> Democrat), <span class="at">span=</span>.<span class="dv">2</span>, <span class="at">se=</span><span class="cn">FALSE</span>, <span class="at">color=</span><span class="st">&quot;#0B53C1&quot;</span>) <span class="sc">+</span></span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">y =</span> Republican), <span class="at">span=</span>.<span class="dv">2</span>, <span class="at">se=</span><span class="cn">FALSE</span>, <span class="at">color=</span><span class="st">&quot;#FF0055&quot;</span>) <span class="sc">+</span></span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Average daily feeling towards major political parties&quot;</span>,</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Feelings Thermometer&quot;</span>,</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">&quot;Data: ANES 2016&quot;</span></span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div id="for-session-6" class="section level7">
+<p class="heading">FOR SESSION 6</p>
+<p>Anscombe %&gt;% group_by(set) %&gt;% summarize( N = n(), mean_of_x = mean(x), std_dev_of_x = sd(x), mean_of_y = mean(y), std_dev_of_y = sd(y), correlation_between_x_and_y = cor(x,y) )</p>
+<p>mlbBat10 %&gt;% summarize(N = n(), r = cor(OBP, SLG))</p>
+</div>
 </div>
 <div id="requirements" class="section level1">
 <h1>Requirements</h1>
 <ul>
-<li>Complete <a href="https://classroom.github.com/a/f4bspIRM">Challenge 3: The Explorer</a></li>
+<li>Complete <a href="https://classroom.github.com/a/XXXXX">Challenge 4: The Analyst</a></li>
 </ul>
 </div>
 

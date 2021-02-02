@@ -11,18 +11,13 @@ subtitle: "Learning Objectives:"
 # Resources
 
 ## Cheatsheets
-
 - [Data transformation](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf)
-- [Data visualization](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
 
 ## Readings
 - [Exploratory Data Analysis](https://r4ds.had.co.nz/exploratory-data-analysis.html)
 
 ## Practice
-
-- [Data visualization with ggplot2](https://learn.datacamp.com/courses/introduction-to-data-visualization-with-ggplot2)
 - [Exploratory Data Analysis](https://learn.datacamp.com/courses/exploratory-data-analysis-in-r)
-- [Data Cleaning](https://learn.datacamp.com/courses/cleaning-data-in-r)
 
 
 # Data Management

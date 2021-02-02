@@ -67,6 +67,28 @@ h6 {
 }
 </style>
 
+<style type="text/css">
+/* for pandoc --citeproc since 2.11 */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 
 
@@ -416,7 +438,7 @@ div.tocify {
 </div>
 <div id="context" class="section level1">
 <h1>Context</h1>
-<p>You are a young data scientist working for a polling agency during the 2016 United States Presidential election. You are tasked to forecast individual level voting intentions using the ANES 2016 dataset. You are expected to submit an end to end research project of that introduces a machine learning algorithm predicting voting intentions using only the pre-election variables in the ANES 2016 dataset. The project can use any of the methods introduced during the course and only the variables available in the pre-election survey of the 2016 ANES dataset. You will explain the methods and the variables you choose to incorporate in your algorithm and why those are appropriate to predict voting intentions. You can use theory or data to motivate your choices. You will also discuss the assumptions made by the methods and the data and the limits of what we can learn from your project.</p>
+<p>You are a young data scientist working for a polling agency during the 2016 United States Presidential election. Ideology is known to be one of the main predictors of voting behavior <span class="citation">(Jessee 2012)</span>. You are tasked to understand and forecast individuals’ ideology (your target) using the ANES 2016 dataset. You are expected to submit a research project of that introduces a machine learning algorithm predicting ideological self-placement (V161126) using the ANES 2016 dataset. The project can use any of the methods introduced during the course, but is not limited to. You will explain the methods and the variables you choose to incorporate in your algorithm and why those are appropriate to predict your target. You can use theory or data to motivate your choices. You will also discuss the assumptions made by the methods and the data and the limits of what we can learn from your project.</p>
 </div>
 <div id="instructions" class="section level1">
 <h1>Instructions</h1>
@@ -430,21 +452,20 @@ div.tocify {
 <p><strong>The RMarkdown script</strong>:</p>
 <ul>
 <li>Contains all the code necessary to reproduce the project.</li>
-<li>Uses code chunks and in-line code that is understandable to the reader.</li>
+<li>Uses code chunks that are understandable to the reader.</li>
 <li>Loads, cleans and prepares the data.</li>
-<li>Makes summary statistics and appropriate visualizations of the target variable and explanatory variables you expect to use.</li>
-<li>Trains an algorithm using the selected variables in the ANES 2016 pre-election dataset.</li>
-<li>Uses the trained algorithm to make predictions of the voting intentions.</li>
-<li>Evaluates and summarises the performance of the algorithm compared to the actual voting intentions and the actual vote.
+<li>Makes summary statistics and appropriate visualizations of the target variable and explanatory variables you select.</li>
+<li>Trains an algorithm using the selected variables in the ANES 2016 dataset.</li>
+<li>Uses the trained algorithm to make predictions of the target variable.</li>
+<li>Evaluates and summarises the performance of the algorithm.
 <ul>
 <li>You will use appropriate tables and visualizations.</li>
 </ul></li>
 <li>Uses prose to describe the algorithmic implementation and variable choices to the reader.
 <ul>
-<li>You will discuss the strengths and weaknesses of the data and the algorithm.</li>
-<li>You will discuss the differences, if any, between the algorithm performance compared to actual voting intentions and actual vote.</li>
+<li>You will discuss the strengths and weaknesses of the data and your algorithm.</li>
 </ul></li>
-<li>Uses relevant citations when appropriate and ground the project theoretically.</li>
+<li>Uses relevant citations when appropriate to ground the project theoretically.</li>
 <li>Contains a bibliography section with the all the used references.</li>
 <li>The script successfully knits.</li>
 </ul>
@@ -468,6 +489,14 @@ div.tocify {
 <li>Expression: The methods used and the variables selected or created are properly motivated using theory and empirics.</li>
 <li>Originality: The algorithmic implementation is original and uses a good depth of course material.</li>
 </ul>
+</div>
+<div id="references" class="section level1 unnumbered">
+<h1 class="unnumbered">References</h1>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-jessee2012ideology" class="csl-entry">
+<p>Jessee, Stephen A. 2012. <em>Ideology and Spatial Voting in American Elections</em>. Cambridge University Press.</p>
+</div>
+</div>
 </div>
 
 

@@ -9,14 +9,9 @@ subtitle: "Learning Objectives:"
 
 # Resources
 
-## Cheatsheets
-- [Data visualization](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
-
-## Readings
-- [Data visualization](https://r4ds.had.co.nz/data-visualisation.html)
-
-## Practice
-- [Data visualization with ggplot2](https://learn.datacamp.com/courses/introduction-to-data-visualization-with-ggplot2)
+- **Cheatsheets:** [Data visualization](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
+- **Readings:** [Data visualization](https://r4ds.had.co.nz/data-visualisation.html)
+- **Practice:** [Data visualization with ggplot2](https://learn.datacamp.com/courses/introduction-to-data-visualization-with-ggplot2)
 
 
 # Data Analysis or how to start answering questions with data!
@@ -220,23 +215,3 @@ ggplot(daily_feeling, aes(x = date)) +
 
 ```
 
-
-####### FOR SESSION 6
-
-Anscombe %>%
-  group_by(set) %>%
-  summarize(
-    N = n(),
-    mean_of_x = mean(x),
-    std_dev_of_x = sd(x),
-    mean_of_y = mean(y),
-    std_dev_of_y = sd(y),
-    correlation_between_x_and_y = cor(x,y)
-  )
-
-mlbBat10 %>%
-  summarize(N = n(), r = cor(OBP, SLG))
-
-
-# Requirements
-- Complete [Challenge 4: The Analyst](https://classroom.github.com/a/XXXXX)

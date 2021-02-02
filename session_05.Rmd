@@ -7,21 +7,33 @@ subtitle: "Learning Objectives:"
 - Visualize data summaries.
 - Answer questions with data.
 
+# Resources
 
-Your journey has been long! Let's recap what you have achieved so far:
-- You have learned programming basics.
-- You have learned how to explore and visualise real world data.
-- You have learned how to manage and clean data.
+## Cheatsheets
+- [Data visualization](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
+
+## Readings
+- [Data visualization] https://r4ds.had.co.nz/data-visualisation.html
+
+## Practice
+- [Data visualization with ggplot2](https://learn.datacamp.com/courses/introduction-to-data-visualization-with-ggplot2)
+
+
+# Data Analysis or how to start answering questions with data!
+
+It has been a long journey! You might not be fluent in R yet, but now you can understand bits of R code and also adjust it to suit your needs.Fixing data to suit your needs can easily take more than 80% of a researcher's time. Once your data is ready, the analysis or modeling parts are usually very quick.
+
+Let's recap what you have achieved so far:
+
 - You have learned to combine prose and code into reproducible working documents.
-- You have learned how to aggregate and summarise data into useful pieces of information (more on this today).
+- You have learned programming basics.
+- You have learned how to explore real world data.
+- You have learned how to clean messy data.
+- You have learned how to summarise data into useful pieces of information (more on this today).
 
-You might not be yet fluent in R, but you can read code and adjust it to suit your needs. Now, it is time to start to answering questions using data.
-Remember that getting familiar with the data and fixing all its problems takes easily 80% or more of a researcher's time. Once your data is ready, the analysis or the modeling part is usually very quick!
+Now, it is time to start to answering questions with data using what you have learned so far!
 
-Once we know more about our dataset, it is time to more fix the identified flaws in the data and begin to extract useful insights.
-
-
-# Hack Time! - Answering questions with data!
+# Hack Time!
 
 ```{r klippy, echo=FALSE, include=TRUE}
 klippy::klippy()
@@ -38,7 +50,7 @@ data_url <- "https://github.com/mickaeltemporao/CMT4A-CMSS-TEMPLATE/raw/main/dat
 
 tb <- readRDS(url(data_url,"rb"))
 
-# Always look at the data first
+# Always look at the data first!
 head(tb)
 
 # Answering questions with data ================================================

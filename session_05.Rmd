@@ -1,238 +1,228 @@
 ---
-title: "Session 5: Data Management"
+title: "Session 5: Data Analysis"
 subtitle: "Learning Objectives:"
 ---
 
-- Learn to recode, transform and create new useful variables.
-- Learn to group and summarise data into useful bits of information.
-- Learn how to report and visualize different types of data.
+- Summarise raw data into useful bit of information.
+- Visualize data summaries.
+- Answer questions with data.
 
 
-## binary
-## dummy
-evaluate usefulness of a variable by comparing to target
+Your journey has been long! Let's recap what you have achieved so far:
+- You have learned programming basics.
+- You have learned how to explore and visualise real world data.
+- You have learned how to manage and clean data.
+- You have learned to combine prose and code into reproducible working documents.
+- You have learned how to aggregate and summarise data into useful pieces of information (more on this today).
 
-talk about pre and post election
+You might not be yet fluent in R, but you can read code and adjust it to suit your needs. Now, it is time to start to answering questions using data.
+Remember that getting familiar with the data and fixing all its problems takes easily 80% or more of a researcher's time. Once your data is ready, the analysis or the modeling part is usually very quick!
 
-create target and real target but unaccessible
-
-Binary Variables vs. Dummy Variables
-https://www.statisticshowto.com/binary-variable-2/#:~:text=The%20terms%20dummy%20variable%20and,not%20exactly%20the%20same%20thing.&text=If%20your%20dummy%20variable%20has,is%20also%20a%20binary%20variable.
-
-## Recode variables
-## Fix missing values
-##
-## num
-## cat
-## ord
-## binary
-## dummy
-##
-## How to viz
-
-## Commit in RStudio
-
-# Resources
-
-## Cheatsheets
-
-## Readings
-
-## Practice
-
-# Resources
-
-## Cheatsheets
-
-- [Data transformation](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf)
-- [Data visualization](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
-
-## Readings
-- [Exploratory Data Analysis](https://r4ds.had.co.nz/exploratory-data-analysis.html)
-
-## Practice
-
-- [Data visualization with ggplot2](https://learn.datacamp.com/courses/introduction-to-data-visualization-with-ggplot2)
-- [Exploratory Data Analysis](https://learn.datacamp.com/courses/exploratory-data-analysis-in-r)
-- [Data Cleaning](https://learn.datacamp.com/courses/cleaning-data-in-r)
+Once we know more about our dataset, it is time to more fix the identified flaws in the data and begin to extract useful insights.
 
 
-# Data Management
-
-Once we know more about our dataset, it is time to more fix the identified flaws in the data and begin to extract useful insights. We continue the explore, transform and visualize loop to learn more from the data and create useful variables also known as features. This process can easily take 80% or more of a researcher's time.
-
-We will continue to use dplyr's verbs to manipulate the data.
-
-- `select()` picks variables based on their names.
-- `filter()` picks cases based on their values.
-- `mutate()` adds new variables that are functions.
-- `arrange()` changes the ordering of the rows.
-- `rename()` changes the name of individual variables.
-
-We will focus on data aggregation functions:
-
-- `summary()` produces result summaries based on the class of the object.
-- `groub_by()` group by one or more variables.
-- `summarise()` summarise each group to fewer rows.
-
-
-## Types of data
-
-We have seen that there are different types of data in R (numeric, character, factor, logical, ...). In the real world, we can group data in two broad families:
-
-**Discrete** data can only take a finite number of values.
-
-- eg. The number of students in a class.
-
-**Continuous** data can take an infinite number of values.
-
-- eg. The height of a student.
-
-## Levels of Measurement
-
-We can further divide each of these data types into four families:
-
-**Nominal:** Differences of kind. There is no mathematical relationship between the values.
-
-eg. Political parties.
-
-**Ordinal:** Differences of degree. There is a mathematical relationships among the values. Symbols like <, ≤, =, ≥, and > have meaning but the distance between two elements is not constant.
-
-eg. Levels of education.
-
-**Interval:** There is a mathematical relationship among the elements and the distance between them is constant but they do not have a meaningful zero value.
-
-eg. Feelings thermometer (0 to 100).
-
-**Ratio:** Similar to the interval variables but they have a meaningful zero value.
-
-eg. Feelings thermometer (-50 to 50)
-
-We can notice that each subsequent level of measurement has the properties of levels before it. For more details on this see [Chapter 1, Siegel, 2013](https://press.princeton.edu/books/paperback/9780691159171/a-mathematics-course-for-political-and-social-research).
-
-Understanding these variable types helps us recode the variables in our datasets into their appropriate types in order to extract proper insights or create useful features for our predictive models. To recode the variables we will often use a combination of functions such as:
-
-- `mutate()`
-- `as.numeric()`
-- `as.character(`)
-- `as.factor()`
-- `as.logical()`
-
-# Hack Time!
+# Hack Time! - Answering questions with data!
 
 ```{r klippy, echo=FALSE, include=TRUE}
-# klippy::klippy()
+klippy::klippy()
 ```
 
 ```{r eval=FALSE}
 # Session 5: Data Management  --------------------------------------------------
 
 # Getting Started ==============================================================
-# Load the tidyverse package
-...
+# Loading packages & data
+library(tidyverse)
 
-# Identify the path to the `ts_2016.rds` dataset
-data_path <- "..."
+data_url <- "https://github.com/mickaeltemporao/CMT4A-CMSS-TEMPLATE/raw/main/data/clean_2016.rds"
 
-# Read your data and save it into an object called `dataset`
-dataset <- ...
+tb <- readRDS(url(data_url,"rb"))
 
-# Let's work on a subset of the dataset using meaningful names
-tmp_data <- dataset %>%
-  select(
-    V163003,   # region
-    V161031,   # vote_intent
-    V161086,   # ft_democrat
-    V161087,   # ft_republican
-    V161126,   # ideology
-    V161155,   # party_id
-    V162034a   # actual_vote
-  ) %>%
-  rename(
-    "region"        = "V163003",
-    "vote_intent"   = "V161031",
-    "ft_democrat"   = "V161086",
-    "ft_republican" = "V161087",
-    "ideology"      = "V161126",
-    "party_id"      = "V161155",
-    "actual_vote"   = "V162034a"
-  )
+# Always look at the data first
+head(tb)
 
+# Answering questions with data ================================================
 
-# Plotting data summaries ======================================================
-
-# Now let's make an actual plot with the percentages
-ggplot(..., aes(x=...)) +
-geom_bar()
-
-# What's wrong here?
-
-# Try again using geom_col() instead of geom_bar
-ggplot(vote_intent_summary, aes(x=vote_intent, y=...))+
-geom_...()
-
-# Let's quickly clean liberal-conservative self placement variable.
-clean_data <- clean_data %>%
-  filter(
-    ideology > 0,
-    ideology < 8
-  ) %>%
+# What is the predicted vote share for each candidate using voting intentions?
+tb %>%
+  group_by(voting_int) %>%
+  summarise(freq = n()) %>%
   mutate(
-    ideology = as. ... (...)
+    prop = freq/sum(freq)
   )
 
-# Peek at the variables
-clean_data %>%
-  select(vote_intent, ideology) %>%
-  # WARNING: summary() is a different function summarise()!
-  summary()
+# How good are those numbers relative to the actual numbers?
+# https://en.wikipedia.org/wiki/2016_United_States_presidential_election#Electoral_results
 
-# What is the average (mean) ideology per vote intention?
-clean_data %>%
-  group_by(...) %>%
-  summarise(
-    ... = ...(...)
-  )
 
-# Do these results seem valid?
-
-# Now try to find which region is the most conservative?
-clean_data %>%
-  group_by(...) %>%
-  ...(avg_idl = mean(...)) %>%
-  arrange(...)
-
-# Let's try to summarise the ideology per vote intention visually
-
-# We need to save the intermediary averages
-idl_means <- clean_data %>%
-  group_by(vote_intent) %>%
+# Are the people who intend to vote for G. Johnson left wing or right wing?
+idl_means <- tb %>%
+  group_by(voting_int) %>%
   summarise(
     avg = mean(ideology)
-  )
+  ) %>%
+  arrange(avg)
 
-# And then we make a plot
-ggplot(clean_data, aes(x = ideology, y = ..prop.., group=vote_intent)) +
+idl_means
+
+ggplot(tb, aes(x = ideology, y = ..prop.., group=voting_int)) +
   geom_bar() +
-  facet_wrap(~vote_intent) +
+  facet_wrap(~voting_int) +
   geom_vline(
     data=idl_means,
     aes(xintercept=avg), color="red", linetype=2) +
+  geom_text(
+    data=idl_means,
+    aes(x=avg, y=0.25, label=round(avg, 2)), color="red", hjust=-0.25
+    ) +
   scale_x_discrete(
-    limits=c("Ext. liberal", "", "", "Moderate", "", "", "Ext. conservative")
+    limits=c("Extrm. Lib", "", "", "Moderate", "", "", "Extrm. Con.")
   ) +
   labs(
-    x = "Self placement",
+    x = "Ideological Self placement",
     y = "Proportion"
   ) +
-  theme_bw()
+  theme_light()
 
-# Can you summarise the ideology per region in a figure?
-...
+
+# How is ideology distributed among people for which religion is important?
+ggplot(tb, aes(x = ideology, y = ..prop.., group=religion)) +
+  geom_bar() +
+  facet_wrap(~religion) +
+  geom_vline(
+    data=tb %>% group_by(religion) %>% summarise(avg=mean(ideology)) %>% arrange(avg),
+    aes(xintercept=avg), color="red", linetype=2) +
+  geom_text(
+    data=tb %>% group_by(religion) %>% summarise(avg=mean(ideology)) %>% arrange(avg),
+    aes(x=avg, y=0.25, label=round(avg, 2)), color="red", hjust=-0.25
+    ) +
+  scale_x_discrete(
+    limits=c("Extrm. Lib", "", "", "Moderate", "", "", "Extrm. Con.")
+  ) +
+  labs(
+    x = "Ideological Self placement",
+    y = "Proportion"
+  ) +
+  theme_light()
+
+
+# How do relgious people intend to vote?
+ggplot(tb, aes(x = voting_int, y = ..prop.., group=religion)) +
+  geom_bar() +
+  facet_wrap(~religion)
+
+
+# Do right-wing people approve president Obama?
+ggplot(tb, aes(x = ideology, y = ..prop.., group=pres_appr)) +
+  geom_bar() +
+  facet_wrap(~pres_appr) +
+  geom_vline(
+    data=tb %>% group_by(pres_appr) %>% summarise(avg=mean(ideology)) %>% arrange(avg),
+    aes(xintercept=avg), color="red", linetype=2) +
+  geom_text(
+    data=tb %>% group_by(pres_appr) %>% summarise(avg=mean(ideology)) %>% arrange(avg),
+    aes(x=avg, y=0.25, label=round(avg, 2)), color="red", hjust=-0.25
+    ) +
+  scale_x_discrete(
+    limits=c("Extrm. Lib", "", "", "Moderate", "", "", "Extrm. Con.")
+  ) +
+  labs(
+    x = "Ideological Self placement",
+    y = "Proportion"
+  ) +
+  theme_light()
+
+
+# Are people who express sexist attitudes left-wing or right-wing?
+ggplot(tb, aes(x = ideology, y = ..prop.., group=sexism)) +
+  geom_bar() +
+  facet_wrap(~sexism) +
+  geom_vline(
+    data=tb %>% group_by(sexism) %>% summarise(avg=mean(ideology)) %>% arrange(avg),
+    aes(xintercept=avg), color="red", linetype=2) +
+  geom_text(
+    data=tb %>% group_by(sexism) %>% summarise(avg=mean(ideology)) %>% arrange(avg),
+    aes(x=avg, y=0.25, label=round(avg, 2)), color="red", hjust=-0.25
+    ) +
+  scale_x_discrete(
+    limits=c("Extrm. Lib", "", "", "Moderate", "", "", "Extrm. Con.")
+  ) +
+  labs(
+    x = "Ideological Self placement",
+    y = "Proportion"
+  ) +
+  theme_light()
+
+
+names(tb)
+
+
+
+# Are young people more right or left wing?
+ggplot(tb, aes(x=factor(ideology), y=age)) +
+  geom_boxplot() +
+  facet_wrap(~latino) +
+  geom_vline(
+    data=tb %>% group_by(latino) %>% summarise(avg = mean(ideology)) %>% arrange(avg),
+    aes(xintercept=avg), color="red", linetype=2) +
+  labs(
+    x = "Ideological Self placement",
+    y = "Proportion"
+  ) +
+  theme_light()
+
+
+# Is there a difference among Latinos?
+ggplot(tb, aes(x=factor(ideology), y=age)) +
+  geom_boxplot() +
+  facet_wrap(~latino) +
+  geom_vline(
+    data=tb %>% group_by(latino) %>% summarise(avg = mean(ideology)) %>% arrange(avg),
+    aes(xintercept=avg), color="red", linetype=2) +
+  labs(
+    x = "Ideological Self placement",
+    y = "Proportion"
+  ) +
+  theme_light()
+
+# How were citizens feeling towards Democrats?
+daily_feeling <- tb %>%
+  group_by(date) %>%
+  summarise(
+    Democrat=mean(feeling_dem),
+    Republican=mean(feeling_rep)
+  )
+
+ggplot(daily_feeling, aes(x = date)) +
+  geom_smooth(aes(y = Democrat), span=.2, se=FALSE, color="#0B53C1") +
+  geom_smooth(aes(y = Republican), span=.2, se=FALSE, color="#FF0055") +
+  labs(
+    title = "Average daily feeling towards major political parties",
+    x = "",
+    y = "Feelings Thermometer",
+    caption = "Data: ANES 2016"
+  ) +
+  theme_minimal()
 
 ```
 
 
-# Requirements
-- Complete [Challenge 3: The Explorer](https://classroom.github.com/a/f4bspIRM)
+####### FOR SESSION 6
 
+Anscombe %>%
+  group_by(set) %>%
+  summarize(
+    N = n(),
+    mean_of_x = mean(x),
+    std_dev_of_x = sd(x),
+    mean_of_y = mean(y),
+    std_dev_of_y = sd(y),
+    correlation_between_x_and_y = cor(x,y)
+  )
+
+mlbBat10 %>%
+  summarize(N = n(), r = cor(OBP, SLG))
+
+
+# Requirements
+- Complete [Challenge 4: The Analyst](https://classroom.github.com/a/XXXXX)

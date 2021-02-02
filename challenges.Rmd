@@ -27,7 +27,7 @@ You can try to do this challenge on your own before the first session. If you're
 | Session 1 | Session 2 | [The RMarkdown Project](https://classroom.github.com/a/cBKLpsZC) |
 | Session 2 | Session 3 | [Functioning Functions](https://classroom.github.com/a/6ConAKQs) |
 | Session 4 | Session 5 | [The Explorer](https://classroom.github.com/a/f4bspIRM)          |
-| Session 6 | Session 7 | [The Analyst]()                                                  |
+| Session 6 | Session 7 | [The Analyst](https://classroom.github.com/a/PGW6Budq)           |
 | Session 8 | Session 9 | TBA                                                              |
 
 ## Grading

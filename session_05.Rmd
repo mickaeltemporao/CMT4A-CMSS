@@ -9,9 +9,9 @@ subtitle: "Learning Objectives:"
 
 # Resources
 
-- **Cheatsheets:** [Data visualization](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
-- **Readings:** [Data visualization](https://r4ds.had.co.nz/data-visualisation.html)
 - **Practice:** [Data visualization with ggplot2](https://learn.datacamp.com/courses/introduction-to-data-visualization-with-ggplot2)
+- **Readings:** [Data visualization](https://r4ds.had.co.nz/data-visualisation.html)
+- **Cheatsheets:** [Data visualization](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
 
 
 # Data Analysis
@@ -33,6 +33,8 @@ Now, it is time to start to answering questions with data using what you have le
 # Hack Time!
 
 This session will be a bit different as the code is ready and should run end to end. Instead, we will take time to look at the figures and derive insights from them!
+
+- If you're interested in how the dataset used in this session was generated [--> click here <--](https://github.com/mickaeltemporao/CMT4A-CMSS-TEMPLATE/blob/main/src/make_data.R)
 
 ```{r klippy, echo=FALSE, include=TRUE}
 klippy::klippy()
@@ -117,10 +119,11 @@ ggplot(tb, aes(x = ideology, y = ..prop.., group=religion)) +
   theme_light()
 
 
-# How do relgious people intend to vote?
+# How do religious people intend to vote?
 ggplot(tb, aes(x = voting_int, y = ..prop.., group=religion)) +
   geom_bar() +
-  facet_wrap(~religion)
+  facet_wrap(~religion) +
+  theme_light()
 
 
 # Do right-wing people approve president Obama?
@@ -163,10 +166,6 @@ ggplot(tb, aes(x = ideology, y = ..prop.., group=sexism)) +
     y = "Proportion"
   ) +
   theme_light()
-
-
-names(tb)
-
 
 
 # Are young people more right or left wing?

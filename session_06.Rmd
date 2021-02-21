@@ -232,6 +232,7 @@ tmp <- raw_data %>%
     income > 0,
   )
 
+  # You need to be careful as some variables might not be properly coded!
   cor(tmp)
 
   cor(tmp) %>%
@@ -248,18 +249,13 @@ tb <- readRDS(url(data_url,"rb"))
 head(tb)
 
 
-cor(tb)
 
-temporary_data %>% cor
+summary(lm(income ~ education, data = temporary_data))
 
-lm(
+cor(temporary_data$income, temporary_data$education)
 
+add gender control
 
-
-
-
-
-# Answering questions with data ================================================
 
 # What is the predicted vote share for each candidate using voting intentions?
 tb %>%

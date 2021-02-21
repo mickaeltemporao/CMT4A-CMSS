@@ -1,5 +1,5 @@
 ---
-title: "Session 5: Data Analysis"
+title: "Session 6: Data Analysis"
 subtitle: "Learning Objectives:"
 ---
 

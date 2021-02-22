@@ -10,148 +10,54 @@ tb <- readRDS(url(data_url,"rb"))
 # Always look at the data first!
 head(tb)
 
-#
-tb %>% select(ideology, age) %>% cor()
 
-summary(lm(ideology ~ age, data = tb))
+# Last time we ended by checking the relationship between ideology and age
+ggplot(tb, aes(x=ideology, y=age)) +
+  geom_jitter() +
+  theme_light()
 
-add gender control
-
-ggplot(tb, aes(x = ideology, y = ..prop.., group=voting_int)) +
-  geom_bar() +
-  facet_wrap(~voting_int) +
-  geom_vline(
-    data=idl_means,
-    aes(xintercept=avg), color="red", linetype=2) +
-  geom_text(
-    data=idl_means,
-    aes(x=avg, y=0.25, label=round(avg, 2)), color="red", hjust=-0.25
-    ) +
-  scale_x_discrete(
-    limits=c("Extrm. Lib", "", "", "Moderate", "", "", "Extrm. Con.")
-  ) +
-  labs(
-    x = "Ideological Self placement",
-    y = "Proportion"
-  ) +
+# Let's add the line of best fit
+ggplot(tb, aes(x=ideology, y=age)) +
+  geom_jitter() +
+  geom_smooth(method="lm") +
   theme_light()
 
 
-# How is ideology distributed among people for which religion is important?
-ggplot(tb, aes(x = ideology, y = ..prop.., group=religion)) +
-  geom_bar() +
-  facet_wrap(~religion) +
-  geom_vline(
-    data=tb %>% group_by(religion) %>% summarise(avg=mean(ideology)) %>% arrange(avg),
-    aes(xintercept=avg), color="red", linetype=2) +
-  geom_text(
-    data=tb %>% group_by(religion) %>% summarise(avg=mean(ideology)) %>% arrange(avg),
-    aes(x=avg, y=0.25, label=round(avg, 2)), color="red", hjust=-0.25
-    ) +
-  scale_x_discrete(
-    limits=c("Extrm. Lib", "", "", "Moderate", "", "", "Extrm. Con.")
-  ) +
-  labs(
-    x = "Ideological Self placement",
-    y = "Proportion"
-  ) +
-  theme_light()
+# Was the relationship positive or negative? TIP: use cor()
+tb %>% select(ideology, age) %>% ...
 
+# What is the size of this effect ? TIP: use lm()
 
-# How do relgious people intend to vote?
-ggplot(tb, aes(x = voting_int, y = ..prop.., group=religion)) +
-  geom_bar() +
-  facet_wrap(~religion)
+# How does lm() work?
+# lm(formula, data)
+# formula : y ~ x
+# data : data.frame
 
+# Let's fit our first model using lm() to answer that question
+lm(ideology ~ age, data = tb)
 
-# Do right-wing people approve president Obama?
-ggplot(tb, aes(x = ideology, y = ..prop.., group=pres_appr)) +
-  geom_bar() +
-  facet_wrap(~pres_appr) +
-  geom_vline(
-    data=tb %>% group_by(pres_appr) %>% summarise(avg=mean(ideology)) %>% arrange(avg),
-    aes(xintercept=avg), color="red", linetype=2) +
-  geom_text(
-    data=tb %>% group_by(pres_appr) %>% summarise(avg=mean(ideology)) %>% arrange(avg),
-    aes(x=avg, y=0.25, label=round(avg, 2)), color="red", hjust=-0.25
-    ) +
-  scale_x_discrete(
-    limits=c("Extrm. Lib", "", "", "Moderate", "", "", "Extrm. Con.")
-  ) +
-  labs(
-    x = "Ideological Self placement",
-    y = "Proportion"
-  ) +
-  theme_light()
+# What about party identification
+lm(ideology ~ party_id, data = tb)
 
+# What about education?
+lm(ideology ~ education, data = tb)
 
-# Are people who express sexist attitudes left-wing or right-wing?
-ggplot(tb, aes(x = ideology, y = ..prop.., group=sexism)) +
-  geom_bar() +
-  facet_wrap(~sexism) +
-  geom_vline(
-    data=tb %>% group_by(sexism) %>% summarise(avg=mean(ideology)) %>% arrange(avg),
-    aes(xintercept=avg), color="red", linetype=2) +
-  geom_text(
-    data=tb %>% group_by(sexism) %>% summarise(avg=mean(ideology)) %>% arrange(avg),
-    aes(x=avg, y=0.25, label=round(avg, 2)), color="red", hjust=-0.25
-    ) +
-  scale_x_discrete(
-    limits=c("Extrm. Lib", "", "", "Moderate", "", "", "Extrm. Con.")
-  ) +
-  labs(
-    x = "Ideological Self placement",
-    y = "Proportion"
-  ) +
-  theme_light()
+# What about gender?
+lm(ideology ~ gender, data = tb)
 
+# Which model is right?
+# All models are wrong but some are useful (Box, 1976)
 
-names(tb)
+# Are those effects due to chance or can we be confident about them?
+# Let's make a more exhaustive model and check!
 
+lm(ideology ~ age + party_id + education + gender, data = tb)
+# This is getting a bit more difficult to understand... bear with me!
+# R's fantastic summary (not summarise) function is here to help us.
 
+# Let's save this model
+my_model <- lm(ideology ~ age + party_id + education + gender, data = tb)
 
-# Are young people more right or left wing?
-ggplot(tb, aes(x=factor(ideology), y=age)) +
-  geom_boxplot() +
-  facet_wrap(~latino) +
-  geom_vline(
-    data=tb %>% group_by(latino) %>% summarise(avg = mean(ideology)) %>% arrange(avg),
-    aes(xintercept=avg), color="red", linetype=2) +
-  labs(
-    x = "Ideological Self placement",
-    y = "Proportion"
-  ) +
-  theme_light()
+# We can use R's great summary() function to
+summary(my_model)
 
-
-# Is there a difference among Latinos?
-ggplot(tb, aes(x=factor(ideology), y=age)) +
-  geom_boxplot() +
-  facet_wrap(~latino) +
-  geom_vline(
-    data=tb %>% group_by(latino) %>% summarise(avg = mean(ideology)) %>% arrange(avg),
-    aes(xintercept=avg), color="red", linetype=2) +
-  labs(
-    x = "Ideological Self placement",
-    y = "Proportion"
-  ) +
-  theme_light()
-
-# How were citizens feeling towards Democrats?
-daily_feeling <- tb %>%
-  group_by(date) %>%
-  summarise(
-    Democrat=mean(feeling_dem),
-    Republican=mean(feeling_rep)
-  )
-
-ggplot(daily_feeling, aes(x = date)) +
-  geom_smooth(aes(y = Democrat), span=.2, se=FALSE, color="#0B53C1") +
-  geom_smooth(aes(y = Republican), span=.2, se=FALSE, color="#FF0055") +
-  labs(
-    title = "Average daily feeling towards major political parties",
-    x = "",
-    y = "Feelings Thermometer",
-    caption = "Data: ANES 2016"
-  ) +
-  theme_minimal()

@@ -30,7 +30,6 @@ Before creating statistical models we need to become familiar with the data we h
 
 ![](https://d33wubrfki0l68.cloudfront.net/571b056757d68e6df81a3e3853f54d3c76ad6efc/32d37/diagrams/data-science.png "")
 
-
 The American National Election Study from 2016 (ANES 2016), a popular dataset often used to study public opinion and political behaviour, will be used throughout this and future sessions. Have you notices that this is the dataset you have been using in your challenges?
 
 - Download the User Guide and Codebook: https://electionstudies.org/data-center/2016-time-series-study/

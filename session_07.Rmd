@@ -1,22 +1,44 @@
 ---
-title: "Session 5: Data Management 2"
+title: "Session 7: Supervised Learning (1/2)"
 subtitle: "Learning Objectives:"
 ---
 
-- Summarise raw data into useful bit of information.
-- Visualize data summaries.
-- Answer questions with data.
+- Identify relationships between variables
+- Quantify relationships between variables
+- Learn about correlation and regression
+
+- Visualize model fit
+- Summarise tables
 
 # Resources
 
-- **Practice:** [Data visualization with ggplot2](https://learn.datacamp.com/courses/introduction-to-data-visualization-with-ggplot2)
-- **Readings:** [Data visualization](https://r4ds.had.co.nz/data-visualisation.html)
-- **Cheatsheets:** [Data visualization](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
+## Cheatsheets
+## Readings
+## Practice
+
+####### FOR SESSION 6
+
+USE cor() AND lm() in summary
+
+stargazer summaries
+
+datset %>%
+  group_by(set) %>%
+  summarize(
+    N = n(),
+    mean_of_x = mean(x),
+    std_dev_of_x = sd(x),
+    mean_of_y = mean(y),
+    std_dev_of_y = sd(y),
+    correlation_between_x_and_y = cor(x,y))
+
+########
+
+# Requirements
+- Complete [Challenge 4: The Analyst](https://classroom.github.com/a/XXXXX)
 
 
-# Data Management
-
-...or how to start answering questions with data!
+# Data Analysis or how to start answering questions with data!
 
 It has been a long journey! You might not be fluent in R yet, but now you can understand bits of R code and also adjust it to suit your needs.Fixing data to suit your needs can easily take more than 80% of a researcher's time. Once your data is ready, the analysis or modeling parts are usually very quick.
 
@@ -33,8 +55,6 @@ Now, it is time to start to answering questions with data using what you have le
 # Hack Time!
 
 This session will be a bit different as the code is ready and should run end to end. Instead, we will take time to look at the figures and derive insights from them!
-
-- If you're interested in how the dataset used in this session was generated [--> click here <--](https://github.com/mickaeltemporao/CMT4A-CMSS-TEMPLATE/blob/main/src/make_data.R)
 
 ```{r klippy, echo=FALSE, include=TRUE}
 klippy::klippy()
@@ -119,11 +139,10 @@ ggplot(tb, aes(x = ideology, y = ..prop.., group=religion)) +
   theme_light()
 
 
-# How do religious people intend to vote?
+# How do relgious people intend to vote?
 ggplot(tb, aes(x = voting_int, y = ..prop.., group=religion)) +
   geom_bar() +
-  facet_wrap(~religion) +
-  theme_light()
+  facet_wrap(~religion)
 
 
 # Do right-wing people approve president Obama?
@@ -168,9 +187,17 @@ ggplot(tb, aes(x = ideology, y = ..prop.., group=sexism)) +
   theme_light()
 
 
+names(tb)
+
+
+
 # Are young people more right or left wing?
 ggplot(tb, aes(x=factor(ideology), y=age)) +
   geom_boxplot() +
+  facet_wrap(~latino) +
+  geom_vline(
+    data=tb %>% group_by(latino) %>% summarise(avg = mean(ideology)) %>% arrange(avg),
+    aes(xintercept=avg), color="red", linetype=2) +
   labs(
     x = "Ideological Self placement",
     y = "Proportion"

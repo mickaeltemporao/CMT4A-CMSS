@@ -1,242 +1,233 @@
 ---
-title: "Session 5: Data Analysis"
+title: "Session 6: Data Modeling (1/2)"
 subtitle: "Learning Objectives:"
+bibliography: references.bib
 ---
 
-- Summarise raw data into useful bit of information.
-- Visualize data summaries.
-- Answer questions with data.
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.align="center")
+```
+
+
+- Identify and quantify variable relationships
+- Interpret results from simple linear models
+- Make predictions using simple linear models
+
 
 # Resources
 
-## Cheatsheets
-- [Data visualization](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
+## Functions
+
+- `cor()` : correlation function
+- `lm()` : linear model function
 
 ## Readings
-- [Data visualization](https://r4ds.had.co.nz/data-visualisation.html)
+- [Model Basics](https://r4ds.had.co.nz/model-basics.html)
 
 ## Practice
-- [Data visualization with ggplot2](https://learn.datacamp.com/courses/introduction-to-data-visualization-with-ggplot2)
+- [Correlation and Regression](https://learn.datacamp.com/courses/correlation-and-regression-in-r)
+
+# Data Modeling
+
+![](https://d33wubrfki0l68.cloudfront.net/571b056757d68e6df81a3e3853f54d3c76ad6efc/32d37/diagrams/data-science.png "")
+
+We have started to use data to answer questions using descriptive statistics such as `mean()`. We have also learned how to use visualizations to identify variable relationships and trends using `ggplot()`. People often says that image is worth a 1000 words, Images are a great tool to convey a message however, our perceptions can be biased [@lewandowsky1989perception]. Let's see.
+
+## Perception Bias
+```{r}
+
+# Load library
+library(tidyverse)
+
+# Import and load the data
+data_url <- "https://github.com/mickaeltemporao/CMT4A-CMSS-TEMPLATE/raw/main/data/ts_2016.rds"
+raw_data <- readRDS(url(data_url,"rb"))
+
+# Prepare data
+temporary_data <- raw_data %>%
+  select(
+    V161267,   # age
+    V161126,   # ideology
+  ) %>%
+  rename(
+    "age"         = "V161267",
+    "ideology"    = "V161126",
+  ) %>%
+  filter(
+    between(ideology, 1, 7),
+    age >= 18,
+  )
+```
+
+### Relationship between variables can be complex to see
+
+```{r echo=FALSE, message=FALSE, fig.width=6, fig.height=6, fig.align = "center"}
+
+# Make a figure
+ggplot(temporary_data, aes(x=age, y=ideology)) +
+  geom_jitter(alpha=.5) +
+  labs(title="What is the relationship between these 2 variables?", x="", y="") +
+  theme(
+    axis.text.x=element_blank(),
+    axis.text.y=element_blank()
+  )
+
+```
+
+```{r echo=FALSE, message=FALSE, fig.width=6, fig.height=6, fig.align = "center"}
+
+models <- tibble(
+  a1 = runif(50, -5, 5),
+  a2 = runif(50, -0.25, 0.25)
+)
+# Make a figure
+ggplot(temporary_data, aes(x=age, y=ideology)) +
+  geom_abline(aes(intercept = a1, slope = a2), data=models, alpha=.5) +
+  geom_jitter(alpha=.25) +
+  geom_smooth(alpha=.25, method='lm', se=FALSE, color='black', size=.2) +
+  labs(title="Which of these lines best describes the relationship ?", x="", y="") +
+  theme(
+    axis.text.x=element_blank(),
+    axis.text.y=element_blank()
+  )
+
+```
+
+### Strong relationship?
+
+```{r echo=FALSE, message=FALSE, fig.width=4, fig.height=6, fig.align = "center"}
+
+# Make a figure
+ggplot(temporary_data, aes(x=age, y=ideology)) +
+  geom_jitter(alpha=.25) +
+  geom_smooth(alpha=.5, method='lm', se=FALSE) +
+  labs(title="Figure A", x="", y="") +
+  theme(
+    axis.text.x=element_blank(),
+    axis.text.y=element_blank()
+  )
+
+```
+
+```{r echo=FALSE, message=FALSE, fig.width=12, fig.height=4, fig.align = "center"}
+
+# Make a figure
+ggplot(temporary_data, aes(x=age, y=ideology)) +
+  geom_jitter(alpha=.5) +
+  geom_smooth(alpha=.5, method='lm', se=FALSE) +
+  labs(title="Figure B", x="", y="") +
+  theme(
+    axis.text.x=element_blank(),
+    axis.text.y=element_blank()
+  )
+
+```
+
+Is the relationship observed due to random chance?
+
+To avoid such biases we need to quantify the strength of relationships using approved standards and be confident about the claims we make. Linear models such the linear regression will help us achieve these goals!
 
 
-####### FOR SESSION 6
+# What is a model?
 
-USE cor() AND lm() in summarise
+```{r message=FALSE}
 
-datset %>%
-  group_by(set) %>%
-  summarize(
-    N = n(),
-    mean_of_x = mean(x),
-    std_dev_of_x = sd(x),
-    mean_of_y = mean(y),
-    std_dev_of_y = sd(y),
-    correlation_between_x_and_y = cor(x,y))
+# Load library
+library(tidyverse)
 
-########
+# Saving the data
+my_data <- data.frame(
+  time_to_iep=c(16.93, 19.49, 18.21, 19.09, 17.67, 18.48, 16.37, 17.57, 19.18, 18.74, 17.15, 17.76, 17.2, 19.78, 18.34, 17.93, 18.09, 17.14, 19.41, 17.99, 16.54, 18.42, 16.65, 19.83, 18.32, 18.13, 16.72, 18.05, 18.5, 19.45, 17.22, 17.32, 19.48, 18.93, 18.69, 18.78, 18.58, 18.8, 18.28, 20.06, 18.12, 18.64, 18.16, 17.44, 18.96, 17.55, 19.09, 17.95, 21.01, 18.19)
+)
 
-# Requirements
-- Complete [Challenge 4: The Analyst](https://classroom.github.com/a/XXXXX)
+# Visualize
+ggplot(my_data, aes(x=time_to_iep)) +
+  geom_histogram() +
+  geom_vline(aes(xintercept=mean(time_to_iep)), size=1.5, color="red", linetype=2) +
+  geom_text(aes(x=mean(time_to_iep), y=4.5, label=round(mean(time_to_iep), 2)), color="red", hjust=-0.25)
+
+```
 
 
-# Data Analysis or how to start answering questions with data!
 
-It has been a long journey! You might not be fluent in R yet, but now you can understand bits of R code and also adjust it to suit your needs.Fixing data to suit your needs can easily take more than 80% of a researcher's time. Once your data is ready, the analysis or modeling parts are usually very quick.
-
-Let's recap what you have achieved so far:
-
-- You have learned to combine prose and code into reproducible working documents.
-- You have learned programming basics.
-- You have learned how to explore real world data.
-- You have learned how to clean messy data.
-- You have learned how to summarise data into useful pieces of information (more on this today).
-
-Now, it is time to start to answering questions with data using what you have learned so far!
 
 # Hack Time!
-
-This session will be a bit different as the code is ready and should run end to end. Instead, we will take time to look at the figures and derive insights from them!
 
 ```{r klippy, echo=FALSE, include=TRUE}
 klippy::klippy()
 ```
 
 ```{r eval=FALSE}
-# Session 5: Data Management  --------------------------------------------------
+# Session 6: Data Modeling  --------------------------------------------------
 
-# Getting Started ==============================================================
-# Loading packages & data
+# Load library
 library(tidyverse)
 
+# Import and load data
 data_url <- "https://github.com/mickaeltemporao/CMT4A-CMSS-TEMPLATE/raw/main/data/clean_2016.rds"
-
 tb <- readRDS(url(data_url,"rb"))
 
 # Always look at the data first!
 head(tb)
 
-# Answering questions with data ================================================
 
-# What is the predicted vote share for each candidate using voting intentions?
-tb %>%
-  group_by(voting_int) %>%
-  summarise(freq = n()) %>%
-  mutate(
-    prop = freq/sum(freq)
-  )
+# Last time we ended by checking the relationship between ideology and age
+ggplot(tb, aes(x=ideology, y=age)) +
+  geom_jitter() +
+  theme_light()
 
-# How good are those numbers relative to the actual numbers?
-# https://en.wikipedia.org/wiki/2016_United_States_presidential_election#Electoral_results
-
-
-# Are the people who intend to vote for G. Johnson left wing or right wing?
-idl_means <- tb %>%
-  group_by(voting_int) %>%
-  summarise(
-    avg = mean(ideology)
-  ) %>%
-  arrange(avg)
-
-idl_means
-
-ggplot(tb, aes(x = ideology, y = ..prop.., group=voting_int)) +
-  geom_bar() +
-  facet_wrap(~voting_int) +
-  geom_vline(
-    data=idl_means,
-    aes(xintercept=avg), color="red", linetype=2) +
-  geom_text(
-    data=idl_means,
-    aes(x=avg, y=0.25, label=round(avg, 2)), color="red", hjust=-0.25
-    ) +
-  scale_x_discrete(
-    limits=c("Extrm. Lib", "", "", "Moderate", "", "", "Extrm. Con.")
-  ) +
-  labs(
-    x = "Ideological Self placement",
-    y = "Proportion"
-  ) +
+# Let's add the line of best fit
+ggplot(tb, aes(x=ideology, y=age)) +
+  geom_jitter() +
+  geom_smooth(method="lm") +
   theme_light()
 
 
-# How is ideology distributed among people for which religion is important?
-ggplot(tb, aes(x = ideology, y = ..prop.., group=religion)) +
-  geom_bar() +
-  facet_wrap(~religion) +
-  geom_vline(
-    data=tb %>% group_by(religion) %>% summarise(avg=mean(ideology)) %>% arrange(avg),
-    aes(xintercept=avg), color="red", linetype=2) +
-  geom_text(
-    data=tb %>% group_by(religion) %>% summarise(avg=mean(ideology)) %>% arrange(avg),
-    aes(x=avg, y=0.25, label=round(avg, 2)), color="red", hjust=-0.25
-    ) +
-  scale_x_discrete(
-    limits=c("Extrm. Lib", "", "", "Moderate", "", "", "Extrm. Con.")
-  ) +
-  labs(
-    x = "Ideological Self placement",
-    y = "Proportion"
-  ) +
-  theme_light()
+# Was the relationship positive or negative? TIP: use cor()
+tb %>% select(ideology, age) %>% ...
 
+# What is the size of the effect ?
+# TIP: we need to use lm()
 
-# How do relgious people intend to vote?
-ggplot(tb, aes(x = voting_int, y = ..prop.., group=religion)) +
-  geom_bar() +
-  facet_wrap(~religion)
+# ---------------------- How does lm() work? ------------------------
+# lm(formula, data)
+# formula : y ~ x
+# y : the dependent variable or what you are trying to explain
+# x : the independent variable(s) or what you believe explains y
+# data : the dataset in the form of a data.frame
+# -------------------------------------------------------------------
 
+# In the next line we fit a model of ideology as a function of age
+lm(ideology ~ age, data = tb)
 
-# Do right-wing people approve president Obama?
-ggplot(tb, aes(x = ideology, y = ..prop.., group=pres_appr)) +
-  geom_bar() +
-  facet_wrap(~pres_appr) +
-  geom_vline(
-    data=tb %>% group_by(pres_appr) %>% summarise(avg=mean(ideology)) %>% arrange(avg),
-    aes(xintercept=avg), color="red", linetype=2) +
-  geom_text(
-    data=tb %>% group_by(pres_appr) %>% summarise(avg=mean(ideology)) %>% arrange(avg),
-    aes(x=avg, y=0.25, label=round(avg, 2)), color="red", hjust=-0.25
-    ) +
-  scale_x_discrete(
-    limits=c("Extrm. Lib", "", "", "Moderate", "", "", "Extrm. Con.")
-  ) +
-  labs(
-    x = "Ideological Self placement",
-    y = "Proportion"
-  ) +
-  theme_light()
+# Is there an effect of party identification on ideology
+lm(ideology ~ party_id, data = tb)
 
+# Is there and effect of education on ideology?
+lm(ideology ~ education, data = tb)
 
-# Are people who express sexist attitudes left-wing or right-wing?
-ggplot(tb, aes(x = ideology, y = ..prop.., group=sexism)) +
-  geom_bar() +
-  facet_wrap(~sexism) +
-  geom_vline(
-    data=tb %>% group_by(sexism) %>% summarise(avg=mean(ideology)) %>% arrange(avg),
-    aes(xintercept=avg), color="red", linetype=2) +
-  geom_text(
-    data=tb %>% group_by(sexism) %>% summarise(avg=mean(ideology)) %>% arrange(avg),
-    aes(x=avg, y=0.25, label=round(avg, 2)), color="red", hjust=-0.25
-    ) +
-  scale_x_discrete(
-    limits=c("Extrm. Lib", "", "", "Moderate", "", "", "Extrm. Con.")
-  ) +
-  labs(
-    x = "Ideological Self placement",
-    y = "Proportion"
-  ) +
-  theme_light()
+# Is there an effect about gender on ideology?
+lm(ideology ~ gender, data = tb)
 
+# Which model is right?
+# All models are wrong but some are useful (Box, 1976)
 
-names(tb)
+# Are those effects due to chance or can we be confident about them?
+# Let's make a more exhaustive model and check!
 
+lm(ideology ~ age + party_id + education + gender, data = tb)
+# This is getting a bit more difficult to understand... bear with me!
+# R's fantastic summary (not summarise) function is here to help us.
 
+# Let's save this model
+my_model <- lm(ideology ~ age + party_id + education + gender, data = tb)
 
-# Are young people more right or left wing?
-ggplot(tb, aes(x=factor(ideology), y=age)) +
-  geom_boxplot() +
-  facet_wrap(~latino) +
-  geom_vline(
-    data=tb %>% group_by(latino) %>% summarise(avg = mean(ideology)) %>% arrange(avg),
-    aes(xintercept=avg), color="red", linetype=2) +
-  labs(
-    x = "Ideological Self placement",
-    y = "Proportion"
-  ) +
-  theme_light()
-
-
-# Is there a difference among Latinos?
-ggplot(tb, aes(x=factor(ideology), y=age)) +
-  geom_boxplot() +
-  facet_wrap(~latino) +
-  geom_vline(
-    data=tb %>% group_by(latino) %>% summarise(avg = mean(ideology)) %>% arrange(avg),
-    aes(xintercept=avg), color="red", linetype=2) +
-  labs(
-    x = "Ideological Self placement",
-    y = "Proportion"
-  ) +
-  theme_light()
-
-# How were citizens feeling towards Democrats?
-daily_feeling <- tb %>%
-  group_by(date) %>%
-  summarise(
-    Democrat=mean(feeling_dem),
-    Republican=mean(feeling_rep)
-  )
-
-ggplot(daily_feeling, aes(x = date)) +
-  geom_smooth(aes(y = Democrat), span=.2, se=FALSE, color="#0B53C1") +
-  geom_smooth(aes(y = Republican), span=.2, se=FALSE, color="#FF0055") +
-  labs(
-    title = "Average daily feeling towards major political parties",
-    x = "",
-    y = "Feelings Thermometer",
-    caption = "Data: ANES 2016"
-  ) +
-  theme_minimal()
+# We can use R's great summary() function to get a model summary!
+summary(my_model)
 
 ```
 
+# Requirements
+- Complete [Challenge 4: The Analyst](https://classroom.github.com/a/XXXXX)
+
+## References

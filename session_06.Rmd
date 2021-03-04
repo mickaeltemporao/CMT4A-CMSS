@@ -172,12 +172,12 @@ head(tb)
 
 
 # Last time we ended by checking the relationship between ideology and age
-ggplot(tb, aes(x=ideology, y=age)) +
+ggplot(tb, aes(y=ideology, x=age)) +
   geom_jitter() +
   theme_light()
 
 # Let's add the line of best fit
-ggplot(tb, aes(x=ideology, y=age)) +
+ggplot(tb, aes(y=ideology, x=age)) +
   geom_jitter() +
   geom_smooth(method="lm") +
   theme_light()

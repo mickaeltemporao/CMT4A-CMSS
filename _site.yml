@@ -23,7 +23,7 @@ navbar:
       href: resources.html
       icon: fa-toolbox fa-lg
   right:
-    - icon: fa-github fa-lg
+    - icon: fa-code-branch fa-lg
       href: https://github.com/mickaeltemporao/CMT4A-CMSS
 output_dir: "docs"
 output:

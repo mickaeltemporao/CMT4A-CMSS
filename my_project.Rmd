@@ -31,7 +31,7 @@ ggplot(clean_data, aes(x=income)) +
 
 ```{r}
 
-my_model <- lm(ideology ~ income, data = tb)
+my_model <- lm(ideology ~ income, data = clean_data)
 
 ```
 

@@ -153,6 +153,8 @@ ggplot(my_data, aes(x=time_to_iep)) +
 
 # Hack Time!
 
+- If you're interested in how the dataset used in this session was generated [--> click here <--](https://github.com/mickaeltemporao/CMT4A-CMSS-TEMPLATE/blob/main/src/make_data.R)
+
 ```{r klippy, echo=FALSE, include=TRUE}
 klippy::klippy()
 ```

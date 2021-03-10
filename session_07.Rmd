@@ -1,241 +1,50 @@
 ---
-title: "Session 7: Supervised Learning (1/2)"
+title: "Session 7: Data Modeling (2/2)"
 subtitle: "Learning Objectives:"
+bibliography: references.bib
 ---
 
-- Identify relationships between variables
-- Quantify relationships between variables
-- Learn about correlation and regression
-
-- Visualize model fit
-- Summarise tables
+- Learn to create and interpret regression tables
+- Learn to make end to end research projects
+- Retrospective
 
 # Resources
 
-## Cheatsheets
+## Functions
+- `lm()` : linear model function
+
+## Summary of file types
+
+- R script (filename.R)
+    - Only contains R code
+- RMarkdown script (filename.Rmd)
+    - Contains Markdown and R code
+- Bib script (filename.bib)
+    - Contains citations in the BibTeX format
+- Text file (filename.txt)
+    - Can be anything!
+
 ## Readings
+- [Model Basics](https://r4ds.had.co.nz/model-basics.html)
+
 ## Practice
-
-####### FOR SESSION 6
-
-USE cor() AND lm() in summary
-
-stargazer summaries
-
-datset %>%
-  group_by(set) %>%
-  summarize(
-    N = n(),
-    mean_of_x = mean(x),
-    std_dev_of_x = sd(x),
-    mean_of_y = mean(y),
-    std_dev_of_y = sd(y),
-    correlation_between_x_and_y = cor(x,y))
-
-########
-
-# Requirements
-- Complete [Challenge 4: The Analyst](https://classroom.github.com/a/XXXXX)
+- [Correlation and Regression](https://learn.datacamp.com/courses/correlation-and-regression-in-r)
 
 
-# Data Analysis or how to start answering questions with data!
+# Data Modeling
 
-It has been a long journey! You might not be fluent in R yet, but now you can understand bits of R code and also adjust it to suit your needs.Fixing data to suit your needs can easily take more than 80% of a researcher's time. Once your data is ready, the analysis or modeling parts are usually very quick.
+![](https://d33wubrfki0l68.cloudfront.net/571b056757d68e6df81a3e3853f54d3c76ad6efc/32d37/diagrams/data-science.png "")
 
-Let's recap what you have achieved so far:
-
-- You have learned to combine prose and code into reproducible working documents.
-- You have learned programming basics.
-- You have learned how to explore real world data.
-- You have learned how to clean messy data.
-- You have learned how to summarise data into useful pieces of information (more on this today).
-
-Now, it is time to start to answering questions with data using what you have learned so far!
+We have created our first linear models and started to learn how to interpret the results of such models. The modeling part completes the data science cycle. It is an iterative and ongoing process. As a researcher we need to decide when our analysis is sufficient to test our hypothesis and shared with our peers.
 
 # Hack Time!
-
-This session will be a bit different as the code is ready and should run end to end. Instead, we will take time to look at the figures and derive insights from them!
 
 ```{r klippy, echo=FALSE, include=TRUE}
 klippy::klippy()
 ```
 
-```{r eval=FALSE}
-# Session 5: Data Management  --------------------------------------------------
-
-# Getting Started ==============================================================
-# Loading packages & data
-library(tidyverse)
-
-data_url <- "https://github.com/mickaeltemporao/CMT4A-CMSS-TEMPLATE/raw/main/data/clean_2016.rds"
-
-tb <- readRDS(url(data_url,"rb"))
-
-# Always look at the data first!
-head(tb)
-
-# Answering questions with data ================================================
-
-# What is the predicted vote share for each candidate using voting intentions?
-tb %>%
-  group_by(voting_int) %>%
-  summarise(freq = n()) %>%
-  mutate(
-    prop = freq/sum(freq)
-  )
-
-# How good are those numbers relative to the actual numbers?
-# https://en.wikipedia.org/wiki/2016_United_States_presidential_election#Electoral_results
+1. Open a RMarkdown document and paste the following code in it: [my_project.Rmd](https://raw.githubusercontent.com/mickaeltemporao/CMT4A-CMSS/main/my_project.Rmd)
+2. Open a Text file, save it as "references.bib" and paste the following code in it: [references.bib](https://raw.githubusercontent.com/mickaeltemporao/CMT4A-CMSS/main/references.bib)
 
 
-# Are the people who intend to vote for G. Johnson left wing or right wing?
-idl_means <- tb %>%
-  group_by(voting_int) %>%
-  summarise(
-    avg = mean(ideology)
-  ) %>%
-  arrange(avg)
-
-idl_means
-
-ggplot(tb, aes(x = ideology, y = ..prop.., group=voting_int)) +
-  geom_bar() +
-  facet_wrap(~voting_int) +
-  geom_vline(
-    data=idl_means,
-    aes(xintercept=avg), color="red", linetype=2) +
-  geom_text(
-    data=idl_means,
-    aes(x=avg, y=0.25, label=round(avg, 2)), color="red", hjust=-0.25
-    ) +
-  scale_x_discrete(
-    limits=c("Extrm. Lib", "", "", "Moderate", "", "", "Extrm. Con.")
-  ) +
-  labs(
-    x = "Ideological Self placement",
-    y = "Proportion"
-  ) +
-  theme_light()
-
-
-# How is ideology distributed among people for which religion is important?
-ggplot(tb, aes(x = ideology, y = ..prop.., group=religion)) +
-  geom_bar() +
-  facet_wrap(~religion) +
-  geom_vline(
-    data=tb %>% group_by(religion) %>% summarise(avg=mean(ideology)) %>% arrange(avg),
-    aes(xintercept=avg), color="red", linetype=2) +
-  geom_text(
-    data=tb %>% group_by(religion) %>% summarise(avg=mean(ideology)) %>% arrange(avg),
-    aes(x=avg, y=0.25, label=round(avg, 2)), color="red", hjust=-0.25
-    ) +
-  scale_x_discrete(
-    limits=c("Extrm. Lib", "", "", "Moderate", "", "", "Extrm. Con.")
-  ) +
-  labs(
-    x = "Ideological Self placement",
-    y = "Proportion"
-  ) +
-  theme_light()
-
-
-# How do relgious people intend to vote?
-ggplot(tb, aes(x = voting_int, y = ..prop.., group=religion)) +
-  geom_bar() +
-  facet_wrap(~religion)
-
-
-# Do right-wing people approve president Obama?
-ggplot(tb, aes(x = ideology, y = ..prop.., group=pres_appr)) +
-  geom_bar() +
-  facet_wrap(~pres_appr) +
-  geom_vline(
-    data=tb %>% group_by(pres_appr) %>% summarise(avg=mean(ideology)) %>% arrange(avg),
-    aes(xintercept=avg), color="red", linetype=2) +
-  geom_text(
-    data=tb %>% group_by(pres_appr) %>% summarise(avg=mean(ideology)) %>% arrange(avg),
-    aes(x=avg, y=0.25, label=round(avg, 2)), color="red", hjust=-0.25
-    ) +
-  scale_x_discrete(
-    limits=c("Extrm. Lib", "", "", "Moderate", "", "", "Extrm. Con.")
-  ) +
-  labs(
-    x = "Ideological Self placement",
-    y = "Proportion"
-  ) +
-  theme_light()
-
-
-# Are people who express sexist attitudes left-wing or right-wing?
-ggplot(tb, aes(x = ideology, y = ..prop.., group=sexism)) +
-  geom_bar() +
-  facet_wrap(~sexism) +
-  geom_vline(
-    data=tb %>% group_by(sexism) %>% summarise(avg=mean(ideology)) %>% arrange(avg),
-    aes(xintercept=avg), color="red", linetype=2) +
-  geom_text(
-    data=tb %>% group_by(sexism) %>% summarise(avg=mean(ideology)) %>% arrange(avg),
-    aes(x=avg, y=0.25, label=round(avg, 2)), color="red", hjust=-0.25
-    ) +
-  scale_x_discrete(
-    limits=c("Extrm. Lib", "", "", "Moderate", "", "", "Extrm. Con.")
-  ) +
-  labs(
-    x = "Ideological Self placement",
-    y = "Proportion"
-  ) +
-  theme_light()
-
-
-names(tb)
-
-
-
-# Are young people more right or left wing?
-ggplot(tb, aes(x=factor(ideology), y=age)) +
-  geom_boxplot() +
-  facet_wrap(~latino) +
-  geom_vline(
-    data=tb %>% group_by(latino) %>% summarise(avg = mean(ideology)) %>% arrange(avg),
-    aes(xintercept=avg), color="red", linetype=2) +
-  labs(
-    x = "Ideological Self placement",
-    y = "Proportion"
-  ) +
-  theme_light()
-
-
-# Is there a difference among Latinos?
-ggplot(tb, aes(x=factor(ideology), y=age)) +
-  geom_boxplot() +
-  facet_wrap(~latino) +
-  geom_vline(
-    data=tb %>% group_by(latino) %>% summarise(avg = mean(ideology)) %>% arrange(avg),
-    aes(xintercept=avg), color="red", linetype=2) +
-  labs(
-    x = "Ideological Self placement",
-    y = "Proportion"
-  ) +
-  theme_light()
-
-# How were citizens feeling towards Democrats?
-daily_feeling <- tb %>%
-  group_by(date) %>%
-  summarise(
-    Democrat=mean(feeling_dem),
-    Republican=mean(feeling_rep)
-  )
-
-ggplot(daily_feeling, aes(x = date)) +
-  geom_smooth(aes(y = Democrat), span=.2, se=FALSE, color="#0B53C1") +
-  geom_smooth(aes(y = Republican), span=.2, se=FALSE, color="#FF0055") +
-  labs(
-    title = "Average daily feeling towards major political parties",
-    x = "",
-    y = "Feelings Thermometer",
-    caption = "Data: ANES 2016"
-  ) +
-  theme_minimal()
-
-```
-
+#### References

@@ -1,0 +1,53 @@
+---
+title: "My Title Here"
+author: "Your Name Here"
+date: "11/03/2021"
+output: pdf_document
+bibliography: references.bib
+---
+
+# Introduction
+
+# Data & Methods
+
+```{r message=FALSE}
+library(tidyverse)
+data_url <- "https://github.com/mickaeltemporao/CMT4A-CMSS-TEMPLATE/raw/main/data/clean_2016.rds"
+clean_data <- readRDS(url(data_url,"rb"))
+```
+
+```{r}
+
+ggplot(clean_data, aes(x=ideology)) +
+  geom_bar()
+
+ggplot(clean_data, aes(x=income)) +
+  geom_bar()
+
+```
+
+# Results
+
+
+```{r}
+
+my_model <- lm(ideology ~ income, data = clean_data)
+
+```
+
+
+```{r, echo=FALSE, eval=TRUE, tidy = TRUE, size="small", results="asis"}
+
+stargazer::stargazer(
+  my_model,
+  title="Model Summary",
+  header=FALSE,
+  single.row = TRUE
+
+)
+```
+
+# Conclusion
+
+# References
+

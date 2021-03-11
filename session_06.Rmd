@@ -17,8 +17,6 @@ knitr::opts_chunk$set(echo = TRUE, fig.align="center")
 # Resources
 
 ## Functions
-
-- `cor()` : correlation function
 - `lm()` : linear model function
 
 ## Readings
@@ -172,7 +170,6 @@ tb <- readRDS(url(data_url,"rb"))
 # Always look at the data first!
 head(tb)
 
-
 # Last time we ended by checking the relationship between ideology and age
 ggplot(tb, aes(y=ideology, x=age)) +
   geom_jitter() +
@@ -184,12 +181,12 @@ ggplot(tb, aes(y=ideology, x=age)) +
   geom_smooth(method="lm") +
   theme_light()
 
+# What is the direction of the relationship?
+# What is the size of the effect?
+# Is this effect due to random chance?
 
-# Was the relationship positive or negative? TIP: use cor()
-tb %>% select(ideology, age) %>% ...
+# lm() helps us answer these questions!
 
-# What is the size of the effect ?
-# TIP: we need to use lm()
 
 # ---------------------- How does lm() work? ------------------------
 # lm(formula, data)

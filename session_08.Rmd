@@ -1,4 +1,9 @@
+
+- colors palettes
+- themes
+
 Illustrate how to use maps
+
 
 # Create a new variable called state_name with the string names of states
 NESdta_short <- NESdta_short %>%

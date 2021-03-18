@@ -25,10 +25,11 @@ bibliography: references.bib
     - Can be anything!
 
 ## Readings
-- [Model Basics](https://r4ds.had.co.nz/model-basics.html)
+- [R Markdown](https://r4ds.had.co.nz/r-markdown.html)
 
 ## Practice
 - [Correlation and Regression](https://learn.datacamp.com/courses/correlation-and-regression-in-r)
+- [Reporting with R Markdown](https://learn.datacamp.com/courses/reporting-with-rmarkdown)
 
 
 # Data Modeling

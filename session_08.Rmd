@@ -1,8 +1,29 @@
+---
+title: "Session 7: Data Modeling (2/2)"
+subtitle: "Learning Objectives:"
+bibliography: references.bib
+---
+
+Demo 1: Improve plots - Themes and colors
+Demo 2: Improve plots - Titles, subtitles, axis, caption
 
 - colors palettes
 - themes
+- maps
 
-Illustrate how to use maps
+- Learn to create and interpret regression tables
+- Learn to make end to end research projects
+- Retrospective
+
+# Resources
+
+## Readings
+
+## Practice
+
+```{r}
+
+```
 
 
 # Create a new variable called state_name with the string names of states
@@ -35,3 +56,17 @@ NESdta_short <- NESdta_short %>%
                                 state == 55~"Wisconsin", state == 56~"Wyoming"))
 
 NESdta_short
+
+
+# Hack Time!
+
+```{r klippy, echo=FALSE, include=TRUE}
+klippy::klippy()
+```
+
+1. Open a RMarkdown document and paste the following code in it: [my_project.Rmd](https://raw.githubusercontent.com/mickaeltemporao/CMT4A-CMSS/main/my_project.Rmd)
+2. Open a Text file, save it as "references.bib" and paste the following code in it: [references.bib](https://raw.githubusercontent.com/mickaeltemporao/CMT4A-CMSS/main/references.bib)
+
+
+#### References
+

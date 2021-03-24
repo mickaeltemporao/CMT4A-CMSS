@@ -499,154 +499,385 @@ div.tocify {
 </div>
 
 
-<div id="section" class="section level1">
-<h1></h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install required packages</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Run line 9, if you get an error copy line 5 and run it in the console.</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&#39;maps&#39;)</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading required packages</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(maps)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Then we can easily draw a map</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>world_map <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">&quot;world&quot;</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(world_map, <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">group =</span> group)) <span class="sc">+</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="at">fill=</span><span class="st">&quot;lightgray&quot;</span>, <span class="at">colour =</span> <span class="st">&quot;white&quot;</span>)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Let&#39;s try with another country</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>fr_map <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">&quot;france&quot;</span>)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fr_map, <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">group =</span> group)) <span class="sc">+</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="at">fill=</span><span class="st">&quot;lightgray&quot;</span>, <span class="at">colour =</span> <span class="st">&quot;white&quot;</span>)</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<div id="publication-ready-figures" class="section level1">
+<h1>Publication Ready Figures</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading required packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Let&#39;s get our data</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>data_url <span class="ot">&lt;-</span> <span class="st">&quot;https://github.com/mickaeltemporao/CMT4A-CMSS-TEMPLATE/raw/main/data/ts_2016.rds&quot;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">url</span>(data_url,<span class="st">&quot;rb&quot;</span>))</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>tmp_data <span class="ot">&lt;-</span> raw_data <span class="sc">%&gt;%</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    V161126,  <span class="co"># ideology</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    V161010e,  <span class="co"># state 2 letters</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    V163003,  <span class="co"># region</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">ideology =</span> V161126,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">state_code =</span> V161010e,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">region =</span> V163003,</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Let&#39;s focus on the US</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an object with the states map data</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>us_map <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">&quot;state&quot;</span>)</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(us_map, <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">group =</span> group)) <span class="sc">+</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="at">fill=</span><span class="st">&quot;lightgray&quot;</span>, <span class="at">colour =</span> <span class="st">&quot;white&quot;</span>)</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(us_map)</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>us_map <span class="ot">&lt;-</span> us_map <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">state =</span> region)</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Let&#39;s get our data</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>data_url <span class="ot">&lt;-</span> <span class="st">&quot;https://github.com/mickaeltemporao/CMT4A-CMSS-TEMPLATE/raw/main/data/ts_2016.rds&quot;</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">url</span>(data_url,<span class="st">&quot;rb&quot;</span>))</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>tmp_data <span class="ot">&lt;-</span> raw_data <span class="sc">%&gt;%</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    V161126,   <span class="co"># ideology</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    V161010e,   <span class="co"># state</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">ideology =</span> V161126,</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">state_code =</span> V161010e</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(tmp_data)</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new variable called state_name with the string names of states</span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>tmp_data <span class="ot">&lt;-</span> tmp_data <span class="sc">%&gt;%</span></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">state =</span> <span class="fu">case_when</span>(</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;AK&quot;</span> <span class="sc">~</span> <span class="st">&quot;Alaska&quot;</span>,</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;AL&quot;</span> <span class="sc">~</span> <span class="st">&quot;Alabama&quot;</span>,</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;AR&quot;</span> <span class="sc">~</span> <span class="st">&quot;Arkansas&quot;</span>,</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;AZ&quot;</span> <span class="sc">~</span> <span class="st">&quot;Arizona&quot;</span>,</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;CA&quot;</span> <span class="sc">~</span> <span class="st">&quot;California&quot;</span>,</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;CO&quot;</span> <span class="sc">~</span> <span class="st">&quot;Colorado&quot;</span>,</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;CT&quot;</span> <span class="sc">~</span> <span class="st">&quot;Connecticut&quot;</span>,</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;DC&quot;</span> <span class="sc">~</span> <span class="st">&quot;District of Columbia&quot;</span>,</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;DE&quot;</span> <span class="sc">~</span> <span class="st">&quot;Delaware&quot;</span>,</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;FL&quot;</span> <span class="sc">~</span> <span class="st">&quot;Florida&quot;</span>,</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;GA&quot;</span> <span class="sc">~</span> <span class="st">&quot;Georgia&quot;</span>,</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;HI&quot;</span> <span class="sc">~</span> <span class="st">&quot;Hawaii&quot;</span>,</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;IA&quot;</span> <span class="sc">~</span> <span class="st">&quot;Iowa&quot;</span>,</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;ID&quot;</span> <span class="sc">~</span> <span class="st">&quot;Idaho&quot;</span>,</span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;IL&quot;</span> <span class="sc">~</span> <span class="st">&quot;Illinois&quot;</span>,</span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;IN&quot;</span> <span class="sc">~</span> <span class="st">&quot;Indiana&quot;</span>,</span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;KS&quot;</span> <span class="sc">~</span> <span class="st">&quot;Kansas&quot;</span>,</span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;KY&quot;</span> <span class="sc">~</span> <span class="st">&quot;Kentucky&quot;</span>,</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;LA&quot;</span> <span class="sc">~</span> <span class="st">&quot;Louisiana&quot;</span>,</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;MA&quot;</span> <span class="sc">~</span> <span class="st">&quot;Massachusetts&quot;</span>,</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;MD&quot;</span> <span class="sc">~</span> <span class="st">&quot;Maryland&quot;</span>,</span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;ME&quot;</span> <span class="sc">~</span> <span class="st">&quot;Maine&quot;</span>,</span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;MI&quot;</span> <span class="sc">~</span> <span class="st">&quot;Michigan&quot;</span>,</span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;MN&quot;</span> <span class="sc">~</span> <span class="st">&quot;Minnesota&quot;</span>,</span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;MO&quot;</span> <span class="sc">~</span> <span class="st">&quot;Missouri&quot;</span>,</span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;MS&quot;</span> <span class="sc">~</span> <span class="st">&quot;Mississippi&quot;</span>,</span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;MT&quot;</span> <span class="sc">~</span> <span class="st">&quot;Montana&quot;</span>,</span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;NC&quot;</span> <span class="sc">~</span> <span class="st">&quot;North Carolina&quot;</span>,</span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;ND&quot;</span> <span class="sc">~</span> <span class="st">&quot;North Dakota&quot;</span>,</span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;NE&quot;</span> <span class="sc">~</span> <span class="st">&quot;Nebraska&quot;</span>,</span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;NH&quot;</span> <span class="sc">~</span> <span class="st">&quot;New Hampshire&quot;</span>,</span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;NJ&quot;</span> <span class="sc">~</span> <span class="st">&quot;New Jersey&quot;</span>,</span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;NM&quot;</span> <span class="sc">~</span> <span class="st">&quot;New Mexico&quot;</span>,</span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;NV&quot;</span> <span class="sc">~</span> <span class="st">&quot;Nevada&quot;</span>,</span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;NY&quot;</span> <span class="sc">~</span> <span class="st">&quot;New York&quot;</span>,</span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;OH&quot;</span> <span class="sc">~</span> <span class="st">&quot;Ohio&quot;</span>,</span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;OK&quot;</span> <span class="sc">~</span> <span class="st">&quot;Oklahoma&quot;</span>,</span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;OR&quot;</span> <span class="sc">~</span> <span class="st">&quot;Oregon&quot;</span>,</span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;PA&quot;</span> <span class="sc">~</span> <span class="st">&quot;Pennsylvania&quot;</span>,</span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;RI&quot;</span> <span class="sc">~</span> <span class="st">&quot;Rhode Island&quot;</span>,</span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;SC&quot;</span> <span class="sc">~</span> <span class="st">&quot;South Carolina&quot;</span>,</span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;SD&quot;</span> <span class="sc">~</span> <span class="st">&quot;South Dakota&quot;</span>,</span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;TN&quot;</span> <span class="sc">~</span> <span class="st">&quot;Tennessee&quot;</span>,</span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;TX&quot;</span> <span class="sc">~</span> <span class="st">&quot;Texas&quot;</span>,</span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;UT&quot;</span> <span class="sc">~</span> <span class="st">&quot;Utah&quot;</span>,</span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;VA&quot;</span> <span class="sc">~</span> <span class="st">&quot;Virginia&quot;</span>,</span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;VT&quot;</span> <span class="sc">~</span> <span class="st">&quot;Vermont&quot;</span>,</span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;WA&quot;</span> <span class="sc">~</span> <span class="st">&quot;Washington&quot;</span>,</span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;WI&quot;</span> <span class="sc">~</span> <span class="st">&quot;Wisconsin&quot;</span>,</span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;WV&quot;</span> <span class="sc">~</span> <span class="st">&quot;West Virginia&quot;</span>,</span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;WY&quot;</span> <span class="sc">~</span> <span class="st">&quot;Wyoming&quot;</span>,</span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(tmp_data)</span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>tmp_data <span class="ot">&lt;-</span> tmp_data <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">state =</span> <span class="fu">tolower</span>(state))</span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>tmp_data <span class="ot">&lt;-</span> tmp_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">between</span>(ideology, <span class="dv">1</span>, <span class="dv">7</span>))</span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>state_idl <span class="ot">&lt;-</span> tmp_data <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(state) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">ideology =</span> <span class="fu">mean</span>(ideology))</span>
-<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>ideology_map <span class="ot">&lt;-</span> us_map <span class="sc">%&gt;%</span> <span class="fu">left_join</span>(state_idl)</span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>centroids <span class="ot">&lt;-</span> us_map <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(state) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">long =</span> <span class="fu">mean</span>(long), <span class="at">lat =</span> <span class="fu">mean</span>(lat))</span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>centroids <span class="ot">&lt;-</span> centroids <span class="sc">%&gt;%</span> <span class="fu">left_join</span>(tmp_data)</span>
-<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the map</span></span>
-<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ideology_map, <span class="fu">aes</span>(long, lat)) <span class="sc">+</span></span>
-<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="fu">aes</span>(<span class="at">fill =</span> ideology, <span class="at">group =</span> group), <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
-<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data=</span>centroids, <span class="fu">aes</span>(<span class="at">label =</span> state_code, <span class="at">x =</span> long, <span class="at">y =</span> lat), <span class="at">size=</span><span class="dv">5</span>, <span class="at">color=</span><span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
-<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient2</span>(</span>
-<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>    <span class="at">low =</span> <span class="st">&quot;#377eb8&quot;</span>, <span class="at">mid =</span> <span class="st">&quot;#984ea3&quot;</span>, <span class="at">midpoint =</span> <span class="dv">4</span>,</span>
-<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>    <span class="at">high =</span> <span class="st">&quot;#e41a1c&quot;</span>, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">7</span>), <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span> ,<span class="dv">7</span>)</span>
-<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>party_colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#377eb8&quot;</span>, <span class="st">&quot;#e41a1c&quot;</span>)</span>
-<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
-<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>  state_idl, <span class="fu">aes</span>(<span class="at">x =</span> ideology, <span class="at">y =</span> <span class="fu">reorder</span>(state, ideology))) <span class="sc">+</span></span>
-<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">4</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">alpha=</span>.<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(</span>
-<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">7</span>),</span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>,</span>
-<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;1</span><span class="sc">\n</span><span class="st"> Ext. Liberal&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;0</span><span class="sc">\n</span><span class="st">Moderate&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;7</span><span class="sc">\n</span><span class="st">Ext. Conservative&quot;</span>)</span>
-<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_color_manual</span>(<span class="at">values =</span> party_colors)</span>
-<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>my.name <span class="ot">&lt;-</span> <span class="fu">readline</span>(<span class="at">prompt=</span><span class="st">&quot;Enter name: &quot;</span>)</span>
-<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>my.age <span class="ot">&lt;-</span> <span class="fu">readline</span>(<span class="at">prompt=</span><span class="st">&quot;Enter age: &quot;</span>)</span>
-<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a><span class="co"># convert character into integer</span></span>
-<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>my.age <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(my.age)</span>
-<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Hi,&quot;</span>, my.name, <span class="st">&quot;next year you will be&quot;</span>, my.age<span class="sc">+</span><span class="dv">1</span>, <span class="st">&quot;years old.&quot;</span>))</span></code></pre></div>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(tmp_data)</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 3
+##   ideology state_code region
+##      &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;
+## 1       99 LA              3
+## 2        5 AR              3
+## 3       99 MS              3
+## 4       99 TN              3
+## 5        4 OH              2
+## 6        6 NJ              1</code></pre>
+<div id="filter-and-recode-values" class="section level2">
+<h2>Filter and Recode values</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tmp_data <span class="ot">&lt;-</span> tmp_data <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">between</span>(ideology, <span class="dv">1</span>, <span class="dv">7</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">region =</span> <span class="fu">factor</span>(region,  <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Northeast&quot;</span>, <span class="st">&quot;Midwest&quot;</span>, <span class="st">&quot;South&quot;</span>, <span class="st">&quot;West&quot;</span>)),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(tmp_data)</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 3
+##   ideology state_code region   
+##      &lt;dbl&gt; &lt;chr&gt;      &lt;fct&gt;    
+## 1        5 AR         South    
+## 2        4 OH         Midwest  
+## 3        6 NJ         Northeast
+## 4        5 NJ         Northeast
+## 5        4 TX         South    
+## 6        3 MS         South</code></pre>
+</div>
+<div id="your-plot-is-the-message" class="section level2">
+<h2>Your Plot is the Message</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tmp_data, <span class="fu">aes</span>(<span class="at">x=</span>ideology)) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
+<p><img src="session_08_code_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+</div>
+<div id="advanced-figures" class="section level1">
+<h1>Advanced Figures</h1>
+<div id="drawing-maps" class="section level2">
+<h2>Drawing Maps</h2>
+<p>To draw maps we will use the maps package.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install required packages</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Run line 9, if you get an error copy line 5 and run it in the console.</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&#39;maps&#39;)</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading required packages</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(maps)</span></code></pre></div>
+<p>Once the <em>maps</em> package is loaded, we can easily draw maps!</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fetching the data</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>world_map <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">&quot;world&quot;</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Making a figure using geom_polygon</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(world_map, <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">group =</span> group)) <span class="sc">+</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="at">fill=</span><span class="st">&quot;lightblue&quot;</span>, <span class="at">colour =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<p><img src="session_08_code_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Let’s make a map of a single country</p>
+<p>Let’s look at the US</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an object with the states map data</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>us_map <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">&quot;state&quot;</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(us_map, <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">group =</span> group)) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="at">fill=</span><span class="st">&quot;lightblue&quot;</span>, <span class="at">colour =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<p><img src="session_08_code_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>What does the map data look like?</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>us_map</span></code></pre></div>
+<pre><code>##         long      lat group order  region subregion
+## 1  -87.46201 30.38968     1     1 alabama      &lt;NA&gt;
+## 2  -87.48493 30.37249     1     2 alabama      &lt;NA&gt;
+## 3  -87.52503 30.37249     1     3 alabama      &lt;NA&gt;
+## 4  -87.53076 30.33239     1     4 alabama      &lt;NA&gt;
+## 5  -87.57087 30.32665     1     5 alabama      &lt;NA&gt;
+## 6  -87.58806 30.32665     1     6 alabama      &lt;NA&gt;
+## 7  -87.59379 30.30947     1     7 alabama      &lt;NA&gt;
+## 8  -87.59379 30.28655     1     8 alabama      &lt;NA&gt;
+## 9  -87.67400 30.27509     1     9 alabama      &lt;NA&gt;
+## 10 -87.81152 30.25790     1    10 alabama      &lt;NA&gt;
+## 11 -87.88026 30.24644     1    11 alabama      &lt;NA&gt;
+## 12 -87.92037 30.24644     1    12 alabama      &lt;NA&gt;
+## 13 -87.95475 30.24644     1    13 alabama      &lt;NA&gt;
+## 14 -88.00632 30.24071     1    14 alabama      &lt;NA&gt;
+## 15 -88.01778 30.25217     1    15 alabama      &lt;NA&gt;
+## 16 -88.01205 30.26936     1    16 alabama      &lt;NA&gt;
+## 17 -87.99486 30.27509     1    17 alabama      &lt;NA&gt;
+## 18 -87.95475 30.27509     1    18 alabama      &lt;NA&gt;
+## 19 -87.90318 30.28082     1    19 alabama      &lt;NA&gt;
+## 20 -87.82870 30.28655     1    20 alabama      &lt;NA&gt;
+## 21 -87.80006 30.28655     1    21 alabama      &lt;NA&gt;
+## 22 -87.80006 30.32665     1    22 alabama      &lt;NA&gt;
+## 23 -87.81724 30.34385     1    23 alabama      &lt;NA&gt;
+## 24 -87.84016 30.38395     1    24 alabama      &lt;NA&gt;
+## 25 -87.85162 30.40114     1    25 alabama      &lt;NA&gt;
+## 26 -87.87453 30.41260     1    26 alabama      &lt;NA&gt;
+## 27 -87.90318 30.42406     1    27 alabama      &lt;NA&gt;
+## 28 -87.92610 30.44698     1    28 alabama      &lt;NA&gt;
+## 29 -87.93183 30.49281     1    29 alabama      &lt;NA&gt;
+## 30 -87.94329 30.52719     1    30 alabama      &lt;NA&gt;
+## 31 -87.92037 30.56157     1    31 alabama      &lt;NA&gt;
+## 32 -87.91464 30.58449     1    32 alabama      &lt;NA&gt;
+## 33 -87.92610 30.61886     1    33 alabama      &lt;NA&gt;
+##  [ reached &#39;max&#39; / getOption(&quot;max.print&quot;) -- omitted 15504 rows ]</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>us_map <span class="sc">%&gt;%</span> <span class="fu">count</span>(region)</span></code></pre></div>
+<pre><code>##                  region    n
+## 1               alabama  202
+## 2               arizona  149
+## 3              arkansas  312
+## 4            california  516
+## 5              colorado   79
+## 6           connecticut   91
+## 7              delaware   94
+## 8  district of columbia   10
+## 9               florida  872
+## 10              georgia  381
+## 11                idaho  233
+## 12             illinois  329
+## 13              indiana  257
+## 14                 iowa  256
+## 15               kansas  113
+## 16             kentucky  397
+## 17            louisiana  650
+## 18                maine  399
+## 19             maryland  566
+## 20        massachusetts  286
+## 21             michigan  830
+## 22            minnesota  373
+## 23          mississippi  382
+## 24             missouri  315
+## 25              montana  238
+## 26             nebraska  208
+## 27               nevada   70
+## 28        new hampshire  125
+## 29           new jersey  205
+## 30           new mexico   78
+## 31             new york  495
+## 32       north carolina  782
+## 33         north dakota  105
+## 34                 ohio  238
+## 35             oklahoma  284
+## 36               oregon  236
+## 37         pennsylvania  172
+## 38         rhode island   66
+## 39       south carolina  304
+## 40         south dakota  166
+## 41            tennessee  289
+## 42                texas 1088
+## 43                 utah   59
+## 44              vermont  129
+## 45             virginia  734
+## 46           washington  545
+## 47        west virginia  373
+## 48            wisconsin  388
+## 49              wyoming   68</code></pre>
+<p>The region variable seems to be the state. Let’s rename that variable.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>us_map <span class="ot">&lt;-</span> us_map <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">state =</span> region)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>us_map</span></code></pre></div>
+<pre><code>##         long      lat group order   state subregion
+## 1  -87.46201 30.38968     1     1 alabama      &lt;NA&gt;
+## 2  -87.48493 30.37249     1     2 alabama      &lt;NA&gt;
+## 3  -87.52503 30.37249     1     3 alabama      &lt;NA&gt;
+## 4  -87.53076 30.33239     1     4 alabama      &lt;NA&gt;
+## 5  -87.57087 30.32665     1     5 alabama      &lt;NA&gt;
+## 6  -87.58806 30.32665     1     6 alabama      &lt;NA&gt;
+## 7  -87.59379 30.30947     1     7 alabama      &lt;NA&gt;
+## 8  -87.59379 30.28655     1     8 alabama      &lt;NA&gt;
+## 9  -87.67400 30.27509     1     9 alabama      &lt;NA&gt;
+## 10 -87.81152 30.25790     1    10 alabama      &lt;NA&gt;
+## 11 -87.88026 30.24644     1    11 alabama      &lt;NA&gt;
+## 12 -87.92037 30.24644     1    12 alabama      &lt;NA&gt;
+## 13 -87.95475 30.24644     1    13 alabama      &lt;NA&gt;
+## 14 -88.00632 30.24071     1    14 alabama      &lt;NA&gt;
+## 15 -88.01778 30.25217     1    15 alabama      &lt;NA&gt;
+## 16 -88.01205 30.26936     1    16 alabama      &lt;NA&gt;
+## 17 -87.99486 30.27509     1    17 alabama      &lt;NA&gt;
+## 18 -87.95475 30.27509     1    18 alabama      &lt;NA&gt;
+## 19 -87.90318 30.28082     1    19 alabama      &lt;NA&gt;
+## 20 -87.82870 30.28655     1    20 alabama      &lt;NA&gt;
+## 21 -87.80006 30.28655     1    21 alabama      &lt;NA&gt;
+## 22 -87.80006 30.32665     1    22 alabama      &lt;NA&gt;
+## 23 -87.81724 30.34385     1    23 alabama      &lt;NA&gt;
+## 24 -87.84016 30.38395     1    24 alabama      &lt;NA&gt;
+## 25 -87.85162 30.40114     1    25 alabama      &lt;NA&gt;
+## 26 -87.87453 30.41260     1    26 alabama      &lt;NA&gt;
+## 27 -87.90318 30.42406     1    27 alabama      &lt;NA&gt;
+## 28 -87.92610 30.44698     1    28 alabama      &lt;NA&gt;
+## 29 -87.93183 30.49281     1    29 alabama      &lt;NA&gt;
+## 30 -87.94329 30.52719     1    30 alabama      &lt;NA&gt;
+## 31 -87.92037 30.56157     1    31 alabama      &lt;NA&gt;
+## 32 -87.91464 30.58449     1    32 alabama      &lt;NA&gt;
+## 33 -87.92610 30.61886     1    33 alabama      &lt;NA&gt;
+##  [ reached &#39;max&#39; / getOption(&quot;max.print&quot;) -- omitted 15504 rows ]</code></pre>
+<p>How does the data we used before look like?</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>tmp_data</span></code></pre></div>
+<pre><code>## # A tibble: 3,303 x 3
+##    ideology state_code region   
+##       &lt;dbl&gt; &lt;chr&gt;      &lt;fct&gt;    
+##  1        5 AR         South    
+##  2        4 OH         Midwest  
+##  3        6 NJ         Northeast
+##  4        5 NJ         Northeast
+##  5        4 TX         South    
+##  6        3 MS         South    
+##  7        2 NC         South    
+##  8        4 CT         Northeast
+##  9        2 KS         Midwest  
+## 10        2 DC         South    
+## # … with 3,293 more rows</code></pre>
+<p>Let’s create a new variable called “state_name” with the string names of states</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>tmp_data <span class="ot">&lt;-</span> tmp_data <span class="sc">%&gt;%</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">state =</span> <span class="fu">case_when</span>(</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;AK&quot;</span> <span class="sc">~</span> <span class="st">&quot;Alaska&quot;</span>,</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;AL&quot;</span> <span class="sc">~</span> <span class="st">&quot;Alabama&quot;</span>,</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;AR&quot;</span> <span class="sc">~</span> <span class="st">&quot;Arkansas&quot;</span>,</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;AZ&quot;</span> <span class="sc">~</span> <span class="st">&quot;Arizona&quot;</span>,</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;CA&quot;</span> <span class="sc">~</span> <span class="st">&quot;California&quot;</span>,</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;CO&quot;</span> <span class="sc">~</span> <span class="st">&quot;Colorado&quot;</span>,</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;CT&quot;</span> <span class="sc">~</span> <span class="st">&quot;Connecticut&quot;</span>,</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;DC&quot;</span> <span class="sc">~</span> <span class="st">&quot;District of Columbia&quot;</span>,</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;DE&quot;</span> <span class="sc">~</span> <span class="st">&quot;Delaware&quot;</span>,</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;FL&quot;</span> <span class="sc">~</span> <span class="st">&quot;Florida&quot;</span>,</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;GA&quot;</span> <span class="sc">~</span> <span class="st">&quot;Georgia&quot;</span>,</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;HI&quot;</span> <span class="sc">~</span> <span class="st">&quot;Hawaii&quot;</span>,</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;IA&quot;</span> <span class="sc">~</span> <span class="st">&quot;Iowa&quot;</span>,</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;ID&quot;</span> <span class="sc">~</span> <span class="st">&quot;Idaho&quot;</span>,</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;IL&quot;</span> <span class="sc">~</span> <span class="st">&quot;Illinois&quot;</span>,</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;IN&quot;</span> <span class="sc">~</span> <span class="st">&quot;Indiana&quot;</span>,</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;KS&quot;</span> <span class="sc">~</span> <span class="st">&quot;Kansas&quot;</span>,</span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;KY&quot;</span> <span class="sc">~</span> <span class="st">&quot;Kentucky&quot;</span>,</span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;LA&quot;</span> <span class="sc">~</span> <span class="st">&quot;Louisiana&quot;</span>,</span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;MA&quot;</span> <span class="sc">~</span> <span class="st">&quot;Massachusetts&quot;</span>,</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;MD&quot;</span> <span class="sc">~</span> <span class="st">&quot;Maryland&quot;</span>,</span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;ME&quot;</span> <span class="sc">~</span> <span class="st">&quot;Maine&quot;</span>,</span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;MI&quot;</span> <span class="sc">~</span> <span class="st">&quot;Michigan&quot;</span>,</span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;MN&quot;</span> <span class="sc">~</span> <span class="st">&quot;Minnesota&quot;</span>,</span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;MO&quot;</span> <span class="sc">~</span> <span class="st">&quot;Missouri&quot;</span>,</span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;MS&quot;</span> <span class="sc">~</span> <span class="st">&quot;Mississippi&quot;</span>,</span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;MT&quot;</span> <span class="sc">~</span> <span class="st">&quot;Montana&quot;</span>,</span>
+<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;NC&quot;</span> <span class="sc">~</span> <span class="st">&quot;North Carolina&quot;</span>,</span>
+<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;ND&quot;</span> <span class="sc">~</span> <span class="st">&quot;North Dakota&quot;</span>,</span>
+<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;NE&quot;</span> <span class="sc">~</span> <span class="st">&quot;Nebraska&quot;</span>,</span>
+<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;NH&quot;</span> <span class="sc">~</span> <span class="st">&quot;New Hampshire&quot;</span>,</span>
+<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;NJ&quot;</span> <span class="sc">~</span> <span class="st">&quot;New Jersey&quot;</span>,</span>
+<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;NM&quot;</span> <span class="sc">~</span> <span class="st">&quot;New Mexico&quot;</span>,</span>
+<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;NV&quot;</span> <span class="sc">~</span> <span class="st">&quot;Nevada&quot;</span>,</span>
+<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;NY&quot;</span> <span class="sc">~</span> <span class="st">&quot;New York&quot;</span>,</span>
+<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;OH&quot;</span> <span class="sc">~</span> <span class="st">&quot;Ohio&quot;</span>,</span>
+<span id="cb17-40"><a href="#cb17-40" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;OK&quot;</span> <span class="sc">~</span> <span class="st">&quot;Oklahoma&quot;</span>,</span>
+<span id="cb17-41"><a href="#cb17-41" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;OR&quot;</span> <span class="sc">~</span> <span class="st">&quot;Oregon&quot;</span>,</span>
+<span id="cb17-42"><a href="#cb17-42" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;PA&quot;</span> <span class="sc">~</span> <span class="st">&quot;Pennsylvania&quot;</span>,</span>
+<span id="cb17-43"><a href="#cb17-43" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;RI&quot;</span> <span class="sc">~</span> <span class="st">&quot;Rhode Island&quot;</span>,</span>
+<span id="cb17-44"><a href="#cb17-44" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;SC&quot;</span> <span class="sc">~</span> <span class="st">&quot;South Carolina&quot;</span>,</span>
+<span id="cb17-45"><a href="#cb17-45" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;SD&quot;</span> <span class="sc">~</span> <span class="st">&quot;South Dakota&quot;</span>,</span>
+<span id="cb17-46"><a href="#cb17-46" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;TN&quot;</span> <span class="sc">~</span> <span class="st">&quot;Tennessee&quot;</span>,</span>
+<span id="cb17-47"><a href="#cb17-47" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;TX&quot;</span> <span class="sc">~</span> <span class="st">&quot;Texas&quot;</span>,</span>
+<span id="cb17-48"><a href="#cb17-48" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;UT&quot;</span> <span class="sc">~</span> <span class="st">&quot;Utah&quot;</span>,</span>
+<span id="cb17-49"><a href="#cb17-49" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;VA&quot;</span> <span class="sc">~</span> <span class="st">&quot;Virginia&quot;</span>,</span>
+<span id="cb17-50"><a href="#cb17-50" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;VT&quot;</span> <span class="sc">~</span> <span class="st">&quot;Vermont&quot;</span>,</span>
+<span id="cb17-51"><a href="#cb17-51" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;WA&quot;</span> <span class="sc">~</span> <span class="st">&quot;Washington&quot;</span>,</span>
+<span id="cb17-52"><a href="#cb17-52" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;WI&quot;</span> <span class="sc">~</span> <span class="st">&quot;Wisconsin&quot;</span>,</span>
+<span id="cb17-53"><a href="#cb17-53" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;WV&quot;</span> <span class="sc">~</span> <span class="st">&quot;West Virginia&quot;</span>,</span>
+<span id="cb17-54"><a href="#cb17-54" aria-hidden="true" tabindex="-1"></a>      state_code <span class="sc">==</span> <span class="st">&quot;WY&quot;</span> <span class="sc">~</span> <span class="st">&quot;Wyoming&quot;</span>,</span>
+<span id="cb17-55"><a href="#cb17-55" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb17-56"><a href="#cb17-56" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb17-57"><a href="#cb17-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-58"><a href="#cb17-58" aria-hidden="true" tabindex="-1"></a>tmp_data</span></code></pre></div>
+<pre><code>## # A tibble: 3,303 x 4
+##    ideology state_code region    state               
+##       &lt;dbl&gt; &lt;chr&gt;      &lt;fct&gt;     &lt;chr&gt;               
+##  1        5 AR         South     Arkansas            
+##  2        4 OH         Midwest   Ohio                
+##  3        6 NJ         Northeast New Jersey          
+##  4        5 NJ         Northeast New Jersey          
+##  5        4 TX         South     Texas               
+##  6        3 MS         South     Mississippi         
+##  7        2 NC         South     North Carolina      
+##  8        4 CT         Northeast Connecticut         
+##  9        2 KS         Midwest   Kansas              
+## 10        2 DC         South     District of Columbia
+## # … with 3,293 more rows</code></pre>
+<p>The state in the us_map data is written with a lowercase. We need those columns to match!</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>tmp_data <span class="ot">&lt;-</span> tmp_data <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">state =</span> <span class="fu">tolower</span>(state))</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>tmp_data</span></code></pre></div>
+<pre><code>## # A tibble: 3,303 x 4
+##    ideology state_code region    state               
+##       &lt;dbl&gt; &lt;chr&gt;      &lt;fct&gt;     &lt;chr&gt;               
+##  1        5 AR         South     arkansas            
+##  2        4 OH         Midwest   ohio                
+##  3        6 NJ         Northeast new jersey          
+##  4        5 NJ         Northeast new jersey          
+##  5        4 TX         South     texas               
+##  6        3 MS         South     mississippi         
+##  7        2 NC         South     north carolina      
+##  8        4 CT         Northeast connecticut         
+##  9        2 KS         Midwest   kansas              
+## 10        2 DC         South     district of columbia
+## # … with 3,293 more rows</code></pre>
+<p>Let’s get the average ideology by state</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>state_idl <span class="ot">&lt;-</span> tmp_data <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(state) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">ideology =</span> <span class="fu">mean</span>(ideology))</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>state_idl</span></code></pre></div>
+<pre><code>## # A tibble: 51 x 2
+##    state                ideology
+##  * &lt;chr&gt;                   &lt;dbl&gt;
+##  1 alabama                  5.27
+##  2 alaska                   4.67
+##  3 arizona                  4.22
+##  4 arkansas                 4.58
+##  5 california               3.76
+##  6 colorado                 3.96
+##  7 connecticut              3.94
+##  8 delaware                 3.38
+##  9 district of columbia     2.6 
+## 10 florida                  4.36
+## # … with 41 more rows</code></pre>
+<p>We now have a dataset with a matching state column and the average ideology by state. We can join these 2 datasets together and try to visualize the ideology by state.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>ideology_map <span class="ot">&lt;-</span> us_map <span class="sc">%&gt;%</span> <span class="fu">left_join</span>(state_idl)</span></code></pre></div>
+<pre><code>## Joining, by = &quot;state&quot;</code></pre>
+</div>
+</div>
+<div id="we-can-make-a-map" class="section level1">
+<h1>We can make a map!</h1>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ideology_map, <span class="fu">aes</span>(long, lat)) <span class="sc">+</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="fu">aes</span>(<span class="at">fill =</span> ideology, <span class="at">group =</span> group), <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient2</span>(</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">low =</span> <span class="st">&quot;#377eb8&quot;</span>, <span class="at">mid =</span> <span class="st">&quot;grey&quot;</span>, <span class="at">midpoint =</span> <span class="dv">4</span>,</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">high =</span> <span class="st">&quot;#e41a1c&quot;</span>, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">7</span>), <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span> ,<span class="dv">7</span>)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="session_08_code_files/figure-html/unnamed-chunk-15-1.png" width="672" /> I might not know all the state names let’s add them!</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>centroids <span class="ot">&lt;-</span> us_map <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(state) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">long =</span> <span class="fu">mean</span>(long), <span class="at">lat =</span> <span class="fu">mean</span>(lat))</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>centroids <span class="ot">&lt;-</span> centroids <span class="sc">%&gt;%</span> <span class="fu">left_join</span>(tmp_data)</span></code></pre></div>
+<pre><code>## Joining, by = &quot;state&quot;</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">ggplot</span>(ideology_map, <span class="fu">aes</span>(long, lat)) <span class="sc">+</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="fu">aes</span>(<span class="at">fill =</span> ideology, <span class="at">group =</span> group), <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data=</span>centroids, <span class="fu">aes</span>(<span class="at">label =</span> state_code, <span class="at">x =</span> long, <span class="at">y =</span> lat), <span class="at">size=</span><span class="dv">3</span>, <span class="at">color=</span><span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient2</span>(</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">low =</span> <span class="st">&quot;#377eb8&quot;</span>, <span class="at">mid =</span> <span class="st">&quot;grey&quot;</span>, <span class="at">midpoint =</span> <span class="dv">4</span>,</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">high =</span> <span class="st">&quot;#e41a1c&quot;</span>, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">7</span>), <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span> ,<span class="dv">7</span>)</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="session_08_code_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p>Some like maps, some might find more classic figures easier to understand.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  state_idl, <span class="fu">aes</span>(<span class="at">x =</span> ideology, <span class="at">y =</span> <span class="fu">reorder</span>(state, ideology))) <span class="sc">+</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">4</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">alpha=</span>.<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color=</span>ideology), <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">shape=</span><span class="dv">1</span>, <span class="at">size=</span><span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">6</span>),</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>,</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Liberal&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;0</span><span class="sc">\n</span><span class="st">Moderate&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;Conservative&quot;</span>)</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_gradient2</span>(<span class="at">low=</span><span class="st">&quot;#377eb8&quot;</span>, <span class="at">mid=</span><span class="st">&quot;grey&quot;</span>, <span class="at">high=</span><span class="st">&quot;#e41a1c&quot;</span>, <span class="at">midpoint=</span><span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Average Ideology by State&quot;</span>,</span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;State&quot;</span>,</span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Liberal Conservative Self-placement&quot;</span>,</span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="session_08_code_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 </div>
 
 

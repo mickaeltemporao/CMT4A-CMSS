@@ -11,7 +11,7 @@
 
 
 
-<title>session_08.utf8</title>
+<title>Session 8: Communicating Results</title>
 
 <script src="site_libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -24,6 +24,10 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/clipboard-1.7.1/clipboard.min.js"></script>
+<link href="site_libs/primer-tooltips-1.4.0/build.css" rel="stylesheet" />
+<link href="site_libs/klippy-0.0.0.9500/css/klippy.min.css" rel="stylesheet" />
+<script src="site_libs/klippy-0.0.0.9500/js/klippy.min.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -66,6 +70,28 @@ h6 {
 }
 </style>
 
+<style type="text/css">
+/* for pandoc --citeproc since 2.11 */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 
 
@@ -402,19 +428,51 @@ div.tocify {
 
 
 
+<h1 class="title toc-ignore">Session 8: Communicating Results</h1>
+<h3 class="subtitle">Learning Objectives:</h3>
 
 </div>
 
 
 <ul>
-<li>colors palettes</li>
-<li>themes</li>
+<li>Learn to make publication ready figures</li>
+<li>Learn to make advanced graphics</li>
+<li>Final project Q&amp;A</li>
 </ul>
-<p>Illustrate how to use maps</p>
-<div id="create-a-new-variable-called-state_name-with-the-string-names-of-states" class="section level1">
-<h1>Create a new variable called state_name with the string names of states</h1>
-<p>NESdta_short &lt;- NESdta_short %&gt;% mutate(state_name = case_when(state == 1~“Alabama”, state == 2~“Alaska”, state == 4~“Arizona”, state == 5~“Arkansas”, state == 6~“California”, state == 8~“Colorado”, state == 9~“Connecticut”, state == 10~“Delaware”, state == 11~“District of Columbia”, state == 12~“Florida”, state == 13~“Georgia”, state == 15~“Hawaii”, state == 16~“Idaho”, state == 17~“Illinois”, state == 18~“Indiana”, state == 19~“Iowa”, state == 20~“Kansas”, state == 21~“Kentucky”, state == 22~“Louisiana”, state == 23~“Maine”, state == 24~“Maryland”, state == 25~“Massachusetts”, state == 26~“Michigan”, state == 27~“Minnesota”, state == 28~“Mississippi”, state == 29~“Missouri”, state == 30~“Montana”, state == 31~“Nebraska”, state == 32~“Nevada”, state == 33~“New Hampshire”, state == 34~“New Jersey”, state == 35~“New Mexico”, state == 36~“New York”, state == 37~“North Carolina”, state == 38~“North Dakota”, state == 39~“Ohio”, state == 40~“Oklahoma”, state == 41~“Oregon”, state == 42~“Pennsylvania”, state == 44~“Rhode Island”, state == 45~“South Carolina”, state == 46~“South Dakota”, state == 47~“Tennessee”, state == 48~“Texas”, state == 49~“Utah”, state == 50~“Vermont”, state == 51~“Virginia”, state == 53~“Washington”, state == 54~“West Virginia”, state == 55~“Wisconsin”, state == 56~“Wyoming”))</p>
-<p>NESdta_short</p>
+<div id="resources" class="section level1">
+<h1>Resources</h1>
+<div id="readings" class="section level2">
+<h2>Readings</h2>
+<ul>
+<li><a href="https://ggplot2-book.org/index.html">Elegant Graphics with ggplot2</a></li>
+<li><a href="https://r4ds.had.co.nz/r-markdown.html">R Markdown</a></li>
+</ul>
+</div>
+<div id="practice" class="section level2">
+<h2>Practice</h2>
+<ul>
+<li><a href="https://learn.datacamp.com/courses/reporting-with-rmarkdown">Reporting with R Markdown</a></li>
+</ul>
+</div>
+<div id="section" class="section level2">
+<h2></h2>
+<p>(<span class="citation">(Broockman and Butler 2017)</span>)[<a href="https://onlinelibrary.wiley.com/doi/10.1111/ajps.12243" class="uri">https://onlinelibrary.wiley.com/doi/10.1111/ajps.12243</a>]</p>
+</div>
+</div>
+<div id="hack-time" class="section level1">
+<h1>Hack Time!</h1>
+<script>
+  addClassKlippyTo("pre.r, pre.markdown");
+  addKlippy('left', 'top', 'auto', '1', 'Copy code', 'Copied!');
+</script>
+<ul>
+<li>Open a RMarkdown document and paste the following code in it: <a href="https://raw.githubusercontent.com/mickaeltemporao/CMT4A-CMSS/main/session_08_code.Rmd">session_08.Rmd</a></li>
+</ul>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-broockman2017causal" class="csl-entry">
+<p>Broockman, David E, and Daniel M Butler. 2017. <span>“The Causal Effects of Elite Position-Taking on Voter Attitudes: Field Experiments with Elite Communication.”</span> <em>American Journal of Political Science</em> 61 (1): 208–21.</p>
+</div>
+</div>
 </div>
 
 

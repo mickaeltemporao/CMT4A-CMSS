@@ -2,24 +2,23 @@
 title: "Schedule"
 ---
 
-The course is divided into 9 live sessions. The first three sessions are 3 hour sessions. The last six sessions are 1 hour 30 minutes each. Learning computational methods requires continuous practice. All activities and challenges are meant to help you keep practicing. For the various challenges and projects, due dates are always related to each group's respective sessions.
+The course is divided into 8 live sessions. The first three sessions are 3 hour sessions. The last six sessions are 1 hour 30 minutes each. Learning computational methods requires continuous practice. All activities and challenges are meant to help you keep practicing. For the various challenges and projects, due dates are always related to each group's respective sessions.
 
 # Overview
 
 This schedule is an approximation, subject to change due needs of the students in the course. Students will be informed of changes to the schedule.
 
-| Group A        | Group B        | Theme                                    | Demo A             | Demo B              |
-| -              | -              | -                                        | -                  | -                   |
-| 2020/11/02     | 2020/11/09     | 1. [Introduction](session_01.html)       | -                  | -                   |
-| 2020/11/16     | 2020/11/23     | 2. [Programming basics](session_02.html) | Bertille, Lison    | -                   |
-| 2020/11/30     | 2020/12/07     | 3. [Data Exploration](session_03.html)   | Colum, Julie Du.   | Marie, Tess         |
-| 2021/01/07     | 2021/01/28     | 4. [Data Management 1](session_04.html)  | Héloïse, Ronan     | Darius, Hugo        |
-| 2021/02/04     | 2021/02/11     | 5. [Data Management 2](session_05.html)  | Solène, Apolline   | Nathan, Elias       |
-| 2021/02/25     | 2021/03/04     | 6. [Data Modeling 1](session_06.html)    | Julie De., Jean    | Clémentine, Louison |
-| **2021/03/13** | **2021/03/13** | **Mid-Term Exam**                        | **Mid-Term Exam ** | **Mid-Term Exam **  |
-| 2021/03/11     | 2021/03/18     | 7. [Data Modeling 2](session_07.html)    | Alice, Jeanne      | Thomas, Jade        |
-| 2021/03/25     | 2021/04/01     | 8. Project Preparation                   | -                  | Mélanie, Nina       |
-| **2021/04/16** | **2021/04/16** | **Final Project**                        | **Final Project**  | **Final Project**   |
+| Group A        | Group B        | Theme                                     | Demo A             | Demo B              |
+| -              | -              | -                                         | -                  | -                   |
+| 2020/11/02     | 2020/11/09     | 1. [Introduction](session_01.html)        | -                  | -                   |
+| 2020/11/16     | 2020/11/23     | 2. [Programming basics](session_02.html)  | Bertille, Lison    | -                   |
+| 2020/11/30     | 2020/12/07     | 3. [Data Exploration](session_03.html)    | Colum, Julie Du.   | Marie, Tess         |
+| 2021/01/07     | 2021/01/28     | 4. [Data Management 1](session_04.html)   | Héloïse, Ronan     | Darius, Hugo        |
+| 2021/02/04     | 2021/02/11     | 5. [Data Management 2](session_05.html)   | Solène, Apolline   | Nathan, Elias       |
+| 2021/02/25     | 2021/03/04     | 6. [Data Modeling 1](session_06.html)     | Julie De., Jean    | Clémentine, Louison |
+| 2021/03/11     | 2021/03/18     | 7. [Data Modeling 2](session_07.html)     | Alice, Jeanne      | Thomas, Jade        |
+| 2021/03/25     | 2021/04/01     | 8. [Project Preparation](session_08.html) | -                  | Mélanie, Nina       |
+| **2021/04/16** | **2021/04/16** | **Final Project**                         | **Final Project**  | **Final Project**   |
 
 
 # Session Overview

@@ -2,19 +2,16 @@
 title: Resources
 ---
 
-Useful resources will be added as we progress throughout. You should check this page regularly!
+Useful resources will be added as we progress throughout the course. You should check this page regularly!
 
 # Books
-- James, G., Witten, D., Hastie, T., & Tibshirani, R. (2013). *[An introduction to statistical learning](http://faculty.marshall.usc.edu/gareth-james/ISL/index.html)*. New York: springer.
-- Salganik, M. J. (2019). *[Bit by bit: Social research in the digital age](https://www.bitbybitbook.com/en/1st-ed/preface/)*. Princeton University Press.
 - Wickham, H., & Grolemund, G. (2016). *[R for Data Science: import, tidy, transform, visualize, and model data](http://r4ds.had.co.nz/)*. O'Reilly Media, Inc.
 
 # Cheatsheets
-- [Base R](http://github.com/rstudio/cheatsheets/raw/master/base-r.pdf)
-- [Data Visualization](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
-- [Data transformation](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf)
+- [R Studio](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
 - [R Markdown](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
-- [RStudio](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
+- [Data Visualization](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
+- [Data Transformation](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf)
 
 
 # Software

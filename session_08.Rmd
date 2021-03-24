@@ -1,62 +1,21 @@
 ---
-title: "Session 7: Data Modeling (2/2)"
+title: "Session 8: Communicating Results"
 subtitle: "Learning Objectives:"
 bibliography: references.bib
 ---
 
-Demo 1: Improve plots - Themes and colors
-Demo 2: Improve plots - Titles, subtitles, axis, caption
-
-- colors palettes
-- themes
-- maps
-
-- Learn to create and interpret regression tables
-- Learn to make end to end research projects
-- Retrospective
+- Learn to make publication ready figures
+- Learn to make advanced graphics
+- Final project Q&A
 
 # Resources
 
 ## Readings
+- [Elegant Graphics with ggplot2](https://ggplot2-book.org/index.html)
+- [R Markdown](https://r4ds.had.co.nz/r-markdown.html)
 
 ## Practice
-
-```{r}
-
-```
-
-
-# Create a new variable called state_name with the string names of states
-NESdta_short <- NESdta_short %>%
-  mutate(state_name = case_when(state == 1~"Alabama", state == 2~"Alaska",
-                                state == 4~"Arizona", state == 5~"Arkansas",
-                                state == 6~"California", state == 8~"Colorado",
-                                state == 9~"Connecticut", state == 10~"Delaware",
-                                state == 11~"District of Columbia",
-                                state == 12~"Florida", state == 13~"Georgia",
-                                state == 15~"Hawaii", state == 16~"Idaho",
-                                state == 17~"Illinois", state == 18~"Indiana",
-                                state == 19~"Iowa", state == 20~"Kansas",
-                                state == 21~"Kentucky", state == 22~"Louisiana",
-                                state == 23~"Maine", state == 24~"Maryland",
-                                state == 25~"Massachusetts", state == 26~"Michigan",
-                                state == 27~"Minnesota", state == 28~"Mississippi",
-                                state == 29~"Missouri", state == 30~"Montana",
-                                state == 31~"Nebraska", state == 32~"Nevada",
-                                state == 33~"New Hampshire", state == 34~"New Jersey",
-                                state == 35~"New Mexico", state == 36~"New York",
-                                state == 37~"North Carolina", state == 38~"North Dakota",
-                                state == 39~"Ohio", state == 40~"Oklahoma",
-                                state == 41~"Oregon",  state == 42~"Pennsylvania",
-                                state == 44~"Rhode Island",  state == 45~"South Carolina",
-                                state == 46~"South Dakota", state == 47~"Tennessee",
-                                state == 48~"Texas", state == 49~"Utah",
-                                state == 50~"Vermont", state == 51~"Virginia",
-                                state == 53~"Washington", state == 54~"West Virginia",
-                                state == 55~"Wisconsin", state == 56~"Wyoming"))
-
-NESdta_short
-
+- [Reporting with R Markdown](https://learn.datacamp.com/courses/reporting-with-rmarkdown)
 
 # Hack Time!
 
@@ -64,9 +23,5 @@ NESdta_short
 klippy::klippy()
 ```
 
-1. Open a RMarkdown document and paste the following code in it: [my_project.Rmd](https://raw.githubusercontent.com/mickaeltemporao/CMT4A-CMSS/main/my_project.Rmd)
-2. Open a Text file, save it as "references.bib" and paste the following code in it: [references.bib](https://raw.githubusercontent.com/mickaeltemporao/CMT4A-CMSS/main/references.bib)
-
-
-#### References
+- Open a RMarkdown document and paste the following code in it: [session_08.Rmd](https://raw.githubusercontent.com/mickaeltemporao/CMT4A-CMSS/main/session_08_code.Rmd)
 

@@ -1,0 +1,158 @@
+---
+title: "Session 8: Communicating Results"
+---
+
+#
+```{r eval=FALSE}
+
+# Install required packages
+# Run line 9, if you get an error copy line 5 and run it in the console.
+# install.packages('maps')
+
+# Loading required packages
+library(tidyverse)
+library(maps)
+
+# Then we can easily draw a map
+world_map <- map_data("world")
+ggplot(world_map, aes(x = long, y = lat, group = group)) +
+  geom_polygon(fill="lightgray", colour = "white")
+
+# Let's try with another country
+fr_map <- map_data("france")
+ggplot(fr_map, aes(x = long, y = lat, group = group)) +
+  geom_polygon(fill="lightgray", colour = "white")
+
+
+# Let's focus on the US
+# Create an object with the states map data
+us_map <- map_data("state")
+ggplot(us_map, aes(x = long, y = lat, group = group)) +
+  geom_polygon(fill="lightgray", colour = "white")
+
+head(us_map)
+
+us_map <- us_map %>% rename(state = region)
+
+# Let's get our data
+data_url <- "https://github.com/mickaeltemporao/CMT4A-CMSS-TEMPLATE/raw/main/data/ts_2016.rds"
+raw_data <- readRDS(url(data_url,"rb"))
+
+tmp_data <- raw_data %>%
+  select(
+    V161126,   # ideology
+    V161010e,   # state
+  ) %>%
+  rename(
+    ideology = V161126,
+    state_code = V161010e
+  )
+
+head(tmp_data)
+
+# Create a new variable called state_name with the string names of states
+tmp_data <- tmp_data %>%
+  mutate(
+    state = case_when(
+      state_code == "AK" ~ "Alaska",
+      state_code == "AL" ~ "Alabama",
+      state_code == "AR" ~ "Arkansas",
+      state_code == "AZ" ~ "Arizona",
+      state_code == "CA" ~ "California",
+      state_code == "CO" ~ "Colorado",
+      state_code == "CT" ~ "Connecticut",
+      state_code == "DC" ~ "District of Columbia",
+      state_code == "DE" ~ "Delaware",
+      state_code == "FL" ~ "Florida",
+      state_code == "GA" ~ "Georgia",
+      state_code == "HI" ~ "Hawaii",
+      state_code == "IA" ~ "Iowa",
+      state_code == "ID" ~ "Idaho",
+      state_code == "IL" ~ "Illinois",
+      state_code == "IN" ~ "Indiana",
+      state_code == "KS" ~ "Kansas",
+      state_code == "KY" ~ "Kentucky",
+      state_code == "LA" ~ "Louisiana",
+      state_code == "MA" ~ "Massachusetts",
+      state_code == "MD" ~ "Maryland",
+      state_code == "ME" ~ "Maine",
+      state_code == "MI" ~ "Michigan",
+      state_code == "MN" ~ "Minnesota",
+      state_code == "MO" ~ "Missouri",
+      state_code == "MS" ~ "Mississippi",
+      state_code == "MT" ~ "Montana",
+      state_code == "NC" ~ "North Carolina",
+      state_code == "ND" ~ "North Dakota",
+      state_code == "NE" ~ "Nebraska",
+      state_code == "NH" ~ "New Hampshire",
+      state_code == "NJ" ~ "New Jersey",
+      state_code == "NM" ~ "New Mexico",
+      state_code == "NV" ~ "Nevada",
+      state_code == "NY" ~ "New York",
+      state_code == "OH" ~ "Ohio",
+      state_code == "OK" ~ "Oklahoma",
+      state_code == "OR" ~ "Oregon",
+      state_code == "PA" ~ "Pennsylvania",
+      state_code == "RI" ~ "Rhode Island",
+      state_code == "SC" ~ "South Carolina",
+      state_code == "SD" ~ "South Dakota",
+      state_code == "TN" ~ "Tennessee",
+      state_code == "TX" ~ "Texas",
+      state_code == "UT" ~ "Utah",
+      state_code == "VA" ~ "Virginia",
+      state_code == "VT" ~ "Vermont",
+      state_code == "WA" ~ "Washington",
+      state_code == "WI" ~ "Wisconsin",
+      state_code == "WV" ~ "West Virginia",
+      state_code == "WY" ~ "Wyoming",
+  )
+)
+
+head(tmp_data)
+
+tmp_data <- tmp_data %>% mutate(state = tolower(state))
+
+tmp_data <- tmp_data %>% filter(between(ideology, 1, 7))
+
+state_idl <- tmp_data %>% group_by(state) %>% summarize(ideology = mean(ideology))
+
+ideology_map <- us_map %>% left_join(state_idl)
+
+centroids <- us_map %>% group_by(state) %>% summarise(long = mean(long), lat = mean(lat))
+centroids <- centroids %>% left_join(tmp_data)
+
+# Create the map
+ggplot(ideology_map, aes(long, lat)) +
+  geom_polygon(aes(fill = ideology, group = group), color = "white") +
+  geom_text(data=centroids, aes(label = state_code, x = long, y = lat), size=5, color="white") +
+  scale_fill_gradient2(
+    low = "#377eb8", mid = "#984ea3", midpoint = 4,
+    high = "#e41a1c", limits = c(1, 7), breaks = c(1, 4 ,7)
+  ) +
+  theme_minimal()
+
+party_colors <- c("#377eb8", "#e41a1c")
+
+ggplot(
+  state_idl, aes(x = ideology, y = reorder(state, ideology))) +
+  geom_vline(xintercept = 4, color = "black", alpha=.5) +
+  geom_point(size = 3) +
+  scale_x_continuous(
+    limits = c(1,7),
+    breaks = 1:7,
+    labels = c("1\n Ext. Liberal", "", "", "0\nModerate", "", "", "7\nExt. Conservative")
+  )
+
+scale_color_manual(values = party_colors)
+
+
+my.name <- readline(prompt="Enter name: ")
+my.age <- readline(prompt="Enter age: ")
+# convert character into integer
+my.age <- as.integer(my.age)
+print(paste("Hi,", my.name, "next year you will be", my.age+1, "years old."))
+
+
+```
+
+

@@ -1,7 +1,8 @@
 # CMT4A-CMSS 2020
 Repository containing the source code for *CMT4A-CMSS: Computational Methods for Social Science*.
 
-The website can be found at: https://mickaeltemporao.github.io/CMT4A-CMSS/
+The website is deprecated.
+The new version can be found at: https://mickaeltemporao.github.io/itds/
 
 # LICENSE AND CREDIT
 Science should be open, and this course builds up other open licensed material, so unless otherwise noted, all materials for this class are licensed under a [GNU Affero General Public License v3.0](https://spdx.org/licenses/AGPL-3.0-or-later.html).
